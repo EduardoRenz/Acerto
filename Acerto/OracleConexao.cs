@@ -4,21 +4,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.OracleClient;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Acerto
 {
-    class OracleConexao
+    class OracleConexao : IConexao
     {
-       
-        List<Produto> lista;  // Lista de produtos associados
-        List<string> colunas; // Lista de coluna
+
         OracleConnection conexao;
-        private string server, user, senha, database;
+        private string server, user, senha;
         public bool conectado;
-        public OracleConexao(string user, string password, string server)
+        public OracleConexao(string user, string senha, string server)
+        {
+            this.user = user;
+            this.senha = senha;
+            this.server = server;
+            string ConnectionString = "Data Source=" + server + ";Persist Security Info=True;" + "User ID=" + user + ";Password=" + senha + ";Unicode=True";
+            Conectar(ConnectionString);
+        } // Construtor da classe
+        public DataTable Consulta(string query)
+        {
+            DataTable dt = new DataTable();
+            if(conexao.State == ConnectionState.Open)
+            {
+                OracleCommand command = conexao.CreateCommand();
+                command.CommandText = query;
+                OracleDataReader reader = command.ExecuteReader();
+                dt.Load(reader);
+                reader.Close();
+                return dt;
+            }
+            else
+            {
+                MessageBox.Show("Erro ao conectar-se");
+                return null;
+            }
+          
+        } //  Retorna uma consulta de uma query
+        public bool Conectar(string sqlConexao)
         {
             conexao = new OracleConnection();
-            conexao.ConnectionString = "Data Source=" + server + ";Persist Security Info=True;" + "User ID=" + user + ";Password=" + password + ";Unicode=True";
             try
             {
                 conexao.Open();
@@ -30,42 +56,12 @@ namespace Acerto
                 Console.WriteLine("Erro ao conectar" + e.Message);
                 conectado = false;
             }
-
-        }
-
-
-     
-        //  OracleCommand("SELECT * FROM information_schema.tables");
-
-        public List<Produto> select(string query)
-        {
-            int i = 0;
-
-                OracleCommand command = conexao.CreateCommand();
-                command.CommandText = query;
-                OracleDataReader reader = command.ExecuteReader();
-                lista = new List<Produto>();
-            Console.WriteLine("COLUNAS:" + reader.FieldCount + " Tem Linhas:" + reader.HasRows);
-            while (reader.Read())
-                {
-
-                for (int x = 0; x < reader.FieldCount; x++) 
-                {
-                    Console.WriteLine(reader[x]);
-                }
-                //lista.Add(new Produto(0, reader.GetInt32("material").ToString(), reader.GetString("serie"), Convert.ToDateTime(reader.GetDateTime("dataHora")), reader.GetInt32("tamanho"), 0, " "));
-                i++;
-                }
-                reader.Close();
-                return lista;
-
-        }
+            return conectado;
+        } // Conecta-se ao banco
         public void Close()
         {
             conexao.Close();
             conexao.Dispose();
-        }
-
-
+        } // fecha a conexão
     }
 }

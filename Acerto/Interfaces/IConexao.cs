@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Data;
 
 namespace Acerto
 {
     interface IConexao
     {
-       List<string> Consulta(string query);
+       DataTable Consulta(string query);
        bool Conectar(string sqlConexao);
        void Close();
     }

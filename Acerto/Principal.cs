@@ -12,8 +12,8 @@ namespace Acerto
 {
     public partial class Principal : Form
     {
-       // OracleConexao conecta = new OracleConexao("deposito", "tec3passos", "bdsac");
-        MysqlConexao conecta = new MysqlConexao("root", " ", "localhost", "bdsac"); // Classe de conexão (mysql)
+       OracleConexao conecta = new OracleConexao("deposito", "tec3passos", "bdsac");
+      //  MysqlConexao conecta = new MysqlConexao("root", " ", "localhost", "bdsac"); // Classe de conexão (mysql)
         public string listaME;
         public DataTable prodErros;
         //----------------------------------------------------------------------------------------------
@@ -30,17 +30,20 @@ namespace Acerto
             }
         }
 
-    
-
         private void btPesquisa_Click(object sender, EventArgs e)
         {
-            listaME = "select material as Material from produto";
+            listaME = "select material as Material, serie as 'Serie(letras)' from produto";
             // listaME = "select movestdat Data, movestseo Origem, movestsed Destino, movesttip Tipo, movestref Material, movestser Serie, movestncf Nf, me_log Processamento from me where movestseo =" + pesquisar.Value + " and me_est is null and movestdat> '01/07/2015' and movestdat< '01/08/2015' order by movestref, movestser, movestdat";
             // prodErros =  new List<Produto>();
            // tabelaNProc.DataSource = conecta.select(listaME, tabelaNProc);
             Console.WriteLine("Pesquisando filial:{0} ",pesquisar.Value);
-            prodErros = conecta.select(listaME);
+            prodErros = conecta.Consulta(listaME);
             tabelaNProc.DataSource = prodErros;
+            conecta.Close();
+        }
+
+        private void Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
             conecta.Close();
         }
     }

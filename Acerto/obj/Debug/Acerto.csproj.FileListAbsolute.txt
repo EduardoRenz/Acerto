@@ -35,3 +35,15 @@ C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\Acerto\obj\Debug\Ace
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\Acerto.exe.config
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Acerto.exe
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Acerto.pdb
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Acerto.csprojResolveAssemblyReference.cache
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Acerto.Principal.resources
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Acerto.Properties.Resources.resources
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Acerto.csproj.GenerateResource.Cache
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\Acerto.exe
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\Acerto.pdb
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\EntityFramework.dll
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\MySql.Data.dll
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\mysql.data.entity.EF6.dll
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\EntityFramework.xml
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\EntityFramework.SqlServer.xml
