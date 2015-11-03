@@ -18,7 +18,6 @@ namespace Acerto
             this.database = database;
             string sqlconecta = " Persist Security Info = False; server =" + server + " ; database =" + database + "; uid =" + user + "; pwd =" + senha + "";
             conexao = new MySqlConnection(sqlconecta);
-
             Conectar(sqlconecta); // Conecta-se ao server Mysql
         }  // Construtor da classe
         public bool Conectar(string sqlconecta)

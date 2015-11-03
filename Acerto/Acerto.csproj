@@ -68,8 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IConexao.cs" />
-    <Compile Include="MysqlConexao.cs" />
-    <Compile Include="OracleConexao.cs" />
+    <Compile Include="classes\MysqlConexao.cs" />
+    <Compile Include="classes\OracleConexao.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
