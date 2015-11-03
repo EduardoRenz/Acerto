@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data.OracleClient;
 using System.Data;
 using System.Windows.Forms;
@@ -20,8 +16,8 @@ namespace Acerto
             this.user = user;
             this.senha = senha;
             this.server = server;
-            string ConnectionString = "Data Source=" + server + ";Persist Security Info=True;" + "User ID=" + user + ";Password=" + senha + ";Unicode=True";
-            Conectar(ConnectionString);
+         string  sqlconect = "Data Source=" + server + ";Persist Security Info=True;" + "User ID=" + user + ";Password=" + senha + ";Unicode=True";
+            Conectar(sqlconect);
         } // Construtor da classe
         public DataTable Consulta(string query)
         {
@@ -44,7 +40,7 @@ namespace Acerto
         } //  Retorna uma consulta de uma query
         public bool Conectar(string sqlConexao)
         {
-            conexao = new OracleConnection();
+            conexao = new OracleConnection(sqlConexao);
             try
             {
                 conexao.Open();
