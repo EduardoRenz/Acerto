@@ -67,6 +67,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\Corretor.cs" />
+    <Compile Include="Interfaces\ICorretor.cs" />
     <Compile Include="Interfaces\IConexao.cs" />
     <Compile Include="classes\MysqlConexao.cs" />
     <Compile Include="classes\OracleConexao.cs" />
