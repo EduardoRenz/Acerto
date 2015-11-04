@@ -37,17 +37,24 @@ namespace Acerto
         }
         public void Analise(DataTable tabela, int coluna,string tipo_correcao, RichTextBox log)
         {
-            if (verificador("1", tabela.Rows[coluna]["saldo"].ToString()) && tipo_correcao == "Transferências") // Trocar para os valores corretos no oracle
+            switch (tipo_correcao)
             {
-
-                Appender(tabela.Rows[coluna]["Serie"].ToString() + " \n",Color.Black,log);
+                case "Transferências":
+                    if (verificador("t", tabela.Rows[coluna]["TIPO"].ToString())) // Trocar para os valores corretos no oracle
+                    {
+                        Appender(tabela.Rows[coluna]["Serie"].ToString() + " \n", Color.Black, log);
+                    }
+                    break;
+                case "Vendas":
+                    if ((verificador("v", tabela.Rows[coluna]["TIPO"].ToString())) || (verificador("V", tabela.Rows[coluna]["TIPO"].ToString())) || (verificador("w", tabela.Rows[coluna]["TIPO"].ToString())) ) // Trocar para os valores corretos no oracle
+                    {
+                        Appender(tabela.Rows[coluna]["Serie"].ToString() + "  \n", Color.Black, log);
+                    }
+                    break;
+                default:
+                    break;
             }
-            if (verificador("0", tabela.Rows[coluna]["saldo"].ToString()) && tipo_correcao == "Vendas") // Trocar para os valores corretos no oracle
-            {
 
-                Appender(tabela.Rows[coluna]["Serie"].ToString() + "  \n", Color.Black, log);
-            }
-            // verifica se pode corigir venda ou transferencia
             // corrige
         }
 
