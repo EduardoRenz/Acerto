@@ -61,8 +61,24 @@ namespace Acerto
                 }
             }
         }
+        private void abas_changed(object sender, TabControlEventArgs e)
+        {
+           if(abas.SelectedTab.Name != "pagErros")
+            {
+                panelPesquisa.Visible = false;
+                grpCondi.Visible = false;
+                splitterErros.Visible = false;
+                menuConsulta.Visible = true;
+            }
+            else
+            {
+                panelPesquisa.Visible =true;
+                grpCondi.Visible =true;
+                splitterErros.Visible = true;
+                menuConsulta.Visible = false;
+            }
+        }
 
-       
-    }  
+    }
 }
 

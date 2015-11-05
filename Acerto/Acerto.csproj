@@ -68,6 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\Corretor.cs" />
+    <Compile Include="Principal.Consulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Interfaces\ICorretor.cs" />
     <Compile Include="Interfaces\IConexao.cs" />
     <Compile Include="classes\MysqlConexao.cs" />
