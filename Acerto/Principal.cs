@@ -7,8 +7,8 @@ namespace Acerto
 {
     public partial class Principal : Form
     {
-      OracleConexao conecta = new OracleConexao("deposito", "tec3passos", "bdsac"); // conexão oracle
-      //  MysqlConexao conecta = new MysqlConexao("root", " ", "localhost", "bdsac"); // conexão mysql
+      //OracleConexao conecta = new OracleConexao("deposito", "tec3passos", "bdsac"); // conexão oracle
+        MysqlConexao conecta = new MysqlConexao("root", " ", "localhost", "bdsac"); // conexão mysql
         Corretor corretor  = new Corretor();
         public string listaME; // String que lista os erros
         public DataTable prodErros; // Tabela de dados dos erros
@@ -18,7 +18,7 @@ namespace Acerto
         {
             if (conecta.conectado){    // se conectou 
                 lblConexao.Text = "Conectado";
-                lblConexao.ForeColor = Color.Green;
+                lblConexao.ForeColor = Color.GreenYellow;
             }
             else{ // erro ao conectar
                 lblConexao.Text = "Desconectado";
@@ -40,9 +40,8 @@ namespace Acerto
         private void btPesquisa_Click(object sender, EventArgs e)
         {
             txtProcessos.Clear();
-          //  listaME = "select * from produto";
-            listaME = "select movestdat Data, movestseo Origem, movestsed Destino, movesttip Tipo, movestref Material, movestser Serie, movestncf Nf, me_log Processamento from me where movestseo =" + pesquisar.Value + " and me_est is null and movestdat> '"+ dataInicio.Value.ToString("dd/MM/yyyy")+ "' and movestdat< '" + dataFim.Value.ToString("dd/MM/yyyy") + "' order by movestref, movestser, movestdat";
-            Console.WriteLine("Pesquisando filial:{0} de {1} a {2} ", pesquisar.Value, dataInicio.Value.ToString("dd/MM/yyyy"), dataFim.Value.ToString("dd/MM/yyyy"));
+            listaME = "select * from produto";
+           // listaME = "select movestdat Data, movestseo Origem, movestsed Destino, movesttip Tipo, movestref Material, movestser Serie, movestncf Nf, me_log Processamento from me where movestseo =" + pesquisar.Value + " and me_est is null and movestdat> '"+ dataInicio.Value.ToString("dd/MM/yyyy")+ "' and movestdat< '" + dataFim.Value.ToString("dd/MM/yyyy") + "' order by movestref, movestser, movestdat";
             Appender("Pesquisando filial: " + pesquisar.Value + ". ", Color.Black, txtProcessos);
             prodErros = conecta.Consulta(listaME);
             Appender(prodErros.Rows.Count + " Linhas encontradas \n", Color.Green, txtProcessos);
