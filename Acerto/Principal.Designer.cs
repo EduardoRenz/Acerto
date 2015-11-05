@@ -57,7 +57,7 @@ namespace Acerto
             this.topo = new System.Windows.Forms.FlowLayoutPanel();
             this.menuConsulta = new System.Windows.Forms.FlowLayoutPanel();
             this.lblConsultaFilial = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.consFilial = new System.Windows.Forms.NumericUpDown();
             this.lblConsultaSerie = new System.Windows.Forms.Label();
             this.txtConsultaSerie = new System.Windows.Forms.TextBox();
             this.lblConsultaMaterial = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@ namespace Acerto
             ((System.ComponentModel.ISupportInitialize)(this.pesquisar)).BeginInit();
             this.topo.SuspendLayout();
             this.menuConsulta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consFilial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).BeginInit();
             this.divCentro.SuspendLayout();
             this.abas.SuspendLayout();
@@ -319,7 +319,7 @@ namespace Acerto
             // menuConsulta
             // 
             this.menuConsulta.Controls.Add(this.lblConsultaFilial);
-            this.menuConsulta.Controls.Add(this.numericUpDown1);
+            this.menuConsulta.Controls.Add(this.consFilial);
             this.menuConsulta.Controls.Add(this.lblConsultaSerie);
             this.menuConsulta.Controls.Add(this.txtConsultaSerie);
             this.menuConsulta.Controls.Add(this.lblConsultaMaterial);
@@ -343,23 +343,23 @@ namespace Acerto
             this.lblConsultaFilial.TabIndex = 6;
             this.lblConsultaFilial.Text = "Filial:";
             // 
-            // numericUpDown1
+            // consFilial
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(56, 3);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.consFilial.Location = new System.Drawing.Point(56, 3);
+            this.consFilial.Maximum = new decimal(new int[] {
             61,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.consFilial.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(65, 20);
-            this.numericUpDown1.TabIndex = 7;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.consFilial.Name = "consFilial";
+            this.consFilial.Size = new System.Drawing.Size(65, 20);
+            this.consFilial.TabIndex = 7;
+            this.consFilial.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -574,7 +574,7 @@ namespace Acerto
             this.topo.PerformLayout();
             this.menuConsulta.ResumeLayout(false);
             this.menuConsulta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.consFilial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).EndInit();
             this.divCentro.ResumeLayout(false);
             this.divCentro.PerformLayout();
@@ -619,7 +619,7 @@ namespace Acerto
         private System.Windows.Forms.TabPage tabPage2;
         private FlowLayoutPanel menuConsulta;
         private Label lblConsultaFilial;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown consFilial;
         private Label lblConsultaSerie;
         private TextBox txtConsultaSerie;
         private Label lblConsultaMaterial;

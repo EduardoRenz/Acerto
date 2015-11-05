@@ -11,7 +11,10 @@ namespace Acerto
 
         private void btConsultaPesquisar_Click(object sender, EventArgs e)
         {
-         gridConsulta.DataSource =   conecta.Consulta("select * from produto where serie LIKE '%"+ txtConsultaSerie.Text+ "%' and material LIKE'%" + txtConsultaMaterial.Text + "%'");
+          string query = "select est_set Filial, est_ref material, est_ser serie, est_sal saldo, est_tam tamanho from estoques where est_set = "+consFilial.Value+" and est_ref LIKE '%"+txtConsultaMaterial.Text+ "%' and est_ser LIKE '%" + txtConsultaSerie.Text + "%'";
+            Console.WriteLine(query);
+
+            gridConsulta.DataSource =   conecta.Consulta(query);
         }
     }
 }
