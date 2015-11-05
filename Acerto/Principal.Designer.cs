@@ -71,6 +71,7 @@ namespace Acerto
             this.abas = new System.Windows.Forms.TabControl();
             this.pagErros = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.gridConsulta = new System.Windows.Forms.DataGridView();
             this.grpCondi.SuspendLayout();
             this.panelPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pesquisar)).BeginInit();
@@ -81,6 +82,8 @@ namespace Acerto
             this.divCentro.SuspendLayout();
             this.abas.SuspendLayout();
             this.pagErros.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridConsulta)).BeginInit();
             this.SuspendLayout();
             // 
             // divTopo
@@ -366,8 +369,8 @@ namespace Acerto
             // 
             this.lblConsultaSerie.AutoSize = true;
             this.lblConsultaSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblConsultaSerie.Location = new System.Drawing.Point(127, 4);
-            this.lblConsultaSerie.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.lblConsultaSerie.Location = new System.Drawing.Point(126, 4);
+            this.lblConsultaSerie.Margin = new System.Windows.Forms.Padding(2, 4, 3, 0);
             this.lblConsultaSerie.Name = "lblConsultaSerie";
             this.lblConsultaSerie.Size = new System.Drawing.Size(51, 17);
             this.lblConsultaSerie.TabIndex = 8;
@@ -376,7 +379,8 @@ namespace Acerto
             // txtConsultaSerie
             // 
             this.txtConsultaSerie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtConsultaSerie.Location = new System.Drawing.Point(184, 3);
+            this.txtConsultaSerie.Location = new System.Drawing.Point(180, 3);
+            this.txtConsultaSerie.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.txtConsultaSerie.MaxLength = 6;
             this.txtConsultaSerie.Name = "txtConsultaSerie";
             this.txtConsultaSerie.Size = new System.Drawing.Size(100, 20);
@@ -386,7 +390,7 @@ namespace Acerto
             // 
             this.lblConsultaMaterial.AutoSize = true;
             this.lblConsultaMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblConsultaMaterial.Location = new System.Drawing.Point(290, 4);
+            this.lblConsultaMaterial.Location = new System.Drawing.Point(283, 4);
             this.lblConsultaMaterial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
             this.lblConsultaMaterial.Name = "lblConsultaMaterial";
             this.lblConsultaMaterial.Size = new System.Drawing.Size(71, 17);
@@ -395,7 +399,7 @@ namespace Acerto
             // 
             // txtConsultaMaterial
             // 
-            this.txtConsultaMaterial.Location = new System.Drawing.Point(367, 3);
+            this.txtConsultaMaterial.Location = new System.Drawing.Point(360, 3);
             this.txtConsultaMaterial.MaxLength = 8;
             this.txtConsultaMaterial.Name = "txtConsultaMaterial";
             this.txtConsultaMaterial.Size = new System.Drawing.Size(100, 20);
@@ -403,7 +407,7 @@ namespace Acerto
             // 
             // btConsultaPesquisar
             // 
-            this.btConsultaPesquisar.Location = new System.Drawing.Point(474, 1);
+            this.btConsultaPesquisar.Location = new System.Drawing.Point(467, 1);
             this.btConsultaPesquisar.Margin = new System.Windows.Forms.Padding(4, 1, 0, 0);
             this.btConsultaPesquisar.Name = "btConsultaPesquisar";
             this.btConsultaPesquisar.Size = new System.Drawing.Size(97, 23);
@@ -418,7 +422,7 @@ namespace Acerto
             this.txtProcessos.Location = new System.Drawing.Point(724, 28);
             this.txtProcessos.Name = "txtProcessos";
             this.txtProcessos.ReadOnly = true;
-            this.txtProcessos.Size = new System.Drawing.Size(710, 612);
+            this.txtProcessos.Size = new System.Drawing.Size(710, 610);
             this.txtProcessos.TabIndex = 3;
             this.txtProcessos.Text = "";
             // 
@@ -462,7 +466,7 @@ namespace Acerto
             this.tabelaNProc.Name = "tabelaNProc";
             this.tabelaNProc.ReadOnly = true;
             this.tabelaNProc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tabelaNProc.Size = new System.Drawing.Size(710, 612);
+            this.tabelaNProc.Size = new System.Drawing.Size(710, 610);
             this.tabelaNProc.TabIndex = 5;
             // 
             // lblnaoproc
@@ -492,7 +496,7 @@ namespace Acerto
             this.divCentro.RowCount = 2;
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.divCentro.Size = new System.Drawing.Size(1442, 648);
+            this.divCentro.Size = new System.Drawing.Size(1442, 646);
             this.divCentro.TabIndex = 6;
             // 
             // abas
@@ -517,18 +521,33 @@ namespace Acerto
             this.pagErros.Margin = new System.Windows.Forms.Padding(0);
             this.pagErros.Name = "pagErros";
             this.pagErros.Padding = new System.Windows.Forms.Padding(3);
-            this.pagErros.Size = new System.Drawing.Size(1448, 654);
+            this.pagErros.Size = new System.Drawing.Size(1448, 652);
             this.pagErros.TabIndex = 0;
             this.pagErros.Text = "Erros de Processamento";
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.tabPage2.Controls.Add(this.gridConsulta);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(1448, 652);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consultar Mercadorias";
+            // 
+            // gridConsulta
+            // 
+            this.gridConsulta.AllowUserToAddRows = false;
+            this.gridConsulta.AllowUserToOrderColumns = true;
+            this.gridConsulta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridConsulta.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            this.gridConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridConsulta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridConsulta.Location = new System.Drawing.Point(0, 0);
+            this.gridConsulta.Name = "gridConsulta";
+            this.gridConsulta.ReadOnly = true;
+            this.gridConsulta.Size = new System.Drawing.Size(1448, 652);
+            this.gridConsulta.TabIndex = 0;
             // 
             // Principal
             // 
@@ -561,6 +580,8 @@ namespace Acerto
             this.divCentro.PerformLayout();
             this.abas.ResumeLayout(false);
             this.pagErros.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridConsulta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,6 +625,7 @@ namespace Acerto
         private Label lblConsultaMaterial;
         private TextBox txtConsultaMaterial;
         private Button btConsultaPesquisar;
+        private DataGridView gridConsulta;
     }
 }
 

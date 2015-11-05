@@ -11,7 +11,7 @@ namespace Acerto
 
         private void btConsultaPesquisar_Click(object sender, EventArgs e)
         {
-
+         gridConsulta.DataSource =   conecta.Consulta("select * from produto where serie LIKE '%"+ txtConsultaSerie.Text+ "%' and material LIKE'%" + txtConsultaMaterial.Text + "%'");
         }
     }
 }
