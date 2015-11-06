@@ -320,10 +320,10 @@ namespace Acerto
             // 
             this.menuConsulta.Controls.Add(this.lblConsultaFilial);
             this.menuConsulta.Controls.Add(this.consFilial);
-            this.menuConsulta.Controls.Add(this.lblConsultaSerie);
-            this.menuConsulta.Controls.Add(this.txtConsultaSerie);
             this.menuConsulta.Controls.Add(this.lblConsultaMaterial);
             this.menuConsulta.Controls.Add(this.txtConsultaMaterial);
+            this.menuConsulta.Controls.Add(this.lblConsultaSerie);
+            this.menuConsulta.Controls.Add(this.txtConsultaSerie);
             this.menuConsulta.Controls.Add(this.btConsultaPesquisar);
             this.menuConsulta.Location = new System.Drawing.Point(5, 38);
             this.menuConsulta.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
@@ -369,7 +369,7 @@ namespace Acerto
             // 
             this.lblConsultaSerie.AutoSize = true;
             this.lblConsultaSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblConsultaSerie.Location = new System.Drawing.Point(126, 4);
+            this.lblConsultaSerie.Location = new System.Drawing.Point(309, 4);
             this.lblConsultaSerie.Margin = new System.Windows.Forms.Padding(2, 4, 3, 0);
             this.lblConsultaSerie.Name = "lblConsultaSerie";
             this.lblConsultaSerie.Size = new System.Drawing.Size(51, 17);
@@ -379,7 +379,7 @@ namespace Acerto
             // txtConsultaSerie
             // 
             this.txtConsultaSerie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtConsultaSerie.Location = new System.Drawing.Point(180, 3);
+            this.txtConsultaSerie.Location = new System.Drawing.Point(363, 3);
             this.txtConsultaSerie.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.txtConsultaSerie.MaxLength = 6;
             this.txtConsultaSerie.Name = "txtConsultaSerie";
@@ -390,7 +390,7 @@ namespace Acerto
             // 
             this.lblConsultaMaterial.AutoSize = true;
             this.lblConsultaMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblConsultaMaterial.Location = new System.Drawing.Point(283, 4);
+            this.lblConsultaMaterial.Location = new System.Drawing.Point(127, 4);
             this.lblConsultaMaterial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
             this.lblConsultaMaterial.Name = "lblConsultaMaterial";
             this.lblConsultaMaterial.Size = new System.Drawing.Size(71, 17);
@@ -399,7 +399,7 @@ namespace Acerto
             // 
             // txtConsultaMaterial
             // 
-            this.txtConsultaMaterial.Location = new System.Drawing.Point(360, 3);
+            this.txtConsultaMaterial.Location = new System.Drawing.Point(204, 3);
             this.txtConsultaMaterial.MaxLength = 8;
             this.txtConsultaMaterial.Name = "txtConsultaMaterial";
             this.txtConsultaMaterial.Size = new System.Drawing.Size(100, 20);
@@ -548,6 +548,7 @@ namespace Acerto
             this.gridConsulta.ReadOnly = true;
             this.gridConsulta.Size = new System.Drawing.Size(1448, 652);
             this.gridConsulta.TabIndex = 0;
+            this.gridConsulta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridConsulta_CellDoubleClick);
             // 
             // Principal
             // 

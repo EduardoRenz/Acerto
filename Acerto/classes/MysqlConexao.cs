@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Acerto
 {
-    class MysqlConexao : IConexao
+  public  class MysqlConexao : IConexao
     {
         MySqlConnection conexao;
         private string server, user, senha, database;

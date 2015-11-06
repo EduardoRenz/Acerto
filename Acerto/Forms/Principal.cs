@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Acerto
 {
     public partial class Principal : Form
     {
-      OracleConexao conecta = new OracleConexao("deposito", "tec3passos", "bdsac"); // conexão oracle
-      //  MysqlConexao conecta = new MysqlConexao("root", " ", "localhost", "bdsac"); // conexão mysql
+     // OracleConexao conecta = new OracleConexao("deposito", "tec3passos", "bdsac"); // conexão oracle
+        MysqlConexao conecta = new MysqlConexao("root", " ", "localhost", "bdsac"); // conexão mysql
         Corretor corretor  = new Corretor();
         public string listaME; // String que lista os erros
         public DataTable prodErros; // Tabela de dados dos erros
@@ -40,8 +41,8 @@ namespace Acerto
         private void btPesquisa_Click(object sender, EventArgs e)
         {
             txtProcessos.Clear();
-            //listaME = "select * from produto";
-            listaME = "select movestdat Data, movestseo Origem, movestsed Destino, movesttip Tipo, movestref Material, movestser Serie, movestncf Nf, me_log Processamento from me where movestseo =" + pesquisar.Value + " and me_est is null and movestdat> '"+ dataInicio.Value.ToString("dd/MM/yyyy")+ "' and movestdat< '" + dataFim.Value.ToString("dd/MM/yyyy") + "' order by movestref, movestser, movestdat";
+           listaME = "select * from produto";
+           // listaME = "select movestdat Data, movestseo Origem, movestsed Destino, movesttip Tipo, movestref Material, movestser Serie, movestncf Nf, me_log Processamento from me where movestseo =" + pesquisar.Value + " and me_est is null and movestdat> '"+ dataInicio.Value.ToString("dd/MM/yyyy")+ "' and movestdat< '" + dataFim.Value.ToString("dd/MM/yyyy") + "' order by movestref, movestser, movestdat";
             Appender("Pesquisando filial: " + pesquisar.Value + ". ", Color.Black, txtProcessos);
             prodErros = conecta.Consulta(listaME);
             Appender(prodErros.Rows.Count + " Linhas encontradas \n", Color.Green, txtProcessos);
@@ -78,6 +79,32 @@ namespace Acerto
                 menuConsulta.Visible = false;
             }
         }
+        public static string SqlScape(string str)
+        {
+            return Regex.Replace(str, @"[\x00'""\b\n\r\t\cZ\\%_]",
+                delegate (Match match)
+                {
+                    string v = match.Value;
+                    switch (v)
+                    {
+                        case "\x00":            // ASCII NUL (0x00) character
+                    return "\\0";
+                        case "\b":              // BACKSPACE character
+                    return "\\b";
+                        case "\n":              // NEWLINE (linefeed) character
+                    return "\\n";
+                        case "\r":              // CARRIAGE RETURN character
+                    return "\\r";
+                        case "\t":              // TAB
+                    return "\\t";
+                        case "\u001A":          // Ctrl-Z
+                    return "\\Z";
+                        default:
+                            return "\\" + v;
+                    }
+                });
+        }
+
 
     }
 }

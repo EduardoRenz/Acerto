@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Data.OracleClient;
+//using System.Data.OracleClient;
+using Oracle.DataAccess.Client;
 using System.Data;
 using System.Windows.Forms;
 
 namespace Acerto
 {
-    class OracleConexao : IConexao
+   public class OracleConexao : IConexao
     {
-
         OracleConnection conexao;
         private string server, user, senha;
         public bool conectado;
