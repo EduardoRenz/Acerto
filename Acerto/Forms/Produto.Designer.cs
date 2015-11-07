@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produto));
             this.tabelaLayoutProd = new System.Windows.Forms.TableLayoutPanel();
             this.ProdTabelaTopEsq = new System.Windows.Forms.TableLayoutPanel();
@@ -47,15 +47,15 @@
             this.ProdDivTopDir = new System.Windows.Forms.FlowLayoutPanel();
             this.ProdLblFilial = new System.Windows.Forms.Label();
             this.ProdTabelaCentro = new System.Windows.Forms.TableLayoutPanel();
-            this.ProdGridSaldos = new System.Windows.Forms.DataGridView();
             this.ProdGridHist = new System.Windows.Forms.DataGridView();
+            this.prodGridSaldos = new System.Windows.Forms.DataGridView();
             this.tabelaLayoutProd.SuspendLayout();
             this.ProdTabelaTopEsq.SuspendLayout();
             this.divProdTopEsq.SuspendLayout();
             this.ProdDivTopDir.SuspendLayout();
             this.ProdTabelaCentro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProdGridSaldos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProdGridHist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodGridSaldos)).BeginInit();
             this.SuspendLayout();
             // 
             // tabelaLayoutProd
@@ -71,7 +71,7 @@
             this.tabelaLayoutProd.RowCount = 2;
             this.tabelaLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tabelaLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tabelaLayoutProd.Size = new System.Drawing.Size(534, 402);
+            this.tabelaLayoutProd.Size = new System.Drawing.Size(534, 292);
             this.tabelaLayoutProd.TabIndex = 0;
             // 
             // ProdTabelaTopEsq
@@ -151,68 +151,17 @@
             // 
             this.ProdTabelaCentro.ColumnCount = 1;
             this.ProdTabelaCentro.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.ProdTabelaCentro.Controls.Add(this.ProdGridSaldos, 0, 1);
+            this.ProdTabelaCentro.Controls.Add(this.prodGridSaldos, 0, 1);
             this.ProdTabelaCentro.Controls.Add(this.ProdGridHist, 0, 0);
             this.ProdTabelaCentro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProdTabelaCentro.Location = new System.Drawing.Point(0, 30);
             this.ProdTabelaCentro.Margin = new System.Windows.Forms.Padding(0);
             this.ProdTabelaCentro.Name = "ProdTabelaCentro";
             this.ProdTabelaCentro.RowCount = 2;
+            this.ProdTabelaCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ProdTabelaCentro.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.ProdTabelaCentro.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.ProdTabelaCentro.Size = new System.Drawing.Size(534, 372);
+            this.ProdTabelaCentro.Size = new System.Drawing.Size(534, 262);
             this.ProdTabelaCentro.TabIndex = 3;
-            // 
-            // ProdGridSaldos
-            // 
-            this.ProdGridSaldos.AllowUserToAddRows = false;
-            this.ProdGridSaldos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ProdGridSaldos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.ProdGridSaldos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.ProdGridSaldos.BackgroundColor = System.Drawing.SystemColors.HotTrack;
-            this.ProdGridSaldos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.ProdGridSaldos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProdGridSaldos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.ProdGridSaldos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProdGridSaldos.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ProdGridSaldos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ProdGridSaldos.EnableHeadersVisualStyles = false;
-            this.ProdGridSaldos.Location = new System.Drawing.Point(3, 209);
-            this.ProdGridSaldos.Name = "ProdGridSaldos";
-            this.ProdGridSaldos.ReadOnly = true;
-            this.ProdGridSaldos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProdGridSaldos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.ProdGridSaldos.RowHeadersVisible = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ProdGridSaldos.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.ProdGridSaldos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ProdGridSaldos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProdGridSaldos.Size = new System.Drawing.Size(528, 160);
-            this.ProdGridSaldos.TabIndex = 1;
             // 
             // ProdGridHist
             // 
@@ -240,7 +189,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ProdGridHist.DefaultCellStyle = dataGridViewCellStyle8;
-            this.ProdGridHist.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ProdGridHist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProdGridHist.EnableHeadersVisualStyles = false;
             this.ProdGridHist.Location = new System.Drawing.Point(3, 3);
             this.ProdGridHist.Name = "ProdGridHist";
@@ -261,18 +210,69 @@
             this.ProdGridHist.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.ProdGridHist.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ProdGridHist.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProdGridHist.Size = new System.Drawing.Size(528, 200);
+            this.ProdGridHist.Size = new System.Drawing.Size(528, 140);
             this.ProdGridHist.TabIndex = 0;
+            // 
+            // prodGridSaldos
+            // 
+            this.prodGridSaldos.AllowUserToAddRows = false;
+            this.prodGridSaldos.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.prodGridSaldos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.prodGridSaldos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.prodGridSaldos.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            this.prodGridSaldos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.prodGridSaldos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.prodGridSaldos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.prodGridSaldos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.prodGridSaldos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.prodGridSaldos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.prodGridSaldos.EnableHeadersVisualStyles = false;
+            this.prodGridSaldos.Location = new System.Drawing.Point(3, 149);
+            this.prodGridSaldos.Name = "prodGridSaldos";
+            this.prodGridSaldos.ReadOnly = true;
+            this.prodGridSaldos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.prodGridSaldos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.prodGridSaldos.RowHeadersVisible = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.prodGridSaldos.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.prodGridSaldos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.prodGridSaldos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.prodGridSaldos.Size = new System.Drawing.Size(528, 110);
+            this.prodGridSaldos.TabIndex = 1;
             // 
             // Produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(534, 402);
+            this.ClientSize = new System.Drawing.Size(534, 292);
             this.Controls.Add(this.tabelaLayoutProd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(550, 440);
+            this.MinimumSize = new System.Drawing.Size(550, 330);
             this.Name = "Produto";
             this.Text = "Produto";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Produto_FormClosed);
@@ -283,8 +283,8 @@
             this.ProdDivTopDir.ResumeLayout(false);
             this.ProdDivTopDir.PerformLayout();
             this.ProdTabelaCentro.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ProdGridSaldos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProdGridHist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodGridSaldos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -300,6 +300,6 @@
         private System.Windows.Forms.Label ProdLblFilial;
         private System.Windows.Forms.TableLayoutPanel ProdTabelaCentro;
         private System.Windows.Forms.DataGridView ProdGridHist;
-        private System.Windows.Forms.DataGridView ProdGridSaldos;
+        private System.Windows.Forms.DataGridView prodGridSaldos;
     }
 }

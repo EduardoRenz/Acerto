@@ -58,10 +58,10 @@ namespace Acerto
             this.menuConsulta = new System.Windows.Forms.FlowLayoutPanel();
             this.lblConsultaFilial = new System.Windows.Forms.Label();
             this.consFilial = new System.Windows.Forms.NumericUpDown();
-            this.lblConsultaSerie = new System.Windows.Forms.Label();
-            this.txtConsultaSerie = new System.Windows.Forms.TextBox();
             this.lblConsultaMaterial = new System.Windows.Forms.Label();
             this.txtConsultaMaterial = new System.Windows.Forms.TextBox();
+            this.lblConsultaSerie = new System.Windows.Forms.Label();
+            this.txtConsultaSerie = new System.Windows.Forms.TextBox();
             this.btConsultaPesquisar = new System.Windows.Forms.Button();
             this.txtProcessos = new System.Windows.Forms.RichTextBox();
             this.lblResults = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@ namespace Acerto
             this.divCentro = new System.Windows.Forms.TableLayoutPanel();
             this.abas = new System.Windows.Forms.TabControl();
             this.pagErros = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabConsultar = new System.Windows.Forms.TabPage();
             this.gridConsulta = new System.Windows.Forms.DataGridView();
             this.grpCondi.SuspendLayout();
             this.panelPesquisa.SuspendLayout();
@@ -82,7 +82,7 @@ namespace Acerto
             this.divCentro.SuspendLayout();
             this.abas.SuspendLayout();
             this.pagErros.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabConsultar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridConsulta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -365,6 +365,25 @@ namespace Acerto
             0,
             0});
             // 
+            // lblConsultaMaterial
+            // 
+            this.lblConsultaMaterial.AutoSize = true;
+            this.lblConsultaMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblConsultaMaterial.Location = new System.Drawing.Point(127, 4);
+            this.lblConsultaMaterial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
+            this.lblConsultaMaterial.Name = "lblConsultaMaterial";
+            this.lblConsultaMaterial.Size = new System.Drawing.Size(71, 17);
+            this.lblConsultaMaterial.TabIndex = 10;
+            this.lblConsultaMaterial.Text = "Material:";
+            // 
+            // txtConsultaMaterial
+            // 
+            this.txtConsultaMaterial.Location = new System.Drawing.Point(204, 3);
+            this.txtConsultaMaterial.MaxLength = 8;
+            this.txtConsultaMaterial.Name = "txtConsultaMaterial";
+            this.txtConsultaMaterial.Size = new System.Drawing.Size(100, 20);
+            this.txtConsultaMaterial.TabIndex = 11;
+            // 
             // lblConsultaSerie
             // 
             this.lblConsultaSerie.AutoSize = true;
@@ -385,25 +404,6 @@ namespace Acerto
             this.txtConsultaSerie.Name = "txtConsultaSerie";
             this.txtConsultaSerie.Size = new System.Drawing.Size(100, 20);
             this.txtConsultaSerie.TabIndex = 9;
-            // 
-            // lblConsultaMaterial
-            // 
-            this.lblConsultaMaterial.AutoSize = true;
-            this.lblConsultaMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblConsultaMaterial.Location = new System.Drawing.Point(127, 4);
-            this.lblConsultaMaterial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 0);
-            this.lblConsultaMaterial.Name = "lblConsultaMaterial";
-            this.lblConsultaMaterial.Size = new System.Drawing.Size(71, 17);
-            this.lblConsultaMaterial.TabIndex = 10;
-            this.lblConsultaMaterial.Text = "Material:";
-            // 
-            // txtConsultaMaterial
-            // 
-            this.txtConsultaMaterial.Location = new System.Drawing.Point(204, 3);
-            this.txtConsultaMaterial.MaxLength = 8;
-            this.txtConsultaMaterial.Name = "txtConsultaMaterial";
-            this.txtConsultaMaterial.Size = new System.Drawing.Size(100, 20);
-            this.txtConsultaMaterial.TabIndex = 11;
             // 
             // btConsultaPesquisar
             // 
@@ -501,8 +501,8 @@ namespace Acerto
             // 
             // abas
             // 
+            this.abas.Controls.Add(this.tabConsultar);
             this.abas.Controls.Add(this.pagErros);
-            this.abas.Controls.Add(this.tabPage2);
             this.abas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.abas.Location = new System.Drawing.Point(0, 74);
             this.abas.Margin = new System.Windows.Forms.Padding(0);
@@ -525,15 +525,15 @@ namespace Acerto
             this.pagErros.TabIndex = 0;
             this.pagErros.Text = "Erros de Processamento";
             // 
-            // tabPage2
+            // tabConsultar
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.tabPage2.Controls.Add(this.gridConsulta);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1448, 652);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Consultar Mercadorias";
+            this.tabConsultar.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.tabConsultar.Controls.Add(this.gridConsulta);
+            this.tabConsultar.Location = new System.Drawing.Point(4, 22);
+            this.tabConsultar.Name = "tabConsultar";
+            this.tabConsultar.Size = new System.Drawing.Size(1448, 652);
+            this.tabConsultar.TabIndex = 1;
+            this.tabConsultar.Text = "Consultar Mercadorias";
             // 
             // gridConsulta
             // 
@@ -581,7 +581,7 @@ namespace Acerto
             this.divCentro.PerformLayout();
             this.abas.ResumeLayout(false);
             this.pagErros.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
+            this.tabConsultar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridConsulta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -617,7 +617,7 @@ namespace Acerto
         private System.Windows.Forms.TableLayoutPanel divCentro;
         private System.Windows.Forms.TabControl abas;
         private System.Windows.Forms.TabPage pagErros;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabConsultar;
         private FlowLayoutPanel menuConsulta;
         private Label lblConsultaFilial;
         private NumericUpDown consFilial;

@@ -17,7 +17,6 @@ namespace Acerto
             {
                 btConsultaPesquisar.Text = "Cancelar";
                 isPesquiando = true;
-                Console.WriteLine(query+ btConsultaPesquisar.Text);
                 gridConsulta.DataSource = conecta.Consulta(query);
                 isPesquiando = false;
                 btConsultaPesquisar.Text = "Pesquisar";

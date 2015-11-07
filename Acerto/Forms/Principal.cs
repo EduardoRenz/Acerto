@@ -17,14 +17,9 @@ namespace Acerto
         public Principal() { InitializeComponent(); }
         private void Form1_Load(object sender, EventArgs e) //  AO CARREGAR O FORM 
         {
-            if (conecta.conectado){    // se conectou 
-                lblConexao.Text = "Conectado";
-                lblConexao.ForeColor = Color.GreenYellow;
-            }
-            else{ // erro ao conectar
-                lblConexao.Text = "Desconectado";
-                lblConexao.ForeColor = Color.Red;
-            }
+            Text = "Acertos  v:" + ProductVersion;
+            VerificaAbas();
+            VerificaConexao();
         }
         public void Appender(string text,Color cor,RichTextBox campo)
         {
@@ -60,7 +55,11 @@ namespace Acerto
         } // click no corrigir
         private void AbasChanged(object sender, TabControlEventArgs e)
         {
-           if(abas.SelectedTab.Name != "pagErros")
+            VerificaAbas();
+        } // Quando a aba é trocada
+        private void VerificaAbas()
+        {
+            if (abas.SelectedTab.Name != "pagErros")
             {
                 panelPesquisa.Visible = false;
                 grpCondi.Visible = false;
@@ -69,12 +68,25 @@ namespace Acerto
             }
             else
             {
-                panelPesquisa.Visible =true;
-                grpCondi.Visible =true;
+                panelPesquisa.Visible = true;
+                grpCondi.Visible = true;
                 splitterErros.Visible = true;
                 menuConsulta.Visible = false;
             }
-        } // Troca de abas
+        }
+        private void VerificaConexao()
+        {
+            if (conecta.conectado)
+            {    // se conectou 
+                lblConexao.Text = "Conectado";
+                lblConexao.ForeColor = Color.GreenYellow;
+            }
+            else
+            { // erro ao conectar
+                lblConexao.Text = "Desconectado";
+                lblConexao.ForeColor = Color.Red;
+            }
+        }
         public static string SqlScape(string str)
         {
             return Regex.Replace(str, @"[\x00'""\b\n\r\t\cZ\\%_]",
