@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
@@ -9,6 +8,8 @@ namespace Acerto
   public  class MysqlConexao : IConexao
     {
         MySqlConnection conexao;
+        MySqlDataReader reader;
+        MySqlCommand consulta;
         private string server, user, senha, database;
         public bool conectado;
         public MysqlConexao(string user, string senha, string server, string database) {
@@ -41,8 +42,8 @@ namespace Acerto
         {      
             DataTable dt = new DataTable();
             if (conexao.State == ConnectionState.Open) {
-                MySqlCommand consulta = new MySqlCommand(query, conexao);
-                MySqlDataReader reader = consulta.ExecuteReader();
+                consulta = new MySqlCommand(query, conexao);
+                reader = consulta.ExecuteReader();
                 dt.Load(reader);
                 reader.Close();
                 return dt;
@@ -50,6 +51,11 @@ namespace Acerto
             MessageBox.Show("Erro ao conectar-se");
             return null;
         } // Faz uma consulta e retorna o resultado 
+        public void CancelQuery()
+        {
+            consulta.Cancel();
+            Console.WriteLine("Query Cancelada");
+        }
         public void Close()
         {
             conexao.Close();

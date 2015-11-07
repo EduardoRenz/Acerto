@@ -26,10 +26,6 @@ namespace Acerto
                 lblConexao.ForeColor = Color.Red;
             }
         }
-        private void Principal_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            conecta.Close();
-        } // Ao fechar o Form
         public void Appender(string text,Color cor,RichTextBox campo)
         {
             campo.SelectionStart = campo.TextLength;
@@ -40,13 +36,13 @@ namespace Acerto
         } // Adiciona texto ao richtextbox
         private void btPesquisa_Click(object sender, EventArgs e)
         {
-            txtProcessos.Clear();
+           txtProcessos.Clear();
            listaME = "select * from produto";
            // listaME = "select movestdat Data, movestseo Origem, movestsed Destino, movesttip Tipo, movestref Material, movestser Serie, movestncf Nf, me_log Processamento from me where movestseo =" + pesquisar.Value + " and me_est is null and movestdat> '"+ dataInicio.Value.ToString("dd/MM/yyyy")+ "' and movestdat< '" + dataFim.Value.ToString("dd/MM/yyyy") + "' order by movestref, movestser, movestdat";
-            Appender("Pesquisando filial: " + pesquisar.Value + ". ", Color.Black, txtProcessos);
-            prodErros = conecta.Consulta(listaME);
-            Appender(prodErros.Rows.Count + " Linhas encontradas \n", Color.Green, txtProcessos);
-            tabelaNProc.DataSource = prodErros;
+           Appender("Pesquisando filial: " + pesquisar.Value + ". ", Color.Black, txtProcessos);
+           prodErros = conecta.Consulta(listaME);
+           Appender(prodErros.Rows.Count + " Linhas encontradas \n", Color.Green, txtProcessos);
+           tabelaNProc.DataSource = prodErros;
         } // Ao clicar na pesquisa
         private void btCorrigir_Click(object sender, EventArgs e)
         {
@@ -61,8 +57,8 @@ namespace Acerto
                     }
                 }
             }
-        }
-        private void abas_changed(object sender, TabControlEventArgs e)
+        } // click no corrigir
+        private void AbasChanged(object sender, TabControlEventArgs e)
         {
            if(abas.SelectedTab.Name != "pagErros")
             {
@@ -78,7 +74,7 @@ namespace Acerto
                 splitterErros.Visible = true;
                 menuConsulta.Visible = false;
             }
-        }
+        } // Troca de abas
         public static string SqlScape(string str)
         {
             return Regex.Replace(str, @"[\x00'""\b\n\r\t\cZ\\%_]",
@@ -103,9 +99,11 @@ namespace Acerto
                             return "\\" + v;
                     }
                 });
-        }
-
-
+        } // escape variaves sql
+        private void Principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            conecta.Close();
+        } // Ao fechar o Form
     }
 }
 

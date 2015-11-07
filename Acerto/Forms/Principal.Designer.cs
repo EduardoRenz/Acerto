@@ -510,7 +510,7 @@ namespace Acerto
             this.abas.SelectedIndex = 0;
             this.abas.Size = new System.Drawing.Size(1456, 678);
             this.abas.TabIndex = 7;
-            this.abas.Selected += new System.Windows.Forms.TabControlEventHandler(this.abas_changed);
+            this.abas.Selected += new System.Windows.Forms.TabControlEventHandler(this.AbasChanged);
             // 
             // pagErros
             // 

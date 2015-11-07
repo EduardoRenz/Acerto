@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Acerto
@@ -20,14 +15,16 @@ namespace Acerto
             //    " and est_ref LIKE '%"+ SqlScape(txtConsultaMaterial.Text)+ "%' and est_ser LIKE '%" + SqlScape(txtConsultaSerie.Text) + "%'";
             if (!isPesquiando)
             {
-                isPesquiando = false;
-                btConsultaPesquisar.Text = "pesquisando...";
-                btConsultaPesquisar.Enabled = false;
-                Console.WriteLine(query);
+                btConsultaPesquisar.Text = "Cancelar";
+                isPesquiando = true;
+                Console.WriteLine(query+ btConsultaPesquisar.Text);
                 gridConsulta.DataSource = conecta.Consulta(query);
                 isPesquiando = false;
-                btConsultaPesquisar.Enabled = true;
                 btConsultaPesquisar.Text = "Pesquisar";
+            }
+            else
+            {
+                conecta.CancelQuery();
             }
         }
         private void gridConsulta_CellDoubleClick(object sender, DataGridViewCellEventArgs e) // Ao dar click duplo em uma celula | Abre nova janela com a pesquisa do produto
