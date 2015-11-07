@@ -1,6 +1,6 @@
 ﻿using System;
-//using System.Data.OracleClient;
-using Oracle.DataAccess.Client;
+using System.Data.OracleClient;
+//using Oracle.DataAccess.Client;
 using System.Data;
 using System.Windows.Forms;
 
@@ -9,6 +9,8 @@ namespace Acerto
    public class OracleConexao : IConexao
     {
         OracleConnection conexao;
+        OracleDataReader reader;
+        OracleCommand command;
         private string server, user, senha;
         public bool conectado;
         public OracleConexao(string user, string senha, string server)
@@ -24,9 +26,9 @@ namespace Acerto
             DataTable dt = new DataTable();
             if(conexao.State == ConnectionState.Open)
             {
-                OracleCommand command = conexao.CreateCommand();
+                command = conexao.CreateCommand();
                 command.CommandText = query;
-                OracleDataReader reader = command.ExecuteReader();
+                 reader = command.ExecuteReader();
                 dt.Load(reader);
                 reader.Close();
                 return dt;
@@ -54,6 +56,11 @@ namespace Acerto
             }
             return conectado;
         } // Conecta-se ao banco
+        public void CancelQuery()
+        {
+            command.Cancel();
+            Console.WriteLine("Query Cancelada");
+        }
         public void Close()
         {
             conexao.Close();

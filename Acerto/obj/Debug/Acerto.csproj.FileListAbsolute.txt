@@ -66,3 +66,4 @@ C:\Users\Eduardo\Source\Repos\Acerto\Acerto\obj\Debug\Acerto.csproj.GenerateReso
 C:\Users\Eduardo\Source\Repos\Acerto\Acerto\obj\Debug\Acerto.csproj.Acerto.exe.config
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Acerto.csproj.Acerto.exe.config
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Acerto.Produto.resources
+C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\Oracle.DataAccess.dll
