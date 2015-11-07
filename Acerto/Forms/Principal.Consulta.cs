@@ -18,6 +18,7 @@ namespace Acerto
                 btConsultaPesquisar.Text = "Cancelar";
                 isPesquiando = true;
                 gridConsulta.DataSource = conecta.Consulta(query);
+                ConsultaNumLinhas.Text = gridConsulta.RowCount + " mercadorias encontradas";
                 isPesquiando = false;
                 btConsultaPesquisar.Text = "Pesquisar";
             }

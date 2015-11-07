@@ -69,9 +69,11 @@ namespace Acerto
             this.lblnaoproc = new System.Windows.Forms.Label();
             this.divCentro = new System.Windows.Forms.TableLayoutPanel();
             this.abas = new System.Windows.Forms.TabControl();
-            this.pagErros = new System.Windows.Forms.TabPage();
             this.tabConsultar = new System.Windows.Forms.TabPage();
             this.gridConsulta = new System.Windows.Forms.DataGridView();
+            this.pagErros = new System.Windows.Forms.TabPage();
+            this.ConsSplitter = new System.Windows.Forms.Splitter();
+            this.ConsultaNumLinhas = new System.Windows.Forms.Label();
             this.grpCondi.SuspendLayout();
             this.panelPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pesquisar)).BeginInit();
@@ -81,9 +83,9 @@ namespace Acerto
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).BeginInit();
             this.divCentro.SuspendLayout();
             this.abas.SuspendLayout();
-            this.pagErros.SuspendLayout();
             this.tabConsultar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridConsulta)).BeginInit();
+            this.pagErros.SuspendLayout();
             this.SuspendLayout();
             // 
             // divTopo
@@ -325,10 +327,12 @@ namespace Acerto
             this.menuConsulta.Controls.Add(this.lblConsultaSerie);
             this.menuConsulta.Controls.Add(this.txtConsultaSerie);
             this.menuConsulta.Controls.Add(this.btConsultaPesquisar);
+            this.menuConsulta.Controls.Add(this.ConsSplitter);
+            this.menuConsulta.Controls.Add(this.ConsultaNumLinhas);
             this.menuConsulta.Location = new System.Drawing.Point(5, 38);
             this.menuConsulta.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.menuConsulta.Name = "menuConsulta";
-            this.menuConsulta.Size = new System.Drawing.Size(588, 31);
+            this.menuConsulta.Size = new System.Drawing.Size(807, 31);
             this.menuConsulta.TabIndex = 7;
             this.menuConsulta.Visible = false;
             // 
@@ -512,19 +516,6 @@ namespace Acerto
             this.abas.TabIndex = 7;
             this.abas.Selected += new System.Windows.Forms.TabControlEventHandler(this.AbasChanged);
             // 
-            // pagErros
-            // 
-            this.pagErros.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.pagErros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pagErros.Controls.Add(this.divCentro);
-            this.pagErros.Location = new System.Drawing.Point(4, 22);
-            this.pagErros.Margin = new System.Windows.Forms.Padding(0);
-            this.pagErros.Name = "pagErros";
-            this.pagErros.Padding = new System.Windows.Forms.Padding(3);
-            this.pagErros.Size = new System.Drawing.Size(1448, 652);
-            this.pagErros.TabIndex = 0;
-            this.pagErros.Text = "Erros de Processamento";
-            // 
             // tabConsultar
             // 
             this.tabConsultar.BackColor = System.Drawing.SystemColors.HotTrack;
@@ -549,6 +540,40 @@ namespace Acerto
             this.gridConsulta.Size = new System.Drawing.Size(1448, 652);
             this.gridConsulta.TabIndex = 0;
             this.gridConsulta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridConsulta_CellDoubleClick);
+            // 
+            // pagErros
+            // 
+            this.pagErros.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pagErros.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pagErros.Controls.Add(this.divCentro);
+            this.pagErros.Location = new System.Drawing.Point(4, 22);
+            this.pagErros.Margin = new System.Windows.Forms.Padding(0);
+            this.pagErros.Name = "pagErros";
+            this.pagErros.Padding = new System.Windows.Forms.Padding(3);
+            this.pagErros.Size = new System.Drawing.Size(1448, 652);
+            this.pagErros.TabIndex = 0;
+            this.pagErros.Text = "Erros de Processamento";
+            // 
+            // ConsSplitter
+            // 
+            this.ConsSplitter.BackColor = System.Drawing.SystemColors.Desktop;
+            this.ConsSplitter.Location = new System.Drawing.Point(569, 3);
+            this.ConsSplitter.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.ConsSplitter.Name = "ConsSplitter";
+            this.ConsSplitter.Size = new System.Drawing.Size(1, 20);
+            this.ConsSplitter.TabIndex = 13;
+            this.ConsSplitter.TabStop = false;
+            // 
+            // ConsultaNumLinhas
+            // 
+            this.ConsultaNumLinhas.AutoSize = true;
+            this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
+            this.ConsultaNumLinhas.Location = new System.Drawing.Point(576, 5);
+            this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
+            this.ConsultaNumLinhas.Size = new System.Drawing.Size(0, 18);
+            this.ConsultaNumLinhas.TabIndex = 14;
             // 
             // Principal
             // 
@@ -580,9 +605,9 @@ namespace Acerto
             this.divCentro.ResumeLayout(false);
             this.divCentro.PerformLayout();
             this.abas.ResumeLayout(false);
-            this.pagErros.ResumeLayout(false);
             this.tabConsultar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridConsulta)).EndInit();
+            this.pagErros.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,6 +652,8 @@ namespace Acerto
         private TextBox txtConsultaMaterial;
         private Button btConsultaPesquisar;
         private DataGridView gridConsulta;
+        private Splitter ConsSplitter;
+        private Label ConsultaNumLinhas;
     }
 }
 

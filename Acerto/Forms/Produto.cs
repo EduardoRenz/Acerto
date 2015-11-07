@@ -58,7 +58,7 @@ namespace Acerto
             prodGridSaldos.DataSource = conecta.Consulta(query);
             Console.WriteLine("aaaaa " +query);
         }
-
+        // Eventos do FORM
         private void Produto_FormClosed(object sender, FormClosedEventArgs e)
         {
             Dispose();
