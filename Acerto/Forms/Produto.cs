@@ -12,7 +12,6 @@ namespace Acerto
 
         public Produto(string material, string serie,int filial,MysqlConexao conecta)  {
             Initialize(material, serie,filial);
-            string query = "SELECT  dataHora as Data,descricao FROM produto,historico WHERE produto_idProduto = produto.idProduto and material =" + material;
             MostraHistorico(conecta);
             MostraSaldo(conecta);
             Show();
@@ -39,7 +38,7 @@ namespace Acerto
         // HISTORICOS
         private void MostraHistorico(MysqlConexao conecta)
         {
-            string query = "historico mysql";
+            string query = "select * from produto";
             ProdGridHist.DataSource = conecta.Consulta(query);
         } // tabela de historico do produto mysql
         private void MostraHistorico(OracleConexao conecta)
@@ -49,7 +48,7 @@ namespace Acerto
         } // tabela de historico do produto oracle
         //SALDOS
         private void MostraSaldo(MysqlConexao conecta) {
-            string query = "select est_set Filial, est_ref material, est_ser serie, est_sal saldo, est_tam tamanho from estoques where est_ref = '" + material + "' and est_ser = '" + serie + "'";
+            string query = "SELECT  dataHora as Data,descricao FROM produto,historico WHERE produto_idProduto = produto.idProduto and material =" + material;
             prodGridSaldos.DataSource = conecta.Consulta(query);
             Console.WriteLine("aaaaa " + query);
         }

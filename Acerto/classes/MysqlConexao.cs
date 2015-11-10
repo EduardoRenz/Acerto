@@ -2,6 +2,7 @@
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Acerto
 {
@@ -31,7 +32,7 @@ namespace Acerto
                 return conectado;
             }
 
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show("Erro de conexão: " + e.Message.ToString());
                 conectado = false;

@@ -8,7 +8,6 @@ C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\EntityFram
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\Microsoft.CSharp.dll
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\MySql.Data.dll
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\mysql.data.entity.EF6.dll
-C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\Oracle.DataAccess.dll
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\System.ComponentModel.DataAnnotations.dll
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\System.Data.DataSetExtensions.dll
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\System.Data.dll
