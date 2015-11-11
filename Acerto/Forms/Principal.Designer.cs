@@ -208,7 +208,7 @@ namespace Acerto
             this.dataFim.Name = "dataFim";
             this.dataFim.Size = new System.Drawing.Size(100, 20);
             this.dataFim.TabIndex = 8;
-            this.dataFim.Value = new System.DateTime(2015, 8, 1, 0, 0, 0, 0);
+            this.dataFim.Value = DateTime.Today;
             // 
             // dataInicio
             // 
@@ -220,7 +220,7 @@ namespace Acerto
             this.dataInicio.Name = "dataInicio";
             this.dataInicio.Size = new System.Drawing.Size(103, 20);
             this.dataInicio.TabIndex = 7;
-            this.dataInicio.Value = new System.DateTime(2015, 7, 1, 0, 0, 0, 0);
+            this.dataInicio.Value = new System.DateTime(2015, 10, 25, 0, 0, 0, 0);
             // 
             // lblData
             // 
@@ -368,6 +368,7 @@ namespace Acerto
             0,
             0,
             0});
+            this.consFilial.KeyUp += new System.Windows.Forms.KeyEventHandler(this.consFilial_KeyUp);
             // 
             // lblConsultaMaterial
             // 

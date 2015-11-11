@@ -21,9 +21,9 @@ namespace Acerto
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
             // ==================================================================================
-            query = "select * from produto where material like '%"+ SqlScape(txtConsultaMaterial.Text) + "%' and serie like '%" +SqlScape(txtConsultaSerie.Text) + "%'";
-          //   query = "select est_set Filial, est_ref material, est_ser serie, est_sal saldo, est_tam tamanho from estoques where est_set = "+ SqlScape(consFilial.Value.ToString())+
-          //   " and est_ref LIKE '%"+ SqlScape(txtConsultaMaterial.Text)+ "%' and est_ser LIKE '%" + SqlScape(txtConsultaSerie.Text) + "%'";
+           // query = "select * from produto where material like '%"+ SqlScape(txtConsultaMaterial.Text) + "%' and serie like '%" +SqlScape(txtConsultaSerie.Text) + "%'";
+             query = "select est_set Filial, est_ref material, est_ser serie, est_sal saldo, est_tam tamanho from estoques where est_set = "+ SqlScape(consFilial.Value.ToString())+
+            " and est_ref LIKE '%"+ SqlScape(txtConsultaMaterial.Text)+ "%' and est_ser LIKE '%" + SqlScape(txtConsultaSerie.Text) + "%'";
             if (!isPesquiando && !worker.IsBusy)
             {
                 btConsultaPesquisar.Text = "pesquisando...";
@@ -49,10 +49,31 @@ namespace Acerto
             btConsultaPesquisar.Text = "Pesquisar";
             btConsultaPesquisar.Enabled = true;
         } // Pesquisa async completa
+        private void txtConsultaSerie_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                btConsultaPesquisar.PerformClick();
+            }
+        }
+        private void txtConsultaMaterial_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                btConsultaPesquisar.PerformClick();
+            }
+        }
+        private void consFilial_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                btConsultaPesquisar.PerformClick();
+            }
+        }
         private void gridConsulta_CellDoubleClick(object sender, DataGridViewCellEventArgs e) // Ao dar click duplo em uma celula | Abre nova janela com a pesquisa do produto
         {
-          //  produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(),Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["Filial"].Value),conecta);
-            produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(), Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["idproduto"].Value), conecta);
+           produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(),Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["Filial"].Value),conecta);
+           // produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(), Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["idproduto"].Value), conecta);
             // no oracle mudar idproduto para filial
         }
     }
