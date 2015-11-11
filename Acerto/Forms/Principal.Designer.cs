@@ -63,6 +63,8 @@ namespace Acerto
             this.lblConsultaSerie = new System.Windows.Forms.Label();
             this.txtConsultaSerie = new System.Windows.Forms.TextBox();
             this.btConsultaPesquisar = new System.Windows.Forms.Button();
+            this.ConsSplitter = new System.Windows.Forms.Splitter();
+            this.ConsultaNumLinhas = new System.Windows.Forms.Label();
             this.txtProcessos = new System.Windows.Forms.RichTextBox();
             this.lblResults = new System.Windows.Forms.Label();
             this.tabelaNProc = new System.Windows.Forms.DataGridView();
@@ -72,8 +74,6 @@ namespace Acerto
             this.tabConsultar = new System.Windows.Forms.TabPage();
             this.gridConsulta = new System.Windows.Forms.DataGridView();
             this.pagErros = new System.Windows.Forms.TabPage();
-            this.ConsSplitter = new System.Windows.Forms.Splitter();
-            this.ConsultaNumLinhas = new System.Windows.Forms.Label();
             this.grpCondi.SuspendLayout();
             this.panelPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pesquisar)).BeginInit();
@@ -387,6 +387,7 @@ namespace Acerto
             this.txtConsultaMaterial.Name = "txtConsultaMaterial";
             this.txtConsultaMaterial.Size = new System.Drawing.Size(100, 20);
             this.txtConsultaMaterial.TabIndex = 11;
+            this.txtConsultaMaterial.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtConsultaMaterial_KeyUp);
             // 
             // lblConsultaSerie
             // 
@@ -408,6 +409,7 @@ namespace Acerto
             this.txtConsultaSerie.Name = "txtConsultaSerie";
             this.txtConsultaSerie.Size = new System.Drawing.Size(100, 20);
             this.txtConsultaSerie.TabIndex = 9;
+            this.txtConsultaSerie.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtConsultaSerie_KeyUp);
             // 
             // btConsultaPesquisar
             // 
@@ -419,6 +421,27 @@ namespace Acerto
             this.btConsultaPesquisar.Text = "Pesquisar";
             this.btConsultaPesquisar.UseVisualStyleBackColor = true;
             this.btConsultaPesquisar.Click += new System.EventHandler(this.btConsultaPesquisar_Click);
+            // 
+            // ConsSplitter
+            // 
+            this.ConsSplitter.BackColor = System.Drawing.SystemColors.Desktop;
+            this.ConsSplitter.Location = new System.Drawing.Point(569, 3);
+            this.ConsSplitter.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.ConsSplitter.Name = "ConsSplitter";
+            this.ConsSplitter.Size = new System.Drawing.Size(1, 20);
+            this.ConsSplitter.TabIndex = 13;
+            this.ConsSplitter.TabStop = false;
+            // 
+            // ConsultaNumLinhas
+            // 
+            this.ConsultaNumLinhas.AutoSize = true;
+            this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
+            this.ConsultaNumLinhas.Location = new System.Drawing.Point(576, 5);
+            this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
+            this.ConsultaNumLinhas.Size = new System.Drawing.Size(0, 18);
+            this.ConsultaNumLinhas.TabIndex = 14;
             // 
             // txtProcessos
             // 
@@ -554,29 +577,9 @@ namespace Acerto
             this.pagErros.TabIndex = 0;
             this.pagErros.Text = "Erros de Processamento";
             // 
-            // ConsSplitter
-            // 
-            this.ConsSplitter.BackColor = System.Drawing.SystemColors.Desktop;
-            this.ConsSplitter.Location = new System.Drawing.Point(569, 3);
-            this.ConsSplitter.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
-            this.ConsSplitter.Name = "ConsSplitter";
-            this.ConsSplitter.Size = new System.Drawing.Size(1, 20);
-            this.ConsSplitter.TabIndex = 13;
-            this.ConsSplitter.TabStop = false;
-            // 
-            // ConsultaNumLinhas
-            // 
-            this.ConsultaNumLinhas.AutoSize = true;
-            this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
-            this.ConsultaNumLinhas.Location = new System.Drawing.Point(576, 5);
-            this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
-            this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
-            this.ConsultaNumLinhas.Size = new System.Drawing.Size(0, 18);
-            this.ConsultaNumLinhas.TabIndex = 14;
-            // 
             // Principal
             // 
+            this.AcceptButton = this.btPesquisa;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
@@ -586,6 +589,7 @@ namespace Acerto
             this.Controls.Add(this.topo);
             this.Controls.Add(this.divTopo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Principal";
             this.Text = "Acerto";

@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Acerto.exe" size="250368">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Acerto.exe" size="250880">
       <assemblyIdentity name="Acerto" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AmvPK2LR4MYOpAxolLv8oEy0Pby/yxA4O7I+/oCaSD0=</dsig:DigestValue>
+        <dsig:DigestValue>LMlSUkzH3BDXGHGmMEnOa8hkFBSg3heAnVy+xRckxxw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

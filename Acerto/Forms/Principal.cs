@@ -116,6 +116,21 @@ namespace Acerto
         {
             conecta.Close();
         } // Ao fechar o Form
+
+        private void txtConsultaSerie_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Return)
+            {
+                btConsultaPesquisar.PerformClick();
+            }
+        }
+        private void txtConsultaMaterial_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                btConsultaPesquisar.PerformClick();
+            }
+        }
     }
 }
 
