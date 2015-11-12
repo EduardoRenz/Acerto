@@ -43,7 +43,7 @@ namespace Acerto
         } // tabela de historico do produto mysql
         private void MostraHistorico(OracleConexao conecta)
         {
-            string query = "select mov_dat Data, mov_seo Origem, mov_sed Destino, mov_tip tipo, mov_doc nf from movimento where mov_ref = " + material + " and mov_ser = '" + serie + "' order by mov_dat";
+            string query = "select mov_dat Data, mov_seo Origem, mov_sed Destino, mov_tip tipo, mov_doc nf from movimento where mov_ref = " + material + " and mov_ser = '" + serie.Trim() + "' order by mov_dat";
             ProdGridHist.DataSource = conecta.Consulta(query);
         } // tabela de historico do produto oracle
         //SALDOS
@@ -53,7 +53,7 @@ namespace Acerto
             Console.WriteLine("aaaaa " + query);
         }
         private void MostraSaldo(OracleConexao conecta) {
-            string query = "select est_set Filial, est_sal saldo, est_tam tamanho from estoques where est_ref = '"+material+"' and est_ser = '"+serie+"'";
+            string query = "select est_set Filial, est_sal saldo, est_tam tamanho from estoques where est_ref = '"+material+"' and est_ser = '"+ (serie).Trim()+"'";
             prodGridSaldos.DataSource = conecta.Consulta(query);
             Console.WriteLine("aaaaa " +query);
         }
