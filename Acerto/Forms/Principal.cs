@@ -8,8 +8,8 @@ namespace Acerto
 {
     public partial class Principal : Form
     {
-      OracleConexao conecta = new OracleConexao("deposito", "tec3passos", "bdsac"); // conexão oracle
-     //   MysqlConexao conecta = new MysqlConexao("root", " ", "localhost", "bdsac"); // conexão mysql
+      //OracleConexao conecta = new OracleConexao("deposito", "tec3passos", "bdsac"); // conexão oracle
+      MysqlConexao conecta = new MysqlConexao("root", " ", "localhost", "bdsac"); // conexão mysql
         Corretor corretor  = new Corretor();
         public string listaME; // String que lista os erros
         public DataTable prodErros; // Tabela de dados dos erros

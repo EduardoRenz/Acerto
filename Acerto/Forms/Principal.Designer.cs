@@ -208,7 +208,7 @@ namespace Acerto
             this.dataFim.Name = "dataFim";
             this.dataFim.Size = new System.Drawing.Size(100, 20);
             this.dataFim.TabIndex = 8;
-            this.dataFim.Value = DateTime.Today;
+            this.dataFim.Value = new System.DateTime(2015, 11, 12, 0, 0, 0, 0);
             // 
             // dataInicio
             // 
@@ -368,7 +368,6 @@ namespace Acerto
             0,
             0,
             0});
-            this.consFilial.KeyUp += new System.Windows.Forms.KeyEventHandler(this.consFilial_KeyUp);
             // 
             // lblConsultaMaterial
             // 
@@ -388,7 +387,6 @@ namespace Acerto
             this.txtConsultaMaterial.Name = "txtConsultaMaterial";
             this.txtConsultaMaterial.Size = new System.Drawing.Size(100, 20);
             this.txtConsultaMaterial.TabIndex = 11;
-            this.txtConsultaMaterial.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtConsultaMaterial_KeyUp);
             // 
             // lblConsultaSerie
             // 
@@ -410,7 +408,6 @@ namespace Acerto
             this.txtConsultaSerie.Name = "txtConsultaSerie";
             this.txtConsultaSerie.Size = new System.Drawing.Size(100, 20);
             this.txtConsultaSerie.TabIndex = 9;
-            this.txtConsultaSerie.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtConsultaSerie_KeyUp);
             // 
             // btConsultaPesquisar
             // 
@@ -580,7 +577,7 @@ namespace Acerto
             // 
             // Principal
             // 
-            this.AcceptButton = this.btPesquisa;
+            this.AcceptButton = this.btConsultaPesquisar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;

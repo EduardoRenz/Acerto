@@ -26,7 +26,6 @@ C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\Consulta.e
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\Consulta.application
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\Consulta.exe
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\Consulta.pdb
-C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\Oracle.DataAccess.dll
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Acerto.csproj.Consulta.exe.config
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Consulta.Properties.Resources.resources
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Consulta.exe.manifest

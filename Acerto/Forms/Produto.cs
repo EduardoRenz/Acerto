@@ -9,20 +9,25 @@ namespace Acerto
         private string serie { get; set; }
         private string material { get; set; }
         private int filial { get; set; }
+        private MysqlConexao conecta;
+       // private OracleConexao conecta;
 
         public Produto(string material, string serie,int filial,MysqlConexao conecta)  {
             Initialize(material, serie,filial);
-            MostraHistorico(conecta);
-            MostraSaldo(conecta);
+            this.conecta = conecta;
             Show();
         }  // Construtor Mysql
         public Produto(string material, string serie, int filial, OracleConexao conecta)
         {
             Initialize(material, serie, filial);
-            MostraHistorico(conecta);
-            MostraSaldo(conecta);
+            //this.conecta = conecta;
             Show();
         }  // Construtor Oracle
+        private void Produto_Load(object sender, EventArgs e)
+        {
+            MostraHistorico(conecta);
+            MostraSaldo(conecta);
+        }
         private void Initialize(string material, string serie, int filial)
         {
             this.serie = serie;
@@ -34,7 +39,6 @@ namespace Acerto
             ProdLblFilial.Text = "Filial:" + filial;
             Text = filial + " | " + material + " | " + serie;
         } // Inicio padrão para o construtor desta classe
-
         // HISTORICOS
         private void MostraHistorico(MysqlConexao conecta)
         {
@@ -50,17 +54,17 @@ namespace Acerto
         private void MostraSaldo(MysqlConexao conecta) {
             string query = "SELECT  dataHora as Data,descricao FROM produto,historico WHERE produto_idProduto = produto.idProduto and material =" + material;
             prodGridSaldos.DataSource = conecta.Consulta(query);
-            Console.WriteLine("aaaaa " + query);
         }
         private void MostraSaldo(OracleConexao conecta) {
             string query = "select est_set Filial, est_sal saldo, est_tam tamanho from estoques where est_ref = '"+material+"' and est_ser = '"+ (serie).Trim()+"'";
             prodGridSaldos.DataSource = conecta.Consulta(query);
-            Console.WriteLine("aaaaa " +query);
         }
         // Eventos do FORM
         private void Produto_FormClosed(object sender, FormClosedEventArgs e)
         {
             Dispose();
         } // ao fechar a janela
+
+      
     }
 }
