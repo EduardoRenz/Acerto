@@ -14,8 +14,8 @@ namespace Acerto
         {
             txtProcessos.Clear();
             // listaME = "select * from produto";
-           listaME = "select movestdat Data, movestseo Origem, movestsed Destino, movesttip Tipo, movestref Material, movestser Serie, movestncf Nf, me_log Processamento from me where movestseo =" + pesquisar.Value + " and me_est is null and movestdat> '" + dataInicio.Value.ToString("dd/MM/yyyy") + "' and movestdat< '" + dataFim.Value.ToString("dd/MM/yyyy") + "' order by movestref, movestser, movestdat";
-            Appender("Pesquisando filial: " + pesquisar.Value + ". ", Color.Black, txtProcessos);
+           listaME = "select movestdat Data, movestseo Origem, movestsed Destino, movesttip Tipo, movestref Material, movestser Serie, movestncf Nf, me_log Processamento from me where movestseo =" + intFilial.Value + " and me_est is null and movestdat> '" + dataInicio.Value.ToString("dd/MM/yyyy") + "' and movestdat< '" + dataFim.Value.ToString("dd/MM/yyyy") + "' order by movestref, movestser, movestdat";
+            Appender("Pesquisando filial: " + intFilial.Value + ". ", Color.Black, txtProcessos);
             prodErros = conecta.Consulta(listaME);
             Appender(prodErros.Rows.Count + " Linhas encontradas \n", Color.Green, txtProcessos);
             tabelaNProc.DataSource = prodErros;

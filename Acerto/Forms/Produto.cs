@@ -9,18 +9,18 @@ namespace Acerto
         private string serie { get; set; }
         private string material { get; set; }
         private int filial { get; set; }
-       // private MysqlConexao conecta;
-        private OracleConexao conecta;
+        private MysqlConexao conecta;
+       // private OracleConexao conecta;
 
         public Produto(string material, string serie,int filial,MysqlConexao conecta)  {
             Initialize(material, serie,filial);
-           // this.conecta = conecta;
+            this.conecta = conecta;
             Show();
         }  // Construtor Mysql
         public Produto(string material, string serie, int filial, OracleConexao conecta)
         {
             Initialize(material, serie, filial);
-           this.conecta = conecta;
+         //  this.conecta = conecta;
             Show();
         }  // Construtor Oracle
         private void Produto_Load(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace Acerto
         } // tabela de historico do produto oracle
         //SALDOS
         private void MostraSaldo(MysqlConexao conecta) {
-            string query = "SELECT  dataHora as Data,descricao FROM produto,historico WHERE produto_idProduto = produto.idProduto and material =" + material;
+            string query = "SELECT  DATE_FORMAT(dataHora,'%d/%m/%Y %h:%i') as Data,descricao FROM produto,historico WHERE produto_idProduto = produto.idProduto and material =" + material;
             prodGridSaldos.DataSource = conecta.Consulta(query);
         }
         private void MostraSaldo(OracleConexao conecta) {

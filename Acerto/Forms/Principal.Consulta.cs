@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Consulta.utilitarios;
+using System;
 using System.ComponentModel;
-using System.Data;
 using System.Windows.Forms;
 
 namespace Acerto
@@ -21,18 +21,28 @@ namespace Acerto
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
             // ==================================================================================
-          //  query = "select * from produto where material like '%"+ SqlScape(txtConsultaMaterial.Text) + "%' and serie like '%" +SqlScape(txtConsultaSerie.Text) + "%'";
-           query = "select est_set Filial, est_ref material, est_ser serie, est_sal saldo, est_tam tamanho from estoques where est_set = "+ SqlScape(consFilial.Value.ToString())+
-           " and est_ref LIKE '%"+ SqlScape(txtConsultaMaterial.Text)+ "%' and est_ser LIKE '%" + SqlScape(txtConsultaSerie.Text) + "%' and ROWNUM <= 2000";
-            if (!isPesquiando && !worker.IsBusy)
-            {
+            query = "select filial.filial, material , serie, saldo from produto,estoque,filial where  material like '%" + Eduardo.SqlScape(txtConsultaMaterial.Text) +
+                     "%' and serie like '%" + Eduardo.SqlScape(txtConsultaSerie.Text) + "%' ";
+            if(intFilial.Value != 0) {
+                query += "and filial.filial = " + intFilial.Value + " ";
+            }
+             query +=   "and produto.idProduto = estoque.produto_idProduto AND filial.idfilial = estoque.filial_idfilial" ;
+
+            // ============================================== QUERY DO ORACLE =================================================================================
+            //query = "select est_set Filial, est_ref material, est_ser serie, est_sal saldo, est_tam tamanho from estoques where "+
+            //        "est_ref LIKE '%"+ Eduardo.SqlScape(txtConsultaMaterial.Text)+ "%' and est_ser LIKE '%" + Eduardo.SqlScape(txtConsultaSerie.Text) + "%'";
+            //if (consFilial.Value != 0){
+            //    query += "and est_set = " + Eduardo.SqlScape(consFilial.Value.ToString());
+            //} 
+            //    query += " and ROWNUM <= 2000";
+            // ==================================================================================================================================================
+            if (!isPesquiando && !worker.IsBusy) {
                 btConsultaPesquisar.Text = "pesquisando...";
                 btConsultaPesquisar.Enabled = false;
                 isPesquiando = true;
                 worker.RunWorkerAsync();     
             }
-            else
-            {
+            else {
                 conecta.CancelQuery();
             }
         }
