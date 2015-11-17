@@ -332,7 +332,7 @@ namespace Acerto
             this.menuConsulta.Location = new System.Drawing.Point(5, 38);
             this.menuConsulta.Margin = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.menuConsulta.Name = "menuConsulta";
-            this.menuConsulta.Size = new System.Drawing.Size(807, 31);
+            this.menuConsulta.Size = new System.Drawing.Size(991, 31);
             this.menuConsulta.TabIndex = 7;
             this.menuConsulta.Visible = false;
             // 

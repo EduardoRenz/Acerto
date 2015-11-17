@@ -9,18 +9,18 @@ namespace Acerto
         private string serie { get; set; }
         private string material { get; set; }
         private int filial { get; set; }
-        private MysqlConexao conecta;
-       // private OracleConexao conecta;
+       // private MysqlConexao conecta;
+        private OracleConexao conecta;
 
         public Produto(string material, string serie,int filial,MysqlConexao conecta)  {
             Initialize(material, serie,filial);
-            this.conecta = conecta;
+           // this.conecta = conecta;
             Show();
         }  // Construtor Mysql
         public Produto(string material, string serie, int filial, OracleConexao conecta)
         {
             Initialize(material, serie, filial);
-            //this.conecta = conecta;
+           this.conecta = conecta;
             Show();
         }  // Construtor Oracle
         private void Produto_Load(object sender, EventArgs e)

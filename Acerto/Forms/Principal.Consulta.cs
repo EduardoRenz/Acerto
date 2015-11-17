@@ -21,16 +21,15 @@ namespace Acerto
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
             // ==================================================================================
-            query = "select * from produto where material like '%"+ SqlScape(txtConsultaMaterial.Text) + "%' and serie like '%" +SqlScape(txtConsultaSerie.Text) + "%'";
-          //   query = "select est_set Filial, est_ref material, est_ser serie, est_sal saldo, est_tam tamanho from estoques where est_set = "+ SqlScape(consFilial.Value.ToString())+
-         //   " and est_ref LIKE '%"+ SqlScape(txtConsultaMaterial.Text)+ "%' and est_ser LIKE '%" + SqlScape(txtConsultaSerie.Text) + "%'";
+          //  query = "select * from produto where material like '%"+ SqlScape(txtConsultaMaterial.Text) + "%' and serie like '%" +SqlScape(txtConsultaSerie.Text) + "%'";
+           query = "select est_set Filial, est_ref material, est_ser serie, est_sal saldo, est_tam tamanho from estoques where est_set = "+ SqlScape(consFilial.Value.ToString())+
+           " and est_ref LIKE '%"+ SqlScape(txtConsultaMaterial.Text)+ "%' and est_ser LIKE '%" + SqlScape(txtConsultaSerie.Text) + "%' and ROWNUM <= 2000";
             if (!isPesquiando && !worker.IsBusy)
             {
                 btConsultaPesquisar.Text = "pesquisando...";
                 btConsultaPesquisar.Enabled = false;
                 isPesquiando = true;
-                worker.RunWorkerAsync();
-              //  gridConsulta.DataSource = conecta.Consulta(query);      
+                worker.RunWorkerAsync();     
             }
             else
             {
@@ -44,7 +43,7 @@ namespace Acerto
         private void PesquisaAsyncCompleta(object sender, RunWorkerCompletedEventArgs e)
         {
             gridConsulta.DataSource = e.Result;
-            ConsultaNumLinhas.Text = gridConsulta.RowCount + " mercadorias encontradas";
+            ConsultaNumLinhas.Text = gridConsulta.RowCount + " mercadorias encontradas (max por consulta:2000)";
             isPesquiando = false;
             btConsultaPesquisar.Text = "Pesquisar";
             btConsultaPesquisar.Enabled = true;
@@ -52,8 +51,8 @@ namespace Acerto
         private void gridConsulta_CellDoubleClick(object sender, DataGridViewCellEventArgs e) // Ao dar click duplo em uma celula | Abre nova janela com a pesquisa do produto
         {
             if(e.RowIndex != -1){
-               // produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(),Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["Filial"].Value),conecta);
-                 produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(), Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["idproduto"].Value), conecta);
+               produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(),Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["Filial"].Value),conecta);
+                // produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(), Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["idproduto"].Value), conecta);
                 // no oracle mudar idproduto para filial
             }
         }
