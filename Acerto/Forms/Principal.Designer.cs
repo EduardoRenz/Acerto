@@ -54,11 +54,10 @@ namespace Acerto
             this.lblConexao = new System.Windows.Forms.Label();
             this.topo = new System.Windows.Forms.FlowLayoutPanel();
             this.painelFilial = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblCodProd = new System.Windows.Forms.TextBox();
+            this.splseparator = new System.Windows.Forms.Splitter();
             this.menuConsulta = new System.Windows.Forms.FlowLayoutPanel();
             this.lblConsultaMaterial = new System.Windows.Forms.Label();
-            this.txtConsultaMaterial = new System.Windows.Forms.TextBox();
-            this.lblConsultaSerie = new System.Windows.Forms.Label();
-            this.txtConsultaSerie = new System.Windows.Forms.TextBox();
             this.btConsultaPesquisar = new System.Windows.Forms.Button();
             this.ConsultaNumLinhas = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -72,7 +71,6 @@ namespace Acerto
             this.tabConsultar = new System.Windows.Forms.TabPage();
             this.gridConsulta = new System.Windows.Forms.DataGridView();
             this.pagErros = new System.Windows.Forms.TabPage();
-            this.splseparator = new System.Windows.Forms.Splitter();
             ((System.ComponentModel.ISupportInitialize)(this.intFilial)).BeginInit();
             this.grpCondi.SuspendLayout();
             this.topo.SuspendLayout();
@@ -300,19 +298,35 @@ namespace Acerto
             this.painelFilial.Size = new System.Drawing.Size(122, 31);
             this.painelFilial.TabIndex = 0;
             // 
+            // lblCodProd
+            // 
+            this.lblCodProd.Location = new System.Drawing.Point(117, 6);
+            this.lblCodProd.Margin = new System.Windows.Forms.Padding(0);
+            this.lblCodProd.Name = "lblCodProd";
+            this.lblCodProd.Size = new System.Drawing.Size(205, 20);
+            this.lblCodProd.TabIndex = 15;
+            // 
+            // splseparator
+            // 
+            this.splseparator.BackColor = System.Drawing.SystemColors.Desktop;
+            this.splseparator.Location = new System.Drawing.Point(117, 9);
+            this.splseparator.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.splseparator.Name = "splseparator";
+            this.splseparator.Size = new System.Drawing.Size(1, 14);
+            this.splseparator.TabIndex = 6;
+            this.splseparator.TabStop = false;
+            // 
             // menuConsulta
             // 
             this.menuConsulta.Controls.Add(this.lblConsultaMaterial);
-            this.menuConsulta.Controls.Add(this.txtConsultaMaterial);
-            this.menuConsulta.Controls.Add(this.lblConsultaSerie);
-            this.menuConsulta.Controls.Add(this.txtConsultaSerie);
+            this.menuConsulta.Controls.Add(this.lblCodProd);
             this.menuConsulta.Controls.Add(this.btConsultaPesquisar);
             this.menuConsulta.Controls.Add(this.ConsultaNumLinhas);
             this.menuConsulta.Location = new System.Drawing.Point(265, 5);
             this.menuConsulta.Margin = new System.Windows.Forms.Padding(0);
             this.menuConsulta.Name = "menuConsulta";
             this.menuConsulta.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.menuConsulta.Size = new System.Drawing.Size(443, 31);
+            this.menuConsulta.Size = new System.Drawing.Size(943, 31);
             this.menuConsulta.TabIndex = 4;
             this.menuConsulta.Visible = false;
             // 
@@ -323,46 +337,16 @@ namespace Acerto
             this.lblConsultaMaterial.Location = new System.Drawing.Point(0, 6);
             this.lblConsultaMaterial.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lblConsultaMaterial.Name = "lblConsultaMaterial";
-            this.lblConsultaMaterial.Size = new System.Drawing.Size(71, 17);
+            this.lblConsultaMaterial.Size = new System.Drawing.Size(114, 17);
             this.lblConsultaMaterial.TabIndex = 10;
-            this.lblConsultaMaterial.Text = "Material:";
-            // 
-            // txtConsultaMaterial
-            // 
-            this.txtConsultaMaterial.Location = new System.Drawing.Point(74, 6);
-            this.txtConsultaMaterial.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.txtConsultaMaterial.MaxLength = 8;
-            this.txtConsultaMaterial.Name = "txtConsultaMaterial";
-            this.txtConsultaMaterial.Size = new System.Drawing.Size(100, 20);
-            this.txtConsultaMaterial.TabIndex = 2;
-            // 
-            // lblConsultaSerie
-            // 
-            this.lblConsultaSerie.AutoSize = true;
-            this.lblConsultaSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblConsultaSerie.Location = new System.Drawing.Point(177, 6);
-            this.lblConsultaSerie.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.lblConsultaSerie.Name = "lblConsultaSerie";
-            this.lblConsultaSerie.Size = new System.Drawing.Size(51, 17);
-            this.lblConsultaSerie.TabIndex = 8;
-            this.lblConsultaSerie.Text = "Serie:";
-            // 
-            // txtConsultaSerie
-            // 
-            this.txtConsultaSerie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtConsultaSerie.Location = new System.Drawing.Point(231, 6);
-            this.txtConsultaSerie.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.txtConsultaSerie.MaxLength = 6;
-            this.txtConsultaSerie.Name = "txtConsultaSerie";
-            this.txtConsultaSerie.Size = new System.Drawing.Size(100, 20);
-            this.txtConsultaSerie.TabIndex = 3;
+            this.lblConsultaMaterial.Text = "Material/Serie:";
             // 
             // btConsultaPesquisar
             // 
-            this.btConsultaPesquisar.Location = new System.Drawing.Point(334, 6);
+            this.btConsultaPesquisar.Location = new System.Drawing.Point(322, 6);
             this.btConsultaPesquisar.Margin = new System.Windows.Forms.Padding(0);
             this.btConsultaPesquisar.Name = "btConsultaPesquisar";
-            this.btConsultaPesquisar.Size = new System.Drawing.Size(97, 22);
+            this.btConsultaPesquisar.Size = new System.Drawing.Size(97, 20);
             this.btConsultaPesquisar.TabIndex = 4;
             this.btConsultaPesquisar.Text = "Pesquisar";
             this.btConsultaPesquisar.UseVisualStyleBackColor = true;
@@ -373,7 +357,7 @@ namespace Acerto
             this.ConsultaNumLinhas.AutoSize = true;
             this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
-            this.ConsultaNumLinhas.Location = new System.Drawing.Point(434, 11);
+            this.ConsultaNumLinhas.Location = new System.Drawing.Point(422, 11);
             this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
             this.ConsultaNumLinhas.Size = new System.Drawing.Size(0, 18);
@@ -541,16 +525,6 @@ namespace Acerto
             this.pagErros.TabIndex = 0;
             this.pagErros.Text = "Erros de Processamento";
             // 
-            // splseparator
-            // 
-            this.splseparator.BackColor = System.Drawing.SystemColors.Desktop;
-            this.splseparator.Location = new System.Drawing.Point(117, 9);
-            this.splseparator.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
-            this.splseparator.Name = "splseparator";
-            this.splseparator.Size = new System.Drawing.Size(1, 14);
-            this.splseparator.TabIndex = 6;
-            this.splseparator.TabStop = false;
-            // 
             // Principal
             // 
             this.AcceptButton = this.btConsultaPesquisar;
@@ -621,10 +595,7 @@ namespace Acerto
         private System.Windows.Forms.TabPage pagErros;
         private System.Windows.Forms.TabPage tabConsultar;
         private FlowLayoutPanel menuConsulta;
-        private Label lblConsultaSerie;
-        private TextBox txtConsultaSerie;
         private Label lblConsultaMaterial;
-        private TextBox txtConsultaMaterial;
         private Button btConsultaPesquisar;
         private DataGridView gridConsulta;
         private Label ConsultaNumLinhas;
@@ -632,6 +603,7 @@ namespace Acerto
         private FlowLayoutPanel flowLayoutPanel1;
         private Label label3;
         private Splitter splseparator;
+        private TextBox lblCodProd;
     }
 }
 

@@ -1,6 +1,7 @@
 ﻿using Consulta.utilitarios;
 using System;
 using System.ComponentModel;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Acerto
@@ -14,6 +15,9 @@ namespace Acerto
 
         private void btConsultaPesquisar_Click(object sender, EventArgs e) // Ao apertar o botão da consulta de produto
         {
+           string[] matSer = arruma(lblCodProd.Text);
+           string material = matSer[0];
+           string serie = matSer[1];
             // ==================================WORKER=========================================
             worker = new BackgroundWorker();
             worker.DoWork +=  new DoWorkEventHandler(PesquisaAsync);
@@ -21,8 +25,8 @@ namespace Acerto
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
             // ==================================================================================
-            query = "select filial.filial, material , serie, saldo from produto,estoque,filial where  material like '%" + Eduardo.SqlScape(txtConsultaMaterial.Text) +
-                     "%' and serie like '%" + Eduardo.SqlScape(txtConsultaSerie.Text) + "%' ";
+            query = "select filial.filial, material , serie, saldo from produto,estoque,filial where  material like '%" + Eduardo.SqlScape(material) +
+                     "%' and serie like '%" + Eduardo.SqlScape(serie) + "%' ";
             if(intFilial.Value != 0) {
                 query += "and filial.filial = " + intFilial.Value + " ";
             }
@@ -65,6 +69,58 @@ namespace Acerto
                 // produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(), Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["idproduto"].Value), conecta);
                 // no oracle mudar idproduto para filial
             }
+        }
+
+
+        /// TESTES
+        /// 
+        private string[] arruma(string str)
+        {
+            char[] toTrim = { '.', '-', ' ', '_','*','"' };
+            string[] materialSerie  = new string[2];
+            // remover todos os especiais
+            foreach(char chars in toTrim)
+            {
+              str =  str.Replace(chars, ' ');
+            }
+           str =  Regex.Replace(str, @"\s+", "");
+            Console.WriteLine("Removido ponto e traços:" + str);
+
+            if (Regex.Matches(str, @"[a-zA-Z]").Count > 0)
+            {
+                Console.WriteLine("LETRAS");
+                materialSerie[0] = Regex.Replace(str, @"[^0-9]", "");
+                materialSerie[1] = Regex.Replace(str, @"[0-9]", "");
+            }
+            else
+            {
+                Console.WriteLine("Só de numeros");
+                if (str.Length < 12 && str.Length >= 8)
+                {
+                    materialSerie[0] = str.Substring(0, 8);
+                    materialSerie[1] = "";
+                }
+                else if((str.Length >= 12))
+                {
+                    materialSerie[0] = str.Substring(0, 8);
+                    materialSerie[1] = str.Substring(8, 4);
+                }
+               else if((str == "") || str == null)
+                {
+                    materialSerie[0] = "";
+                    materialSerie[1] = "";
+                }
+                else
+                {
+                    materialSerie[0] = str;
+                    materialSerie[1] = "";
+                }
+                
+                
+
+            }
+            Console.WriteLine("MAterial:{0}  Serie: {1}", materialSerie[0], materialSerie[1]);
+            return materialSerie;
         }
     }
 }
