@@ -9,31 +9,31 @@ namespace Acerto
         private string serie { get; set; }
         private string material { get; set; }
         private int filial { get; set; }
-        private MysqlConexao conecta;
-       // private OracleConexao conecta;
+        //private MysqlConexao conecta;
+        private OracleConexao conecta;
 
         public Produto(string material, string serie,int filial,MysqlConexao conecta)  {
             Initialize(material, serie,filial);
-            this.conecta = conecta;
+            //this.conecta = conecta;
             Show();
         }  // Construtor Mysql
         public Produto(string material, string serie, int filial, OracleConexao conecta)
         {
             Initialize(material, serie, filial);
-         //  this.conecta = conecta;
+            this.conecta = conecta;
             Show();
         }  // Construtor Oracle
         private void Produto_Load(object sender, EventArgs e)
         {
-            MostraHistorico(conecta);
+            MostraHistorico(conecta); // lentro pra pesquisa
             MostraSaldo(conecta);
         }
         private void Initialize(string material, string serie, int filial)
         {
+            InitializeComponent();
             this.serie = serie;
             this.material = material;
             this.filial = filial;
-            InitializeComponent();
             lblProdMaterial.Text = material;
             lblProdSerie.Text = serie;
             ProdLblFilial.Text = "Filial:" + filial;
@@ -47,7 +47,7 @@ namespace Acerto
         } // tabela de historico do produto mysql
         private void MostraHistorico(OracleConexao conecta)
         {
-            string query = "select mov_dat Data, mov_seo Origem, mov_sed Destino, mov_tip tipo, mov_doc nf from movimento where mov_ref = " + material + " and mov_ser = '" + serie.Trim() + "' order by mov_dat";
+            string query = "select mov_dat Data, mov_seo Origem, mov_sed Destino, mov_tip tipo, mov_doc nf from movimento where mov_ref = " + material.Trim() + " and mov_ser = '" + serie.Trim() + "' order by mov_dat";
             ProdGridHist.DataSource = conecta.Consulta(query);
         } // tabela de historico do produto oracle
         //SALDOS

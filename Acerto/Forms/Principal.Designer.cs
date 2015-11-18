@@ -54,10 +54,10 @@ namespace Acerto
             this.lblConexao = new System.Windows.Forms.Label();
             this.topo = new System.Windows.Forms.FlowLayoutPanel();
             this.painelFilial = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblCodProd = new System.Windows.Forms.TextBox();
             this.splseparator = new System.Windows.Forms.Splitter();
             this.menuConsulta = new System.Windows.Forms.FlowLayoutPanel();
             this.lblConsultaMaterial = new System.Windows.Forms.Label();
+            this.lblCodProd = new System.Windows.Forms.TextBox();
             this.btConsultaPesquisar = new System.Windows.Forms.Button();
             this.ConsultaNumLinhas = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -138,11 +138,6 @@ namespace Acerto
             this.intFilial.Size = new System.Drawing.Size(65, 20);
             this.intFilial.TabIndex = 1;
             this.toolTip.SetToolTip(this.intFilial, "0 = Todas as Filiais");
-            this.intFilial.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // lblFilial
             // 
@@ -298,14 +293,6 @@ namespace Acerto
             this.painelFilial.Size = new System.Drawing.Size(122, 31);
             this.painelFilial.TabIndex = 0;
             // 
-            // lblCodProd
-            // 
-            this.lblCodProd.Location = new System.Drawing.Point(117, 6);
-            this.lblCodProd.Margin = new System.Windows.Forms.Padding(0);
-            this.lblCodProd.Name = "lblCodProd";
-            this.lblCodProd.Size = new System.Drawing.Size(205, 20);
-            this.lblCodProd.TabIndex = 15;
-            // 
             // splseparator
             // 
             this.splseparator.BackColor = System.Drawing.SystemColors.Desktop;
@@ -340,6 +327,14 @@ namespace Acerto
             this.lblConsultaMaterial.Size = new System.Drawing.Size(114, 17);
             this.lblConsultaMaterial.TabIndex = 10;
             this.lblConsultaMaterial.Text = "Material/Serie:";
+            // 
+            // lblCodProd
+            // 
+            this.lblCodProd.Location = new System.Drawing.Point(117, 6);
+            this.lblCodProd.Margin = new System.Windows.Forms.Padding(0);
+            this.lblCodProd.Name = "lblCodProd";
+            this.lblCodProd.Size = new System.Drawing.Size(205, 20);
+            this.lblCodProd.TabIndex = 15;
             // 
             // btConsultaPesquisar
             // 

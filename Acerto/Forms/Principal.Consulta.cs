@@ -25,20 +25,21 @@ namespace Acerto
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
             // ==================================================================================
-            query = "select filial.filial, material , serie, saldo from produto,estoque,filial where  material like '%" + Eduardo.SqlScape(material) +
-                     "%' and serie like '%" + Eduardo.SqlScape(serie) + "%' ";
-            if(intFilial.Value != 0) {
-                query += "and filial.filial = " + intFilial.Value + " ";
-            }
-             query +=   "and produto.idProduto = estoque.produto_idProduto AND filial.idfilial = estoque.filial_idfilial" ;
+            //query = "select filial.filial, material , serie, saldo from produto,estoque,filial where  material like '%" + Eduardo.SqlScape(material) +
+            //         "%' and serie like '%" + Eduardo.SqlScape(serie) + "%' ";
+            //if(intFilial.Value != 0) {
+            //    query += "and filial.filial = " + intFilial.Value + " ";
+            //}
+            // query +=   "and produto.idProduto = estoque.produto_idProduto AND filial.idfilial = estoque.filial_idfilial" ;
 
             // ============================================== QUERY DO ORACLE =================================================================================
-            //query = "select est_set Filial, est_ref material, est_ser serie, est_sal saldo, est_tam tamanho from estoques where "+
-            //        "est_ref LIKE '%"+ Eduardo.SqlScape(txtConsultaMaterial.Text)+ "%' and est_ser LIKE '%" + Eduardo.SqlScape(txtConsultaSerie.Text) + "%'";
-            //if (consFilial.Value != 0){
-            //    query += "and est_set = " + Eduardo.SqlScape(consFilial.Value.ToString());
-            //} 
-            //    query += " and ROWNUM <= 2000";
+            query = "select est_set Filial, est_ref material, est_ser serie, est_sal saldo, est_tam tamanho from estoques where " +
+                    "est_ref LIKE '%" + Eduardo.SqlScape(material) + "%' and est_ser LIKE '%" + Eduardo.SqlScape(serie) + "%'";
+            if (intFilial.Value != 0)
+            {
+                query += "and est_set = " + Eduardo.SqlScape(intFilial.Value.ToString());
+            }
+            query += " and ROWNUM <= 1000";
             // ==================================================================================================================================================
             if (!isPesquiando && !worker.IsBusy) {
                 btConsultaPesquisar.Text = "pesquisando...";
@@ -57,7 +58,7 @@ namespace Acerto
         private void PesquisaAsyncCompleta(object sender, RunWorkerCompletedEventArgs e)
         {
             gridConsulta.DataSource = e.Result;
-            ConsultaNumLinhas.Text = gridConsulta.RowCount + " mercadorias encontradas (max por consulta:2000)";
+            ConsultaNumLinhas.Text = gridConsulta.RowCount + " mercadorias encontradas (max por consulta:1000)";
             isPesquiando = false;
             btConsultaPesquisar.Text = "Pesquisar";
             btConsultaPesquisar.Enabled = true;
@@ -66,7 +67,7 @@ namespace Acerto
         {
             if(e.RowIndex != -1){
                produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(),Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["Filial"].Value),conecta);
-                // produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(), Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["idproduto"].Value), conecta);
+                //produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(), Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["idproduto"].Value), conecta);
                 // no oracle mudar idproduto para filial
             }
         }
