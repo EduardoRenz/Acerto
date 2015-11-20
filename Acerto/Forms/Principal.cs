@@ -20,6 +20,7 @@ namespace Acerto
             Text = "Acertos  v:1.0.4.2";
             VerificaAbas();
             VerificaConexao();
+            divCentro.ColumnStyles[1].Width = 0; // REMOVER SE QUISER MOSTRAR OS LOGS DE AUTO CORREÇAO SE HOUVER
         }
         private void AbasChanged(object sender, TabControlEventArgs e)
         {
@@ -37,7 +38,7 @@ namespace Acerto
             else
             {
                 flowLayoutPanel1.Visible = true;
-                grpCondi.Visible = true;
+                grpCondi.Visible = false; // TRUE SE QUISER MOSTRAR AS OPCOES DE AUTO CORRECAO SE HOUVER
  
                 menuConsulta.Visible = false;
             }
@@ -59,8 +60,7 @@ namespace Acerto
         {
             conecta.Close();
         } // Ao fechar o Form      
-
-      
+   
     }
 }
 

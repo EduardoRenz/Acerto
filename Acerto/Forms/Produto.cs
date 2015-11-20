@@ -47,7 +47,7 @@ namespace Acerto
         } // tabela de historico do produto mysql
         private void MostraHistorico(OracleConexao conecta)
         {
-            string query = "select mov_ser Serie, mov_ref Material, mov_dat Data, mov_seo Origem, mov_sed Destino, mov_tip tipo, mov_doc nf from movimento where mov_ref = '"+material+"' and mov_ser = '"+serie+"' order by mov_dat";
+            string query = "select mov_dat Data, mov_seo Origem, mov_sed Destino, mov_tip tipo, mov_doc nf from movimento where mov_ref = '"+material+"' and mov_ser = '"+serie+"' order by mov_dat";
             ProdGridHist.DataSource = conecta.Consulta(query);
         } // tabela de historico do produto oracle
         //SALDOS

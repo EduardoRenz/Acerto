@@ -162,6 +162,7 @@ namespace Acerto
             this.grpCondi.Name = "grpCondi";
             this.grpCondi.Size = new System.Drawing.Size(356, 30);
             this.grpCondi.TabIndex = 8;
+            this.grpCondi.Visible = false;
             // 
             // btCorrigir
             // 
@@ -390,10 +391,10 @@ namespace Acerto
             // txtProcessos
             // 
             this.txtProcessos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProcessos.Location = new System.Drawing.Point(724, 28);
+            this.txtProcessos.Location = new System.Drawing.Point(1078, 28);
             this.txtProcessos.Name = "txtProcessos";
             this.txtProcessos.ReadOnly = true;
-            this.txtProcessos.Size = new System.Drawing.Size(710, 612);
+            this.txtProcessos.Size = new System.Drawing.Size(356, 612);
             this.txtProcessos.TabIndex = 3;
             this.txtProcessos.Text = "";
             // 
@@ -401,7 +402,7 @@ namespace Acerto
             // 
             this.lblResults.AutoSize = true;
             this.lblResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblResults.Location = new System.Drawing.Point(724, 8);
+            this.lblResults.Location = new System.Drawing.Point(1078, 8);
             this.lblResults.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.lblResults.Name = "lblResults";
             this.lblResults.Size = new System.Drawing.Size(88, 17);
@@ -437,7 +438,7 @@ namespace Acerto
             this.tabelaNProc.Name = "tabelaNProc";
             this.tabelaNProc.ReadOnly = true;
             this.tabelaNProc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tabelaNProc.Size = new System.Drawing.Size(710, 612);
+            this.tabelaNProc.Size = new System.Drawing.Size(1064, 612);
             this.tabelaNProc.TabIndex = 5;
             // 
             // lblnaoproc
@@ -454,8 +455,8 @@ namespace Acerto
             // divCentro
             // 
             this.divCentro.ColumnCount = 2;
-            this.divCentro.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.divCentro.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.divCentro.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.72067F));
+            this.divCentro.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.27933F));
             this.divCentro.Controls.Add(this.lblResults, 1, 0);
             this.divCentro.Controls.Add(this.txtProcessos, 1, 1);
             this.divCentro.Controls.Add(this.lblnaoproc, 0, 0);
