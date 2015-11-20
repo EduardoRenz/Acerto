@@ -330,6 +330,7 @@ namespace Acerto
             // 
             // lblCodProd
             // 
+            this.lblCodProd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.lblCodProd.Location = new System.Drawing.Point(117, 6);
             this.lblCodProd.Margin = new System.Windows.Forms.Padding(0);
             this.lblCodProd.Name = "lblCodProd";

@@ -17,7 +17,7 @@ namespace Acerto
         public Principal() { InitializeComponent(); }
         private void Form1_Load(object sender, EventArgs e) //  AO CARREGAR O FORM 
         {
-            Text = "Acertos  v:1.0.4.0";
+            Text = "Acertos  v:1.0.4.1";
             VerificaAbas();
             VerificaConexao();
         }
