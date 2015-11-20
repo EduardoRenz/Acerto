@@ -312,8 +312,8 @@ namespace Acerto
             this.menuConsulta.Location = new System.Drawing.Point(265, 5);
             this.menuConsulta.Margin = new System.Windows.Forms.Padding(0);
             this.menuConsulta.Name = "menuConsulta";
-            this.menuConsulta.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.menuConsulta.Size = new System.Drawing.Size(943, 31);
+            this.menuConsulta.Padding = new System.Windows.Forms.Padding(6, 6, 0, 0);
+            this.menuConsulta.Size = new System.Drawing.Size(832, 31);
             this.menuConsulta.TabIndex = 4;
             this.menuConsulta.Visible = false;
             // 
@@ -321,7 +321,7 @@ namespace Acerto
             // 
             this.lblConsultaMaterial.AutoSize = true;
             this.lblConsultaMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblConsultaMaterial.Location = new System.Drawing.Point(0, 6);
+            this.lblConsultaMaterial.Location = new System.Drawing.Point(6, 6);
             this.lblConsultaMaterial.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lblConsultaMaterial.Name = "lblConsultaMaterial";
             this.lblConsultaMaterial.Size = new System.Drawing.Size(114, 17);
@@ -331,7 +331,7 @@ namespace Acerto
             // lblCodProd
             // 
             this.lblCodProd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.lblCodProd.Location = new System.Drawing.Point(117, 6);
+            this.lblCodProd.Location = new System.Drawing.Point(123, 6);
             this.lblCodProd.Margin = new System.Windows.Forms.Padding(0);
             this.lblCodProd.Name = "lblCodProd";
             this.lblCodProd.Size = new System.Drawing.Size(205, 20);
@@ -339,7 +339,7 @@ namespace Acerto
             // 
             // btConsultaPesquisar
             // 
-            this.btConsultaPesquisar.Location = new System.Drawing.Point(322, 6);
+            this.btConsultaPesquisar.Location = new System.Drawing.Point(328, 6);
             this.btConsultaPesquisar.Margin = new System.Windows.Forms.Padding(0);
             this.btConsultaPesquisar.Name = "btConsultaPesquisar";
             this.btConsultaPesquisar.Size = new System.Drawing.Size(97, 20);
@@ -353,11 +353,11 @@ namespace Acerto
             this.ConsultaNumLinhas.AutoSize = true;
             this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
-            this.ConsultaNumLinhas.Location = new System.Drawing.Point(422, 11);
-            this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
+            this.ConsultaNumLinhas.Location = new System.Drawing.Point(428, 6);
             this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
-            this.ConsultaNumLinhas.Size = new System.Drawing.Size(0, 18);
+            this.ConsultaNumLinhas.Size = new System.Drawing.Size(131, 18);
             this.ConsultaNumLinhas.TabIndex = 14;
+            this.ConsultaNumLinhas.Text = "0 = Todas as filiais";
             // 
             // flowLayoutPanel1
             // 
