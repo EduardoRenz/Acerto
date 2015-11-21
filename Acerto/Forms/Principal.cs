@@ -17,10 +17,13 @@ namespace Acerto
         public Principal() { InitializeComponent(); }
         private void Form1_Load(object sender, EventArgs e) //  AO CARREGAR O FORM 
         {
-            Text = "Consulta  v:1.0.4.5";
+            Text = "Consulta  v:1.0.5.0";
             VerificaAbas();
             VerificaConexao();
             divCentro.ColumnStyles[1].Width = 0; // REMOVER SE QUISER MOSTRAR OS LOGS DE AUTO CORREÇAO SE HOUVER
+            conecta.GetTabelas(); // DESENVOLVEDOR  pega as tabelas do db
+            conecta.GetColunas("TIPMOV");
+
         }
         private void AbasChanged(object sender, TabControlEventArgs e)
         {

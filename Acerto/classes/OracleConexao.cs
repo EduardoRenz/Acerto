@@ -3,6 +3,7 @@ using System.Data.OracleClient;
 //using Oracle.DataAccess.Client;
 using System.Data;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Acerto
 {
@@ -67,6 +68,33 @@ namespace Acerto
         {
             command.Cancel();
             Console.WriteLine("Query Cancelada");
+        }
+        public List<string> GetTabelas()
+        {
+            List<string> lista =  new List<string>();
+            command = conexao.CreateCommand();
+            command.CommandText = "SELECT DISTINCT OBJECT_NAME FROM USER_OBJECTS WHERE OBJECT_TYPE = 'TABLE'";
+            reader = command.ExecuteReader();
+            while (reader.Read())  {
+                lista.Add(reader[0].ToString());
+                Console.Write(reader[0].ToString()+" | ");
+            }
+            reader.Close();
+            return lista;
+        }
+        public List<string> GetColunas(string tabela)
+        {
+            //SELECT table_name, column_name, data_type, data_lengthFROM USER_TAB_COLUMNSWHERE table_name = 'MYTABLE'
+            List<string> lista = new List<string>();
+            command = conexao.CreateCommand();
+            command.CommandText = "SELECT column_name FROM USER_TAB_COLUMNS WHERE table_name ='"+tabela+"'";
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                lista.Add(reader[0].ToString());
+                Console.WriteLine(reader[0].ToString());
+            }
+            return lista;
         }
         public void Close()
         {
