@@ -8,8 +8,8 @@ namespace Acerto
 {
     public partial class Principal : Form
     {
-     OracleConexao conecta = new OracleConexao("deposito", "tec3passos", "bdsac"); // conexão oracle
-    //  MysqlConexao conecta = new MysqlConexao("root", " ", "localhost", "bdsac"); // conexão mysql
+        OracleConexao conecta = new OracleConexao("deposito", "tec3passos", "bdsac"); // conexão oracle
+        //MysqlConexao conecta = new MysqlConexao("root", " ", "localhost", "bdsac"); // conexão mysql
         Corretor corretor  = new Corretor();
         public string listaME; // String que lista os erros
         public DataTable prodErros; // Tabela de dados dos erros
@@ -17,7 +17,7 @@ namespace Acerto
         public Principal() { InitializeComponent(); }
         private void Form1_Load(object sender, EventArgs e) //  AO CARREGAR O FORM 
         {
-            Text = "Acertos  v:1.0.4.2";
+            Text = "Consulta  v:1.0.4.5";
             VerificaAbas();
             VerificaConexao();
             divCentro.ColumnStyles[1].Width = 0; // REMOVER SE QUISER MOSTRAR OS LOGS DE AUTO CORREÇAO SE HOUVER

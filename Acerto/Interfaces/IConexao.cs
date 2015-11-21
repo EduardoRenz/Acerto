@@ -6,7 +6,7 @@ namespace Acerto
     interface IConexao
     {
        DataTable Consulta(string query);
-       bool Conectar(string sqlConexao);
+       bool Conectar();
        void Close();
     }
 }

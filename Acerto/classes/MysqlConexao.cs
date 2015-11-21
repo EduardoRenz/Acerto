@@ -11,18 +11,18 @@ namespace Acerto
         MySqlConnection conexao;
         MySqlDataReader reader;
         MySqlCommand consulta;
-        private string server, user, senha, database;
+        private string server, user, senha, database,sqlconecta;
         public bool conectado;
         public MysqlConexao(string user, string senha, string server, string database) {
             this.user = user;
             this.senha = senha;
             this.server = server;
             this.database = database;
-            string sqlconecta = " Persist Security Info = False; server =" + server + " ; database =" + database + "; uid =" + user + "; pwd =" + senha + "";
+            sqlconecta = " Persist Security Info = False; server =" + server + " ; database =" + database + "; uid =" + user + "; pwd =" + senha + "";
             conexao = new MySqlConnection(sqlconecta);
-            Conectar(sqlconecta); // Conecta-se ao server Mysql
+            Conectar(); // Conecta-se ao server Mysql
         }  // Construtor da classe
-        public bool Conectar(string sqlconecta)
+        public bool Conectar()
         {
             conexao = new MySqlConnection(sqlconecta);
             try
@@ -34,7 +34,14 @@ namespace Acerto
 
             catch (Exception e)
             {
-                MessageBox.Show("Erro de conexão: " + e.Message.ToString());
+                if (MessageBox.Show("Erro ao se conectar no banco de dados "+e.Message+" , retentar?", "Erro", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    Conectar();
+                }
+                else
+                {
+                    Application.Exit();
+                }
                 conectado = false;
                 return conectado;
             }

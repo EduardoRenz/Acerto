@@ -31,4 +31,3 @@ C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Consulta.P
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Consulta.exe.manifest
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Consulta.application
 C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\obj\Debug\Consulta.pdb
-C:\Users\Eduardo\Documents\GitHubVisualStudio\Acerto\Acerto\bin\Debug\Oracle.DataAccess.dll

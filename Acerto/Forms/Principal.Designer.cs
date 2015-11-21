@@ -160,7 +160,7 @@ namespace Acerto
             this.grpCondi.Location = new System.Drawing.Point(382, 6);
             this.grpCondi.Margin = new System.Windows.Forms.Padding(0);
             this.grpCondi.Name = "grpCondi";
-            this.grpCondi.Size = new System.Drawing.Size(356, 30);
+            this.grpCondi.Size = new System.Drawing.Size(356, 23);
             this.grpCondi.TabIndex = 8;
             this.grpCondi.Visible = false;
             // 
@@ -207,7 +207,7 @@ namespace Acerto
             this.dataFim.Name = "dataFim";
             this.dataFim.Size = new System.Drawing.Size(100, 20);
             this.dataFim.TabIndex = 3;
-            this.dataFim.Value = new System.DateTime(2015, 11, 12, 0, 0, 0, 0);
+            this.dataFim.Value = DateTime.Today;
             // 
             // dataInicio
             // 
@@ -219,14 +219,14 @@ namespace Acerto
             this.dataInicio.Name = "dataInicio";
             this.dataInicio.Size = new System.Drawing.Size(103, 20);
             this.dataInicio.TabIndex = 2;
-            this.dataInicio.Value = new System.DateTime(2015, 10, 25, 0, 0, 0, 0);
+            this.dataInicio.Value = DateTime.Now.AddMonths(-1);
             // 
             // lblData
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblData.Location = new System.Drawing.Point(6, 6);
-            this.lblData.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.lblData.Margin = new Padding(0, 0, 3, 0);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(47, 17);
             this.lblData.TabIndex = 6;

@@ -11,15 +11,15 @@ namespace Acerto
         OracleConnection conexao;
         OracleDataReader reader;
         OracleCommand command;
-        private string server, user, senha;
+        private string server, user, senha, sqlconect;
         public bool conectado;
         public OracleConexao(string user, string senha, string server)
         {
             this.user = user;
             this.senha = senha;
             this.server = server;
-         string  sqlconect = "Data Source=" + server + ";Persist Security Info=True;" + "User ID=" + user + ";Password=" + senha + ";Unicode=True";
-            Conectar(sqlconect);
+            sqlconect = "Data Source=" + server + ";Persist Security Info=True;" + "User ID=" + user + ";Password=" + senha + ";Unicode=True";
+            Conectar();
         } // Construtor da classe
         public DataTable Consulta(string query)
         {
@@ -40,9 +40,9 @@ namespace Acerto
             }
           
         } //  Retorna uma consulta de uma query
-        public bool Conectar(string sqlConexao)
+        public bool Conectar()
         {
-            conexao = new OracleConnection(sqlConexao);
+            conexao = new OracleConnection(sqlconect);
             try
             {
                 conexao.Open();
@@ -51,7 +51,14 @@ namespace Acerto
             }
             catch (Exception e)
             {
-                Console.WriteLine("Erro ao conectar" + e.Message);
+                if (MessageBox.Show("Erro ao se conectar no banco de dados " + e.Message + " , retentar?", "Erro", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    Conectar();
+                }
+                else
+                {
+                    Application.Exit();
+                }
                 conectado = false;
             }
             return conectado;
