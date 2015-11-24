@@ -34,6 +34,9 @@ namespace Acerto
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.divTopo = new System.Windows.Forms.FlowLayoutPanel();
             this.painelPesquisa = new System.Windows.Forms.TextBox();
@@ -207,7 +210,7 @@ namespace Acerto
             this.dataFim.Name = "dataFim";
             this.dataFim.Size = new System.Drawing.Size(100, 20);
             this.dataFim.TabIndex = 3;
-            this.dataFim.Value = DateTime.Today;
+            this.dataFim.Value = new System.DateTime(2015, 11, 24, 0, 0, 0, 0);
             // 
             // dataInicio
             // 
@@ -219,14 +222,14 @@ namespace Acerto
             this.dataInicio.Name = "dataInicio";
             this.dataInicio.Size = new System.Drawing.Size(103, 20);
             this.dataInicio.TabIndex = 2;
-            this.dataInicio.Value = DateTime.Now.AddMonths(-1);
+            this.dataInicio.Value = new System.DateTime(2015, 10, 24, 10, 48, 49, 957);
             // 
             // lblData
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblData.Location = new System.Drawing.Point(6, 6);
-            this.lblData.Margin = new Padding(0, 0, 3, 0);
+            this.lblData.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(47, 17);
             this.lblData.TabIndex = 6;
@@ -440,6 +443,7 @@ namespace Acerto
             this.tabelaNProc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tabelaNProc.Size = new System.Drawing.Size(1064, 612);
             this.tabelaNProc.TabIndex = 5;
+            this.tabelaNProc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaNProc_CellDoubleClick);
             // 
             // lblnaoproc
             // 
@@ -500,11 +504,35 @@ namespace Acerto
             this.gridConsulta.AllowUserToOrderColumns = true;
             this.gridConsulta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridConsulta.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridConsulta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gridConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridConsulta.DefaultCellStyle = dataGridViewCellStyle4;
             this.gridConsulta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridConsulta.Location = new System.Drawing.Point(0, 0);
             this.gridConsulta.Name = "gridConsulta";
             this.gridConsulta.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridConsulta.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gridConsulta.Size = new System.Drawing.Size(1448, 654);
             this.gridConsulta.TabIndex = 0;
             this.gridConsulta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridConsulta_CellDoubleClick);

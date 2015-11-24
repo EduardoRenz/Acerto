@@ -42,6 +42,13 @@ namespace Acerto
                 }
             }
         } // click no corrigir
+        private void tabelaNProc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                produto = new Produto(tabelaNProc.Rows[e.RowIndex].Cells["material"].Value.ToString(), tabelaNProc.Rows[e.RowIndex].Cells["serie"].Value.ToString(), Convert.ToInt32(tabelaNProc.Rows[e.RowIndex].Cells["Origem"].Value), conecta);
+            }
+        }
         public void Appender(string text, Color cor, RichTextBox campo)
         {
             campo.SelectionStart = campo.TextLength;
