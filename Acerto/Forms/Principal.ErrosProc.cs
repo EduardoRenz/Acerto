@@ -19,15 +19,12 @@ namespace Acerto
               {
                  listaME += " and movestseo ='" + intFilial.Value+"' ";
               }
-
             listaME += " order by movestref, movestser, movestdat";
-
-
-
             Appender("Pesquisando filial: " + intFilial.Value + ". ", Color.Black, txtProcessos);
             prodErros = conecta.Consulta(listaME);
             Appender(prodErros.Rows.Count + " Linhas encontradas \n", Color.Green, txtProcessos);
             tabelaNProc.DataSource = prodErros;
+            ConsultaNumLinhas.Text = tabelaNProc.RowCount + " Acertos encontrados.";
         } // Ao clicar na pesquisa
         private void btCorrigir_Click(object sender, EventArgs e)
         {

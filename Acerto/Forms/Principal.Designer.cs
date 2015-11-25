@@ -160,7 +160,7 @@ namespace Acerto
             this.grpCondi.Controls.Add(this.chkTrans);
             this.grpCondi.Controls.Add(this.chkVendas);
             this.grpCondi.Controls.Add(this.condLabel);
-            this.grpCondi.Location = new System.Drawing.Point(382, 6);
+            this.grpCondi.Location = new System.Drawing.Point(0, 29);
             this.grpCondi.Margin = new System.Windows.Forms.Padding(0);
             this.grpCondi.Name = "grpCondi";
             this.grpCondi.Size = new System.Drawing.Size(356, 23);
@@ -277,12 +277,13 @@ namespace Acerto
             this.topo.Controls.Add(this.painelFilial);
             this.topo.Controls.Add(this.menuConsulta);
             this.topo.Controls.Add(this.flowLayoutPanel1);
+            this.topo.Controls.Add(this.ConsultaNumLinhas);
             this.topo.Dock = System.Windows.Forms.DockStyle.Top;
             this.topo.Location = new System.Drawing.Point(0, 0);
             this.topo.Margin = new System.Windows.Forms.Padding(0);
             this.topo.Name = "topo";
             this.topo.Padding = new System.Windows.Forms.Padding(5);
-            this.topo.Size = new System.Drawing.Size(1456, 72);
+            this.topo.Size = new System.Drawing.Size(1456, 41);
             this.topo.TabIndex = 4;
             // 
             // painelFilial
@@ -312,12 +313,11 @@ namespace Acerto
             this.menuConsulta.Controls.Add(this.lblConsultaMaterial);
             this.menuConsulta.Controls.Add(this.lblCodProd);
             this.menuConsulta.Controls.Add(this.btConsultaPesquisar);
-            this.menuConsulta.Controls.Add(this.ConsultaNumLinhas);
             this.menuConsulta.Location = new System.Drawing.Point(265, 5);
             this.menuConsulta.Margin = new System.Windows.Forms.Padding(0);
             this.menuConsulta.Name = "menuConsulta";
             this.menuConsulta.Padding = new System.Windows.Forms.Padding(6, 6, 0, 0);
-            this.menuConsulta.Size = new System.Drawing.Size(832, 31);
+            this.menuConsulta.Size = new System.Drawing.Size(426, 31);
             this.menuConsulta.TabIndex = 4;
             this.menuConsulta.Visible = false;
             // 
@@ -357,7 +357,8 @@ namespace Acerto
             this.ConsultaNumLinhas.AutoSize = true;
             this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
-            this.ConsultaNumLinhas.Location = new System.Drawing.Point(428, 6);
+            this.ConsultaNumLinhas.Location = new System.Drawing.Point(1076, 11);
+            this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
             this.ConsultaNumLinhas.Size = new System.Drawing.Size(131, 18);
             this.ConsultaNumLinhas.TabIndex = 14;
@@ -372,11 +373,11 @@ namespace Acerto
             this.flowLayoutPanel1.Controls.Add(this.dataFim);
             this.flowLayoutPanel1.Controls.Add(this.btPesquisa);
             this.flowLayoutPanel1.Controls.Add(this.grpCondi);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 36);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(691, 5);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(750, 31);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(382, 31);
             this.flowLayoutPanel1.TabIndex = 2;
             this.flowLayoutPanel1.Visible = false;
             // 
@@ -415,7 +416,7 @@ namespace Acerto
             // tabelaNProc
             // 
             this.tabelaNProc.AllowUserToAddRows = false;
-            this.tabelaNProc.AllowUserToDeleteRows = false;
+            this.tabelaNProc.AllowUserToOrderColumns = true;
             this.tabelaNProc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tabelaNProc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.tabelaNProc.BackgroundColor = System.Drawing.SystemColors.HotTrack;
@@ -480,11 +481,11 @@ namespace Acerto
             this.abas.Controls.Add(this.tabConsultar);
             this.abas.Controls.Add(this.pagErros);
             this.abas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.abas.Location = new System.Drawing.Point(0, 72);
+            this.abas.Location = new System.Drawing.Point(0, 41);
             this.abas.Margin = new System.Windows.Forms.Padding(0);
             this.abas.Name = "abas";
             this.abas.SelectedIndex = 0;
-            this.abas.Size = new System.Drawing.Size(1456, 680);
+            this.abas.Size = new System.Drawing.Size(1456, 711);
             this.abas.TabIndex = 0;
             this.abas.Selected += new System.Windows.Forms.TabControlEventHandler(this.AbasChanged);
             // 
@@ -494,7 +495,7 @@ namespace Acerto
             this.tabConsultar.Controls.Add(this.gridConsulta);
             this.tabConsultar.Location = new System.Drawing.Point(4, 22);
             this.tabConsultar.Name = "tabConsultar";
-            this.tabConsultar.Size = new System.Drawing.Size(1448, 654);
+            this.tabConsultar.Size = new System.Drawing.Size(1448, 685);
             this.tabConsultar.TabIndex = 1;
             this.tabConsultar.Text = "Consultar Mercadorias";
             // 
@@ -533,7 +534,7 @@ namespace Acerto
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridConsulta.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gridConsulta.Size = new System.Drawing.Size(1448, 654);
+            this.gridConsulta.Size = new System.Drawing.Size(1448, 685);
             this.gridConsulta.TabIndex = 0;
             this.gridConsulta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridConsulta_CellDoubleClick);
             // 
