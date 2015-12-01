@@ -79,6 +79,7 @@ namespace Acerto
                 lista.Add(reader[0].ToString());
                 Console.Write(reader[0].ToString()+" | ");
             }
+            Console.Write("\n");
             reader.Close();
             return lista;
         }
@@ -94,6 +95,11 @@ namespace Acerto
                 lista.Add(reader[0].ToString());
                 Console.WriteLine(reader[0].ToString());
             }
+            return lista;
+        }
+        public string ListaDB()
+        {
+            string lista = "";
             return lista;
         }
         public void Close()

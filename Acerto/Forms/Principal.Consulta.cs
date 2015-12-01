@@ -24,14 +24,7 @@ namespace Acerto
             worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(PesquisaAsyncCompleta);
             worker.WorkerReportsProgress = true;
             worker.WorkerSupportsCancellation = true;
-            // ==================================================================================
-            //query = "select filial.filial, material , serie, saldo from produto,estoque,filial where  material like '%" + Eduardo.SqlScape(material) +
-            //         "%' and serie like '%" + Eduardo.SqlScape(serie) + "%' ";
-            //if(intFilial.Value != 0) {
-            //    query += "and filial.filial = " + intFilial.Value + " ";
-            //}
-            // query +=   "and produto.idProduto = estoque.produto_idProduto AND filial.idfilial = estoque.filial_idfilial" ;
-
+ 
             // ============================================== QUERY DO ORACLE =================================================================================
             query = "select est_set Filial, est_ref material, est_ser serie, est_sal saldo, est_tam tamanho from estoques where " +
                     "est_ref LIKE '%" + Eduardo.SqlScape(material) + "%' and est_ser LIKE '%" + Eduardo.SqlScape(serie) + "%'";
