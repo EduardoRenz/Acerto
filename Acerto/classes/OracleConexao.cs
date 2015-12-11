@@ -77,12 +77,12 @@ namespace Acerto
             reader = command.ExecuteReader();
             while (reader.Read())  {
                 lista.Add(reader[0].ToString());
-                Console.Write(reader[0].ToString()+" | ");
+               // Console.Write(reader[0].ToString()+" | ");
             }
             Console.Write("\n");
             reader.Close();
             return lista;
-        }
+        } // Pega Tabelas do BD
         public List<string> GetColunas(string tabela)
         {
             //SELECT table_name, column_name, data_type, data_lengthFROM USER_TAB_COLUMNSWHERE table_name = 'MYTABLE'
@@ -93,9 +93,43 @@ namespace Acerto
             while (reader.Read())
             {
                 lista.Add(reader[0].ToString());
-                Console.WriteLine(reader[0].ToString());
+              //  Console.WriteLine(reader[0].ToString());
             }
             return lista;
+        } // Pega Colunas da tabela
+        public void GetBD()
+        {
+            List<string> tabelas = new List<string>();
+            List<string> colunas = new List<string>();
+            tabelas = GetTabelas();
+            foreach (var tabela in tabelas)
+            {
+                Console.WriteLine(tabela.ToString());
+                foreach (var coluna in GetColunas(tabela.ToString()))
+                {
+                    Console.WriteLine("-- " + coluna.ToString());
+                }
+            }
+        } // Une gettabelas e getcolunas
+        public void Getschemas() // experimental não fuinciona ainda
+        {
+            command = conexao.CreateCommand();
+            command.CommandText = "select distinct owner from  dba_segments where  owner in  (select username from dba_users  where default_tablespace not in ('SYSTEM','SYSAUX') )";
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Console.Write(reader[0].ToString() + " | ");
+                }
+
+                reader.Close();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+           
         }
         public string ListaDB()
         {

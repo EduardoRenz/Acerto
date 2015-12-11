@@ -21,8 +21,10 @@ namespace Acerto
             VerificaAbas();
             VerificaConexao();
             divCentro.ColumnStyles[1].Width = 0; // REMOVER SE QUISER MOSTRAR OS LOGS DE AUTO CORREÇAO SE HOUVER
-           conecta.GetTabelas(); // DESENVOLVEDOR  pega as tabelas do db
-           conecta.GetColunas("OC");
+            //conecta.GetTabelas(); // DESENVOLVEDOR  pega as tabelas do db
+            // conecta.GetColunas("OC");
+            //conecta.GetBD();
+            conecta.Getschemas();
         }
         private void AbasChanged(object sender, TabControlEventArgs e)
         {
