@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Acerto
@@ -25,8 +26,9 @@ namespace Acerto
         }  // Construtor Oracle
         private void Produto_Load(object sender, EventArgs e)
         {
-            MostraHistorico(conecta); // lentro pra pesquisa
+            MostraHistorico(conecta);
             MostraSaldo(conecta);
+            DetalhesProduto(conecta);
         }
         private void Initialize(string material, string serie, int filial)
         {
@@ -58,6 +60,18 @@ namespace Acerto
         private void MostraSaldo(OracleConexao conecta) {
             string query = "select est_set Filial, est_sal saldo, est_tam tamanho from estoques where est_ref = '"+material+"' and est_ser = '"+ (serie).Trim()+"'";
             prodGridSaldos.DataSource = conecta.Consulta(query);
+        }
+        // DADOS DO PRODUTO
+        private void DetalhesProduto(OracleConexao conecta)
+        {
+            DataTable dt = new DataTable();
+            string query = "select * from ME where MOVESTREF ='"+material+"' and MOVESTSER ='"+serie+"'";
+            dt = conecta.Consulta(query);
+            foreach (var coluna in dt.Columns)
+            {
+                Console.WriteLine(coluna+ " : "+dt.Rows[0][coluna.ToString()]);
+            }
+            //  Console.WriteLine(dt.Rows[0][0]);
         }
         // Eventos do FORM
         private void Produto_FormClosed(object sender, FormClosedEventArgs e)

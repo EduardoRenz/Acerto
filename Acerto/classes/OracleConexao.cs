@@ -114,7 +114,8 @@ namespace Acerto
         public void Getschemas() // experimental não fuinciona ainda
         {
             command = conexao.CreateCommand();
-            command.CommandText = "select distinct owner from  dba_segments where  owner in  (select username from dba_users  where default_tablespace not in ('SYSTEM','SYSAUX') )";
+           // command.CommandText = "SELECT * FROM all_users"; // Usuarios
+            command.CommandText = "SELECT * FROM all_users";
             try
             {
                 reader = command.ExecuteReader();

@@ -24,7 +24,7 @@ namespace Acerto
             //conecta.GetTabelas(); // DESENVOLVEDOR  pega as tabelas do db
             // conecta.GetColunas("OC");
             //conecta.GetBD();
-            conecta.Getschemas();
+           // conecta.Getschemas();
         }
         private void AbasChanged(object sender, TabControlEventArgs e)
         {
