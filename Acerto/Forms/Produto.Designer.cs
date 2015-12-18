@@ -71,7 +71,7 @@
             this.tabelaLayoutProd.RowCount = 2;
             this.tabelaLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tabelaLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tabelaLayoutProd.Size = new System.Drawing.Size(534, 292);
+            this.tabelaLayoutProd.Size = new System.Drawing.Size(832, 292);
             this.tabelaLayoutProd.TabIndex = 0;
             // 
             // ProdTabelaTopEsq
@@ -86,7 +86,7 @@
             this.ProdTabelaTopEsq.Name = "ProdTabelaTopEsq";
             this.ProdTabelaTopEsq.RowCount = 1;
             this.ProdTabelaTopEsq.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.ProdTabelaTopEsq.Size = new System.Drawing.Size(528, 24);
+            this.ProdTabelaTopEsq.Size = new System.Drawing.Size(826, 24);
             this.ProdTabelaTopEsq.TabIndex = 2;
             // 
             // divProdTopEsq
@@ -97,7 +97,7 @@
             this.divProdTopEsq.Location = new System.Drawing.Point(0, 0);
             this.divProdTopEsq.Margin = new System.Windows.Forms.Padding(0);
             this.divProdTopEsq.Name = "divProdTopEsq";
-            this.divProdTopEsq.Size = new System.Drawing.Size(275, 24);
+            this.divProdTopEsq.Size = new System.Drawing.Size(573, 24);
             this.divProdTopEsq.TabIndex = 1;
             // 
             // lblProdMaterial
@@ -129,7 +129,7 @@
             this.ProdDivTopDir.Controls.Add(this.ProdLblFilial);
             this.ProdDivTopDir.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProdDivTopDir.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.ProdDivTopDir.Location = new System.Drawing.Point(275, 0);
+            this.ProdDivTopDir.Location = new System.Drawing.Point(573, 0);
             this.ProdDivTopDir.Margin = new System.Windows.Forms.Padding(0);
             this.ProdDivTopDir.Name = "ProdDivTopDir";
             this.ProdDivTopDir.Size = new System.Drawing.Size(253, 24);
@@ -160,7 +160,7 @@
             this.ProdTabelaCentro.RowCount = 2;
             this.ProdTabelaCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ProdTabelaCentro.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.ProdTabelaCentro.Size = new System.Drawing.Size(534, 262);
+            this.ProdTabelaCentro.Size = new System.Drawing.Size(832, 262);
             this.ProdTabelaCentro.TabIndex = 3;
             // 
             // prodGridSaldos
@@ -211,7 +211,7 @@
             this.prodGridSaldos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.prodGridSaldos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.prodGridSaldos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.prodGridSaldos.Size = new System.Drawing.Size(528, 110);
+            this.prodGridSaldos.Size = new System.Drawing.Size(826, 110);
             this.prodGridSaldos.TabIndex = 1;
             // 
             // ProdGridHist
@@ -261,7 +261,7 @@
             this.ProdGridHist.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.ProdGridHist.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ProdGridHist.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProdGridHist.Size = new System.Drawing.Size(528, 140);
+            this.ProdGridHist.Size = new System.Drawing.Size(826, 140);
             this.ProdGridHist.TabIndex = 0;
             // 
             // Produto
@@ -269,7 +269,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(534, 292);
+            this.ClientSize = new System.Drawing.Size(832, 292);
             this.Controls.Add(this.tabelaLayoutProd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(550, 330);

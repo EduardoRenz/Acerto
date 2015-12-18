@@ -10,6 +10,7 @@ namespace Acerto
         private string serie { get; set; }
         private string material { get; set; }
         private int filial { get; set; }
+        private DataTable dadosProduto = new DataTable() ;
         //private MysqlConexao conecta;
         private OracleConexao conecta;
 
@@ -49,7 +50,7 @@ namespace Acerto
         } // tabela de historico do produto mysql
         private void MostraHistorico(OracleConexao conecta)
         {
-            string query = "select mov_dat Data, mov_seo Origem, mov_sed Destino,TIP_DES Tipo, mov_doc nf from movimento, TIPMOV where mov_ref = '"+material+"' and mov_ser = '"+serie+"' and mov_tip = TIP_COD order by mov_dat";
+            string query = "select mov_dat Data, mov_seo Origem, mov_sed Destino,TIP_DES Tipo, mov_doc nf,MOV_CDEMP cpf_cnpj, MOV_CDVDR Vendedor, MOV_VAL Valor from movimento, TIPMOV where mov_ref = '" + material+"' and mov_ser = '"+serie+"' and mov_tip = TIP_COD order by mov_dat";
             ProdGridHist.DataSource = conecta.Consulta(query);
         } // tabela de historico do produto oracle
         //SALDOS
@@ -64,12 +65,11 @@ namespace Acerto
         // DADOS DO PRODUTO
         private void DetalhesProduto(OracleConexao conecta)
         {
-            DataTable dt = new DataTable();
-            string query = "select * from ME where MOVESTREF ='"+material+"' and MOVESTSER ='"+serie+"'";
-            dt = conecta.Consulta(query);
-            foreach (var coluna in dt.Columns)
+            string query = "select * from MOVIMENTO where MOV_REF ='"+material+"' and MOV_SER ='"+serie+"'";
+            dadosProduto = conecta.Consulta(query);
+            foreach (var coluna in dadosProduto.Columns)
             {
-                Console.WriteLine(coluna+ " : "+dt.Rows[0][coluna.ToString()]);
+                Console.WriteLine(coluna+ " : "+dadosProduto.Rows[0][coluna.ToString()]);
             }
             //  Console.WriteLine(dt.Rows[0][0]);
         }
