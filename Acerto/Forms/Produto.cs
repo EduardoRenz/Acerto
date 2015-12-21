@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Consulta.utilitarios;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -19,9 +20,18 @@ namespace Acerto
         }  // Construtor Oracle
         private void Produto_Load(object sender, EventArgs e)
         {
+            // Busca os dados
             MostraHistorico(conecta);
             MostraSaldo(conecta);
             DetalhesProduto(conecta);
+            // Aplicando os labels e texts
+            prodMaterial.Text = material;
+            prodSerie.Text = serie;
+            prodFilial.Text = filial.ToString();
+            Text = filial + " | " + material + " | " + serie;
+            prodDescr.Text = dadosProduto.Rows[0].Field<string>("MERCADO_DES").ToLower();
+            prodDescr.Text = Eduardo.UpperFirst(prodDescr.Text);
+
         }
         private void Initialize(string material, string serie, int filial)
         {
@@ -29,10 +39,7 @@ namespace Acerto
             this.serie = serie;
             this.material = material;
             this.filial = filial;
-            prodMaterial.Text = material;
-            prodSerie.Text = serie;
-            prodFilial.Text = filial.ToString();
-            Text = filial + " | " + material + " | " + serie;
+           
         } // Inicio padrão para o construtor desta classe
         // HISTORICOS
         private void MostraHistorico(OracleConexao conecta)

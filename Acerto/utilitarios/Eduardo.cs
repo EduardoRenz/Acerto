@@ -37,5 +37,11 @@ namespace Consulta.utilitarios
                 });
         } // escape variaves sql
 
+        public static string UpperFirst(string text)
+        {
+            return char.ToUpper(text[0]) +
+                ((text.Length > 1) ? text.Substring(1).ToLower() : string.Empty);
+        }
+
     }
 }
