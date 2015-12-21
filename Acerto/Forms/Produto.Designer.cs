@@ -40,22 +40,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Produto));
             this.tabelaLayoutProd = new System.Windows.Forms.TableLayoutPanel();
-            this.ProdTabelaTopEsq = new System.Windows.Forms.TableLayoutPanel();
-            this.divProdTopEsq = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblProdMaterial = new System.Windows.Forms.Label();
-            this.lblProdSerie = new System.Windows.Forms.Label();
-            this.ProdDivTopDir = new System.Windows.Forms.FlowLayoutPanel();
-            this.ProdLblFilial = new System.Windows.Forms.Label();
             this.ProdTabelaCentro = new System.Windows.Forms.TableLayoutPanel();
             this.prodGridSaldos = new System.Windows.Forms.DataGridView();
             this.ProdGridHist = new System.Windows.Forms.DataGridView();
+            this.divProdTopEsq = new System.Windows.Forms.FlowLayoutPanel();
+            this.prodFilial = new System.Windows.Forms.TextBox();
+            this.ProdLblFilial = new System.Windows.Forms.Label();
+            this.prodSerie = new System.Windows.Forms.TextBox();
+            this.lblProdSerie = new System.Windows.Forms.Label();
+            this.prodMaterial = new System.Windows.Forms.TextBox();
+            this.lblProdMaterial = new System.Windows.Forms.Label();
+            this.ProdTabelaTopEsq = new System.Windows.Forms.TableLayoutPanel();
             this.tabelaLayoutProd.SuspendLayout();
-            this.ProdTabelaTopEsq.SuspendLayout();
-            this.divProdTopEsq.SuspendLayout();
-            this.ProdDivTopDir.SuspendLayout();
             this.ProdTabelaCentro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.prodGridSaldos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProdGridHist)).BeginInit();
+            this.divProdTopEsq.SuspendLayout();
+            this.ProdTabelaTopEsq.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabelaLayoutProd
@@ -71,81 +72,8 @@
             this.tabelaLayoutProd.RowCount = 2;
             this.tabelaLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tabelaLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tabelaLayoutProd.Size = new System.Drawing.Size(832, 292);
+            this.tabelaLayoutProd.Size = new System.Drawing.Size(1202, 553);
             this.tabelaLayoutProd.TabIndex = 0;
-            // 
-            // ProdTabelaTopEsq
-            // 
-            this.ProdTabelaTopEsq.ColumnCount = 2;
-            this.ProdTabelaTopEsq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.ProdTabelaTopEsq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 253F));
-            this.ProdTabelaTopEsq.Controls.Add(this.divProdTopEsq, 0, 0);
-            this.ProdTabelaTopEsq.Controls.Add(this.ProdDivTopDir, 1, 0);
-            this.ProdTabelaTopEsq.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProdTabelaTopEsq.Location = new System.Drawing.Point(3, 3);
-            this.ProdTabelaTopEsq.Name = "ProdTabelaTopEsq";
-            this.ProdTabelaTopEsq.RowCount = 1;
-            this.ProdTabelaTopEsq.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.ProdTabelaTopEsq.Size = new System.Drawing.Size(826, 24);
-            this.ProdTabelaTopEsq.TabIndex = 2;
-            // 
-            // divProdTopEsq
-            // 
-            this.divProdTopEsq.Controls.Add(this.lblProdMaterial);
-            this.divProdTopEsq.Controls.Add(this.lblProdSerie);
-            this.divProdTopEsq.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.divProdTopEsq.Location = new System.Drawing.Point(0, 0);
-            this.divProdTopEsq.Margin = new System.Windows.Forms.Padding(0);
-            this.divProdTopEsq.Name = "divProdTopEsq";
-            this.divProdTopEsq.Size = new System.Drawing.Size(573, 24);
-            this.divProdTopEsq.TabIndex = 1;
-            // 
-            // lblProdMaterial
-            // 
-            this.lblProdMaterial.AutoSize = true;
-            this.lblProdMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProdMaterial.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblProdMaterial.Location = new System.Drawing.Point(0, 0);
-            this.lblProdMaterial.Margin = new System.Windows.Forms.Padding(0);
-            this.lblProdMaterial.Name = "lblProdMaterial";
-            this.lblProdMaterial.Size = new System.Drawing.Size(83, 24);
-            this.lblProdMaterial.TabIndex = 0;
-            this.lblProdMaterial.Text = "Material";
-            // 
-            // lblProdSerie
-            // 
-            this.lblProdSerie.AutoSize = true;
-            this.lblProdSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProdSerie.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblProdSerie.Location = new System.Drawing.Point(83, 0);
-            this.lblProdSerie.Margin = new System.Windows.Forms.Padding(0);
-            this.lblProdSerie.Name = "lblProdSerie";
-            this.lblProdSerie.Size = new System.Drawing.Size(59, 24);
-            this.lblProdSerie.TabIndex = 1;
-            this.lblProdSerie.Text = "Serie";
-            // 
-            // ProdDivTopDir
-            // 
-            this.ProdDivTopDir.Controls.Add(this.ProdLblFilial);
-            this.ProdDivTopDir.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProdDivTopDir.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.ProdDivTopDir.Location = new System.Drawing.Point(573, 0);
-            this.ProdDivTopDir.Margin = new System.Windows.Forms.Padding(0);
-            this.ProdDivTopDir.Name = "ProdDivTopDir";
-            this.ProdDivTopDir.Size = new System.Drawing.Size(253, 24);
-            this.ProdDivTopDir.TabIndex = 2;
-            // 
-            // ProdLblFilial
-            // 
-            this.ProdLblFilial.AutoSize = true;
-            this.ProdLblFilial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProdLblFilial.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ProdLblFilial.Location = new System.Drawing.Point(193, 0);
-            this.ProdLblFilial.Margin = new System.Windows.Forms.Padding(0);
-            this.ProdLblFilial.Name = "ProdLblFilial";
-            this.ProdLblFilial.Size = new System.Drawing.Size(60, 24);
-            this.ProdLblFilial.TabIndex = 1;
-            this.ProdLblFilial.Text = "Filial:";
             // 
             // ProdTabelaCentro
             // 
@@ -160,7 +88,7 @@
             this.ProdTabelaCentro.RowCount = 2;
             this.ProdTabelaCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.ProdTabelaCentro.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.ProdTabelaCentro.Size = new System.Drawing.Size(832, 262);
+            this.ProdTabelaCentro.Size = new System.Drawing.Size(1202, 523);
             this.ProdTabelaCentro.TabIndex = 3;
             // 
             // prodGridSaldos
@@ -192,7 +120,7 @@
             this.prodGridSaldos.DefaultCellStyle = dataGridViewCellStyle3;
             this.prodGridSaldos.Dock = System.Windows.Forms.DockStyle.Top;
             this.prodGridSaldos.EnableHeadersVisualStyles = false;
-            this.prodGridSaldos.Location = new System.Drawing.Point(3, 149);
+            this.prodGridSaldos.Location = new System.Drawing.Point(3, 410);
             this.prodGridSaldos.Name = "prodGridSaldos";
             this.prodGridSaldos.ReadOnly = true;
             this.prodGridSaldos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -211,7 +139,7 @@
             this.prodGridSaldos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.prodGridSaldos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.prodGridSaldos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.prodGridSaldos.Size = new System.Drawing.Size(826, 110);
+            this.prodGridSaldos.Size = new System.Drawing.Size(1196, 110);
             this.prodGridSaldos.TabIndex = 1;
             // 
             // ProdGridHist
@@ -261,15 +189,118 @@
             this.ProdGridHist.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.ProdGridHist.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ProdGridHist.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ProdGridHist.Size = new System.Drawing.Size(826, 140);
+            this.ProdGridHist.Size = new System.Drawing.Size(1196, 401);
             this.ProdGridHist.TabIndex = 0;
+            // 
+            // divProdTopEsq
+            // 
+            this.divProdTopEsq.Controls.Add(this.lblProdMaterial);
+            this.divProdTopEsq.Controls.Add(this.prodMaterial);
+            this.divProdTopEsq.Controls.Add(this.lblProdSerie);
+            this.divProdTopEsq.Controls.Add(this.prodSerie);
+            this.divProdTopEsq.Controls.Add(this.ProdLblFilial);
+            this.divProdTopEsq.Controls.Add(this.prodFilial);
+            this.divProdTopEsq.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.divProdTopEsq.Location = new System.Drawing.Point(0, 0);
+            this.divProdTopEsq.Margin = new System.Windows.Forms.Padding(0);
+            this.divProdTopEsq.Name = "divProdTopEsq";
+            this.divProdTopEsq.Size = new System.Drawing.Size(1196, 24);
+            this.divProdTopEsq.TabIndex = 1;
+            // 
+            // prodFilial
+            // 
+            this.prodFilial.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.prodFilial.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.prodFilial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prodFilial.Location = new System.Drawing.Point(417, 0);
+            this.prodFilial.Margin = new System.Windows.Forms.Padding(0);
+            this.prodFilial.Name = "prodFilial";
+            this.prodFilial.ReadOnly = true;
+            this.prodFilial.Size = new System.Drawing.Size(100, 22);
+            this.prodFilial.TabIndex = 4;
+            this.prodFilial.Text = "00";
+            // 
+            // ProdLblFilial
+            // 
+            this.ProdLblFilial.AutoSize = true;
+            this.ProdLblFilial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProdLblFilial.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.ProdLblFilial.Location = new System.Drawing.Point(357, 0);
+            this.ProdLblFilial.Margin = new System.Windows.Forms.Padding(0);
+            this.ProdLblFilial.Name = "ProdLblFilial";
+            this.ProdLblFilial.Size = new System.Drawing.Size(60, 24);
+            this.ProdLblFilial.TabIndex = 1;
+            this.ProdLblFilial.Text = "Filial:";
+            // 
+            // prodSerie
+            // 
+            this.prodSerie.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.prodSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.prodSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prodSerie.Location = new System.Drawing.Point(266, 0);
+            this.prodSerie.Margin = new System.Windows.Forms.Padding(0);
+            this.prodSerie.Name = "prodSerie";
+            this.prodSerie.ReadOnly = true;
+            this.prodSerie.Size = new System.Drawing.Size(91, 22);
+            this.prodSerie.TabIndex = 3;
+            this.prodSerie.Text = "Serie";
+            // 
+            // lblProdSerie
+            // 
+            this.lblProdSerie.AutoSize = true;
+            this.lblProdSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProdSerie.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblProdSerie.Location = new System.Drawing.Point(195, 0);
+            this.lblProdSerie.Margin = new System.Windows.Forms.Padding(0);
+            this.lblProdSerie.Name = "lblProdSerie";
+            this.lblProdSerie.Size = new System.Drawing.Size(71, 24);
+            this.lblProdSerie.TabIndex = 1;
+            this.lblProdSerie.Text = "Serie: ";
+            // 
+            // prodMaterial
+            // 
+            this.prodMaterial.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.prodMaterial.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.prodMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prodMaterial.Location = new System.Drawing.Point(95, 0);
+            this.prodMaterial.Margin = new System.Windows.Forms.Padding(0);
+            this.prodMaterial.Name = "prodMaterial";
+            this.prodMaterial.ReadOnly = true;
+            this.prodMaterial.Size = new System.Drawing.Size(100, 22);
+            this.prodMaterial.TabIndex = 2;
+            this.prodMaterial.Text = "Material";
+            // 
+            // lblProdMaterial
+            // 
+            this.lblProdMaterial.AutoSize = true;
+            this.lblProdMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProdMaterial.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblProdMaterial.Location = new System.Drawing.Point(0, 0);
+            this.lblProdMaterial.Margin = new System.Windows.Forms.Padding(0);
+            this.lblProdMaterial.Name = "lblProdMaterial";
+            this.lblProdMaterial.Size = new System.Drawing.Size(95, 24);
+            this.lblProdMaterial.TabIndex = 0;
+            this.lblProdMaterial.Text = "Material: ";
+            // 
+            // ProdTabelaTopEsq
+            // 
+            this.ProdTabelaTopEsq.ColumnCount = 1;
+            this.ProdTabelaTopEsq.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ProdTabelaTopEsq.Controls.Add(this.divProdTopEsq, 0, 0);
+            this.ProdTabelaTopEsq.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProdTabelaTopEsq.Location = new System.Drawing.Point(3, 3);
+            this.ProdTabelaTopEsq.Name = "ProdTabelaTopEsq";
+            this.ProdTabelaTopEsq.RowCount = 1;
+            this.ProdTabelaTopEsq.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.ProdTabelaTopEsq.Size = new System.Drawing.Size(1196, 24);
+            this.ProdTabelaTopEsq.TabIndex = 2;
             // 
             // Produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(832, 292);
+            this.ClientSize = new System.Drawing.Size(1202, 553);
             this.Controls.Add(this.tabelaLayoutProd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(550, 330);
@@ -278,14 +309,12 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Produto_FormClosed);
             this.Load += new System.EventHandler(this.Produto_Load);
             this.tabelaLayoutProd.ResumeLayout(false);
-            this.ProdTabelaTopEsq.ResumeLayout(false);
-            this.divProdTopEsq.ResumeLayout(false);
-            this.divProdTopEsq.PerformLayout();
-            this.ProdDivTopDir.ResumeLayout(false);
-            this.ProdDivTopDir.PerformLayout();
             this.ProdTabelaCentro.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.prodGridSaldos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProdGridHist)).EndInit();
+            this.divProdTopEsq.ResumeLayout(false);
+            this.divProdTopEsq.PerformLayout();
+            this.ProdTabelaTopEsq.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -293,14 +322,16 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tabelaLayoutProd;
-        private System.Windows.Forms.TableLayoutPanel ProdTabelaTopEsq;
-        private System.Windows.Forms.FlowLayoutPanel divProdTopEsq;
-        private System.Windows.Forms.Label lblProdMaterial;
-        private System.Windows.Forms.Label lblProdSerie;
-        private System.Windows.Forms.FlowLayoutPanel ProdDivTopDir;
-        private System.Windows.Forms.Label ProdLblFilial;
         private System.Windows.Forms.TableLayoutPanel ProdTabelaCentro;
         private System.Windows.Forms.DataGridView ProdGridHist;
         private System.Windows.Forms.DataGridView prodGridSaldos;
+        private System.Windows.Forms.FlowLayoutPanel divProdTopEsq;
+        private System.Windows.Forms.Label lblProdMaterial;
+        private System.Windows.Forms.TextBox prodMaterial;
+        private System.Windows.Forms.Label lblProdSerie;
+        private System.Windows.Forms.TextBox prodSerie;
+        private System.Windows.Forms.Label ProdLblFilial;
+        private System.Windows.Forms.TextBox prodFilial;
+        private System.Windows.Forms.TableLayoutPanel ProdTabelaTopEsq;
     }
 }

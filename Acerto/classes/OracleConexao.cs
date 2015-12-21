@@ -75,9 +75,10 @@ namespace Acerto
             command = conexao.CreateCommand();
             command.CommandText = "SELECT DISTINCT OBJECT_NAME FROM USER_OBJECTS WHERE OBJECT_TYPE = 'TABLE'";
             reader = command.ExecuteReader();
+            Console.WriteLine(" \n Pegando Tabelas do banco...");
             while (reader.Read())  {
                 lista.Add(reader[0].ToString());
-               // Console.Write(reader[0].ToString()+" | ");
+                Console.Write(reader[0].ToString()+" | ");
             }
             Console.Write("\n");
             reader.Close();
@@ -90,6 +91,7 @@ namespace Acerto
             command = conexao.CreateCommand();
             command.CommandText = "SELECT column_name FROM USER_TAB_COLUMNS WHERE table_name ='"+tabela+"'";
             reader = command.ExecuteReader();
+            Console.WriteLine("Pegando Colunas de " + tabela+"\n");
             while (reader.Read())
             {
                 lista.Add(reader[0].ToString());
@@ -111,7 +113,7 @@ namespace Acerto
                 }
             }
         } // Une gettabelas e getcolunas
-        public void Getschemas() // experimental não fuinciona ainda
+        public void GetUsuarios() // pega usuarios do bd
         {
             command = conexao.CreateCommand();
            // command.CommandText = "SELECT * FROM all_users"; // Usuarios
@@ -131,11 +133,6 @@ namespace Acerto
                 Console.WriteLine(e.Message);
             }
            
-        }
-        public string ListaDB()
-        {
-            string lista = "";
-            return lista;
         }
         public void Close()
         {
