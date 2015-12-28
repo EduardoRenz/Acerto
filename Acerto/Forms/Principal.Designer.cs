@@ -62,9 +62,9 @@ namespace Acerto
             this.lblConsultaMaterial = new System.Windows.Forms.Label();
             this.lblCodProd = new System.Windows.Forms.TextBox();
             this.btConsultaPesquisar = new System.Windows.Forms.Button();
-            this.ConsultaNumLinhas = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
+            this.ConsultaNumLinhas = new System.Windows.Forms.Label();
             this.txtProcessos = new System.Windows.Forms.RichTextBox();
             this.lblResults = new System.Windows.Forms.Label();
             this.tabelaNProc = new System.Windows.Forms.DataGridView();
@@ -295,14 +295,14 @@ namespace Acerto
             this.painelFilial.Margin = new System.Windows.Forms.Padding(0);
             this.painelFilial.Name = "painelFilial";
             this.painelFilial.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.painelFilial.Size = new System.Drawing.Size(122, 31);
+            this.painelFilial.Size = new System.Drawing.Size(128, 31);
             this.painelFilial.TabIndex = 0;
             // 
             // splseparator
             // 
             this.splseparator.BackColor = System.Drawing.SystemColors.Desktop;
-            this.splseparator.Location = new System.Drawing.Point(117, 9);
-            this.splseparator.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
+            this.splseparator.Location = new System.Drawing.Point(122, 9);
+            this.splseparator.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.splseparator.Name = "splseparator";
             this.splseparator.Size = new System.Drawing.Size(1, 14);
             this.splseparator.TabIndex = 6;
@@ -313,11 +313,11 @@ namespace Acerto
             this.menuConsulta.Controls.Add(this.lblConsultaMaterial);
             this.menuConsulta.Controls.Add(this.lblCodProd);
             this.menuConsulta.Controls.Add(this.btConsultaPesquisar);
-            this.menuConsulta.Location = new System.Drawing.Point(265, 5);
+            this.menuConsulta.Location = new System.Drawing.Point(271, 5);
             this.menuConsulta.Margin = new System.Windows.Forms.Padding(0);
             this.menuConsulta.Name = "menuConsulta";
-            this.menuConsulta.Padding = new System.Windows.Forms.Padding(6, 6, 0, 0);
-            this.menuConsulta.Size = new System.Drawing.Size(426, 31);
+            this.menuConsulta.Padding = new System.Windows.Forms.Padding(3, 6, 0, 0);
+            this.menuConsulta.Size = new System.Drawing.Size(438, 31);
             this.menuConsulta.TabIndex = 4;
             this.menuConsulta.Visible = false;
             // 
@@ -325,7 +325,7 @@ namespace Acerto
             // 
             this.lblConsultaMaterial.AutoSize = true;
             this.lblConsultaMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblConsultaMaterial.Location = new System.Drawing.Point(6, 6);
+            this.lblConsultaMaterial.Location = new System.Drawing.Point(3, 6);
             this.lblConsultaMaterial.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lblConsultaMaterial.Name = "lblConsultaMaterial";
             this.lblConsultaMaterial.Size = new System.Drawing.Size(114, 17);
@@ -335,7 +335,7 @@ namespace Acerto
             // lblCodProd
             // 
             this.lblCodProd.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.lblCodProd.Location = new System.Drawing.Point(123, 6);
+            this.lblCodProd.Location = new System.Drawing.Point(120, 6);
             this.lblCodProd.Margin = new System.Windows.Forms.Padding(0);
             this.lblCodProd.Name = "lblCodProd";
             this.lblCodProd.Size = new System.Drawing.Size(205, 20);
@@ -344,25 +344,13 @@ namespace Acerto
             // btConsultaPesquisar
             // 
             this.btConsultaPesquisar.Location = new System.Drawing.Point(328, 6);
-            this.btConsultaPesquisar.Margin = new System.Windows.Forms.Padding(0);
+            this.btConsultaPesquisar.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btConsultaPesquisar.Name = "btConsultaPesquisar";
             this.btConsultaPesquisar.Size = new System.Drawing.Size(97, 20);
             this.btConsultaPesquisar.TabIndex = 4;
             this.btConsultaPesquisar.Text = "Pesquisar";
             this.btConsultaPesquisar.UseVisualStyleBackColor = true;
             this.btConsultaPesquisar.Click += new System.EventHandler(this.btConsultaPesquisar_Click);
-            // 
-            // ConsultaNumLinhas
-            // 
-            this.ConsultaNumLinhas.AutoSize = true;
-            this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
-            this.ConsultaNumLinhas.Location = new System.Drawing.Point(1076, 11);
-            this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
-            this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
-            this.ConsultaNumLinhas.Size = new System.Drawing.Size(131, 18);
-            this.ConsultaNumLinhas.TabIndex = 14;
-            this.ConsultaNumLinhas.Text = "0 = Todas as filiais";
             // 
             // flowLayoutPanel1
             // 
@@ -373,7 +361,7 @@ namespace Acerto
             this.flowLayoutPanel1.Controls.Add(this.dataFim);
             this.flowLayoutPanel1.Controls.Add(this.btPesquisa);
             this.flowLayoutPanel1.Controls.Add(this.grpCondi);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(691, 5);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(709, 5);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
@@ -392,13 +380,25 @@ namespace Acerto
             this.label3.Size = new System.Drawing.Size(0, 18);
             this.label3.TabIndex = 14;
             // 
+            // ConsultaNumLinhas
+            // 
+            this.ConsultaNumLinhas.AutoSize = true;
+            this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
+            this.ConsultaNumLinhas.Location = new System.Drawing.Point(1094, 11);
+            this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
+            this.ConsultaNumLinhas.Size = new System.Drawing.Size(131, 18);
+            this.ConsultaNumLinhas.TabIndex = 14;
+            this.ConsultaNumLinhas.Text = "0 = Todas as filiais";
+            // 
             // txtProcessos
             // 
             this.txtProcessos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtProcessos.Location = new System.Drawing.Point(1078, 28);
             this.txtProcessos.Name = "txtProcessos";
             this.txtProcessos.ReadOnly = true;
-            this.txtProcessos.Size = new System.Drawing.Size(356, 612);
+            this.txtProcessos.Size = new System.Drawing.Size(356, 643);
             this.txtProcessos.TabIndex = 3;
             this.txtProcessos.Text = "";
             // 
@@ -442,7 +442,7 @@ namespace Acerto
             this.tabelaNProc.Name = "tabelaNProc";
             this.tabelaNProc.ReadOnly = true;
             this.tabelaNProc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tabelaNProc.Size = new System.Drawing.Size(1064, 612);
+            this.tabelaNProc.Size = new System.Drawing.Size(1064, 643);
             this.tabelaNProc.TabIndex = 5;
             this.tabelaNProc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaNProc_CellDoubleClick);
             // 
@@ -473,7 +473,7 @@ namespace Acerto
             this.divCentro.RowCount = 2;
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.divCentro.Size = new System.Drawing.Size(1442, 648);
+            this.divCentro.Size = new System.Drawing.Size(1442, 679);
             this.divCentro.TabIndex = 6;
             // 
             // abas
@@ -547,7 +547,7 @@ namespace Acerto
             this.pagErros.Margin = new System.Windows.Forms.Padding(0);
             this.pagErros.Name = "pagErros";
             this.pagErros.Padding = new System.Windows.Forms.Padding(3);
-            this.pagErros.Size = new System.Drawing.Size(1448, 654);
+            this.pagErros.Size = new System.Drawing.Size(1448, 685);
             this.pagErros.TabIndex = 0;
             this.pagErros.Text = "Erros de Processamento";
             // 

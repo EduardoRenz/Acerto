@@ -30,6 +30,9 @@ namespace Acerto
             prodFilial.Text = filial.ToString();
             Text = filial + " | " + material + " | " + serie;
             prodDescr.Text = dadosProduto.Rows[0].Field<string>("MERCADO_DES").ToLower();
+            anoEst.Text = dadosProduto.Rows[0].Field<string>("MERCADO_ANOEST");
+            subGrp.Text = dadosProduto.Rows[0].Field<string>("MERCADO_SGRP");
+            prodGrp.Text = dadosProduto.Rows[0].Field<string>("MERCADO_GRP");
             prodDescr.Text = Eduardo.UpperFirst(prodDescr.Text);
 
         }
@@ -61,7 +64,6 @@ namespace Acerto
             {
                 Console.WriteLine(coluna+ " : "+dadosProduto.Rows[0][coluna.ToString()]);
             }
-            //  Console.WriteLine(dt.Rows[0][0]);
         } // Detalhes do produto tabela MERCADORIAS
         // Eventos do FORM
         private void Produto_FormClosed(object sender, FormClosedEventArgs e)
