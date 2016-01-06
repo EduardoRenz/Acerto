@@ -92,7 +92,7 @@
             this.divProdTopEsq.Location = new System.Drawing.Point(0, 0);
             this.divProdTopEsq.Margin = new System.Windows.Forms.Padding(0);
             this.divProdTopEsq.Name = "divProdTopEsq";
-            this.divProdTopEsq.Size = new System.Drawing.Size(1050, 25);
+            this.divProdTopEsq.Size = new System.Drawing.Size(1047, 25);
             this.divProdTopEsq.TabIndex = 1;
             // 
             // panelMaterial
@@ -402,7 +402,7 @@
             this.ProdGridHist.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ProdGridHist.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ProdGridHist.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ProdGridHist.Size = new System.Drawing.Size(1044, 194);
+            this.ProdGridHist.Size = new System.Drawing.Size(1041, 194);
             this.ProdGridHist.TabIndex = 0;
             // 
             // prodGridSaldos
@@ -453,7 +453,7 @@
             this.prodGridSaldos.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.prodGridSaldos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.prodGridSaldos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.prodGridSaldos.Size = new System.Drawing.Size(1044, 110);
+            this.prodGridSaldos.Size = new System.Drawing.Size(1041, 110);
             this.prodGridSaldos.TabIndex = 1;
             // 
             // tableLayoutProd
@@ -470,7 +470,7 @@
             this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutProd.Size = new System.Drawing.Size(1050, 341);
+            this.tableLayoutProd.Size = new System.Drawing.Size(1047, 292);
             this.tableLayoutProd.TabIndex = 2;
             // 
             // Produto
@@ -478,7 +478,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(1050, 341);
+            this.ClientSize = new System.Drawing.Size(1047, 292);
             this.Controls.Add(this.tableLayoutProd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(550, 330);

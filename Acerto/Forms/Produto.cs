@@ -60,10 +60,10 @@ namespace Acerto
         {
             string query = "select * from MERCADORIAS where MERCADO_COD = '"+material+"'";
             dadosProduto = conecta.Consulta(query);
-            foreach (var coluna in dadosProduto.Columns)
-            {
-                Console.WriteLine(coluna+ " : "+dadosProduto.Rows[0][coluna.ToString()]);
-            }
+            //foreach (var coluna in dadosProduto.Columns)
+            //{
+            //    Console.WriteLine(coluna+ " : "+dadosProduto.Rows[0][coluna.ToString()]);
+            //}
         } // Detalhes do produto tabela MERCADORIAS
         // Eventos do FORM
         private void Produto_FormClosed(object sender, FormClosedEventArgs e)

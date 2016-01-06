@@ -205,8 +205,6 @@ namespace Acerto
             this.dataFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dataFim.Location = new System.Drawing.Point(179, 6);
             this.dataFim.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.dataFim.MaxDate = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
-            this.dataFim.MinDate = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
             this.dataFim.Name = "dataFim";
             this.dataFim.Size = new System.Drawing.Size(100, 20);
             this.dataFim.TabIndex = 3;
