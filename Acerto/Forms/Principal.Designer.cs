@@ -215,8 +215,6 @@ namespace Acerto
             this.dataInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dataInicio.Location = new System.Drawing.Point(56, 6);
             this.dataInicio.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.dataInicio.MaxDate = new System.DateTime(2015, 12, 31, 0, 0, 0, 0);
-            this.dataInicio.MinDate = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
             this.dataInicio.Name = "dataInicio";
             this.dataInicio.Size = new System.Drawing.Size(103, 20);
             this.dataInicio.TabIndex = 2;
@@ -259,6 +257,7 @@ namespace Acerto
             // 
             this.lblConexao.AutoSize = true;
             this.lblConexao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblConexao.Enabled = false;
             this.lblConexao.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblConexao.Location = new System.Drawing.Point(8, 5);
             this.lblConexao.Name = "lblConexao";

@@ -24,6 +24,7 @@ namespace Acerto
             MostraHistorico(conecta);
             MostraSaldo(conecta);
             DetalhesProduto(conecta);
+            VerificaErrosProcessamento(conecta);
             // Aplicando os labels e texts
             prodMaterial.Text = material;
             prodSerie.Text = serie;
@@ -49,6 +50,17 @@ namespace Acerto
         {
             string query = "select mov_dat Data, mov_seo Origem, mov_sed Destino,TIP_DES Tipo, mov_doc nf,MOV_CDEMP cpf_cnpj, MOV_CDVDR Vendedor, MOV_VAL Valor from movimento, TIPMOV where mov_ref = '" + material+"' and mov_ser = '"+serie+"' and mov_tip = TIP_COD order by mov_dat";
             ProdGridHist.DataSource = conecta.Consulta(query);
+            foreach (DataGridViewRow row in ProdGridHist.Rows)
+            {
+
+                for (int i = 0; i < ProdGridHist.ColumnCount; i++)
+                {
+                    
+
+                }
+            }
+           
+
         } // tabela de historico do produto oracle MOVIMENTO
         //SALDOS
         private void MostraSaldo(OracleConexao conecta) {
@@ -65,6 +77,20 @@ namespace Acerto
             //    Console.WriteLine(coluna+ " : "+dadosProduto.Rows[0][coluna.ToString()]);
             //}
         } // Detalhes do produto tabela MERCADORIAS
+        // Verifica erros de processamento
+        private void VerificaErrosProcessamento(OracleConexao conecta) {
+            string query = "select movestdat Data, movestseo Origem, movestsed Destino, movesttip Tipo, movestref Material, movestser Serie, movestncf Nf, me_log Processamento from me where me_est is null and movestref = '"+material+ "' and movestser = '"+serie+"'";
+            DataTable errosProc = new DataTable();
+            errosProc = conecta.Consulta(query);
+            if(errosProc.Rows.Count > 0)
+            {
+                lblErrProc.Text = "Erro de processamento em:" + errosProc.Rows[0]["Data"] +" Nota:"+errosProc.Rows[0]["NF"] + ", "+ errosProc.Rows[0]["Processamento"].ToString(); 
+            }
+            else
+            {
+                lblErrProc.Text = "";
+            }
+        }
         // Eventos do FORM
         private void Produto_FormClosed(object sender, FormClosedEventArgs e)
         {

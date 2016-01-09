@@ -65,6 +65,7 @@
             this.ProdGridHist = new System.Windows.Forms.DataGridView();
             this.prodGridSaldos = new System.Windows.Forms.DataGridView();
             this.tableLayoutProd = new System.Windows.Forms.TableLayoutPanel();
+            this.lblErrProc = new System.Windows.Forms.Label();
             this.divProdTopEsq.SuspendLayout();
             this.panelMaterial.SuspendLayout();
             this.panelSerie.SuspendLayout();
@@ -402,7 +403,7 @@
             this.ProdGridHist.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ProdGridHist.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ProdGridHist.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ProdGridHist.Size = new System.Drawing.Size(1041, 194);
+            this.ProdGridHist.Size = new System.Drawing.Size(1041, 274);
             this.ProdGridHist.TabIndex = 0;
             // 
             // prodGridSaldos
@@ -434,7 +435,7 @@
             this.prodGridSaldos.DefaultCellStyle = dataGridViewCellStyle8;
             this.prodGridSaldos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.prodGridSaldos.EnableHeadersVisualStyles = false;
-            this.prodGridSaldos.Location = new System.Drawing.Point(3, 228);
+            this.prodGridSaldos.Location = new System.Drawing.Point(3, 308);
             this.prodGridSaldos.Name = "prodGridSaldos";
             this.prodGridSaldos.ReadOnly = true;
             this.prodGridSaldos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -453,7 +454,7 @@
             this.prodGridSaldos.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.prodGridSaldos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.prodGridSaldos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.prodGridSaldos.Size = new System.Drawing.Size(1041, 110);
+            this.prodGridSaldos.Size = new System.Drawing.Size(1041, 90);
             this.prodGridSaldos.TabIndex = 1;
             // 
             // tableLayoutProd
@@ -463,22 +464,36 @@
             this.tableLayoutProd.Controls.Add(this.prodGridSaldos, 0, 2);
             this.tableLayoutProd.Controls.Add(this.divProdTopEsq, 0, 0);
             this.tableLayoutProd.Controls.Add(this.ProdGridHist, 0, 1);
+            this.tableLayoutProd.Controls.Add(this.lblErrProc, 0, 3);
             this.tableLayoutProd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutProd.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutProd.Name = "tableLayoutProd";
-            this.tableLayoutProd.RowCount = 3;
+            this.tableLayoutProd.RowCount = 4;
             this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutProd.Size = new System.Drawing.Size(1047, 292);
+            this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74.28159F));
+            this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.71842F));
+            this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutProd.Size = new System.Drawing.Size(1047, 430);
             this.tableLayoutProd.TabIndex = 2;
+            // 
+            // lblErrProc
+            // 
+            this.lblErrProc.AutoSize = true;
+            this.lblErrProc.BackColor = System.Drawing.Color.Red;
+            this.lblErrProc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrProc.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblErrProc.Location = new System.Drawing.Point(3, 401);
+            this.lblErrProc.Name = "lblErrProc";
+            this.lblErrProc.Size = new System.Drawing.Size(208, 24);
+            this.lblErrProc.TabIndex = 2;
+            this.lblErrProc.Text = "Erro de processamento";
             // 
             // Produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(1047, 292);
+            this.ClientSize = new System.Drawing.Size(1047, 430);
             this.Controls.Add(this.tableLayoutProd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(550, 330);
@@ -537,5 +552,6 @@
         private System.Windows.Forms.Label lblAnoEst;
         private System.Windows.Forms.TextBox anoEst;
         private System.Windows.Forms.FlowLayoutPanel flowGrptoEst;
+        private System.Windows.Forms.Label lblErrProc;
     }
 }
