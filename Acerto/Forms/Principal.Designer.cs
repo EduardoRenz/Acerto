@@ -257,7 +257,6 @@ namespace Acerto
             // 
             this.lblConexao.AutoSize = true;
             this.lblConexao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblConexao.Enabled = false;
             this.lblConexao.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lblConexao.Location = new System.Drawing.Point(8, 5);
             this.lblConexao.Name = "lblConexao";
@@ -265,6 +264,7 @@ namespace Acerto
             this.lblConexao.TabIndex = 1;
             this.lblConexao.Text = "Desconectado";
             this.lblConexao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblConexao.Visible = false;
             // 
             // topo
             // 
