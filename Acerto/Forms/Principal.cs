@@ -9,7 +9,6 @@ namespace Acerto
     public partial class Principal : Form
     {
         OracleConexao conecta = new OracleConexao("deposito", "tec3passos", "bdsac"); // conexão oracle
-        //MysqlConexao conecta = new MysqlConexao("root", " ", "localhost", "bdsac"); // conexão mysql
         Corretor corretor  = new Corretor();
         public string listaME; // String que lista os erros
         public DataTable prodErros; // Tabela de dados dos erros
@@ -17,10 +16,9 @@ namespace Acerto
         public Principal() { InitializeComponent(); }
         private void Form1_Load(object sender, EventArgs e) //  AO CARREGAR O FORM 
         {
-            Text = "Consulta  v:1.0.7.0";
+            Text = "Consulta  v:1.1.0.0";
             VerificaAbas();
             VerificaConexao();
-            divCentro.ColumnStyles[1].Width = 0; // REMOVER SE QUISER MOSTRAR OS LOGS DE AUTO CORREÇAO SE HOUVER
             //conecta.GetTabelas(); // DESENVOLVEDOR  pega as tabelas do db
             // conecta.GetColunas("OC");
             //conecta.GetBD();
@@ -32,40 +30,41 @@ namespace Acerto
         } // Quando a aba é trocada
         private void VerificaAbas()
         {
-            if (abas.SelectedTab.Name != "pagErros")
+            grpCondi.Visible = false;
+            panelDatas.Visible = false;
+            menuConsulta.Visible = false;
+            tabConsultar.Visible = false;
+            mercadoriaPanel.Visible = false;
+            switch (abas.SelectedTab.Name)
             {
-                flowLayoutPanel1.Visible = false;
-                grpCondi.Visible = false;
-
-                menuConsulta.Visible = true;
-            }
-            else
-            {
-                flowLayoutPanel1.Visible = true;
-                grpCondi.Visible = false; // TRUE SE QUISER MOSTRAR AS OPCOES DE AUTO CORRECAO SE HOUVER
- 
-                menuConsulta.Visible = false;
+                case "pagErros":
+                    panelDatas.Visible = true;
+                    break;
+                case "tabConsultar":
+                    menuConsulta.Visible = true;
+                    break;
+                case "tabMercadorias":
+                    mercadoriaPanel.Visible = true;
+                    break;
+                default:
+                    break;
             }
         }
         private void VerificaConexao()
         {
             if (conecta.conectado)
             {    // se conectou 
-                lblConexao.Text = "Conectado";
-                lblConexao.ForeColor = Color.GreenYellow;
+              
             }
             else
             { // erro ao conectar
-                lblConexao.Text = "Desconectado";
-                lblConexao.ForeColor = Color.Red;
+
             }
         }
         private void Principal_FormClosed(object sender, FormClosedEventArgs e)
         {
             conecta.Close();
         } // Ao fechar o Form      
-
-      
     }
 }
 

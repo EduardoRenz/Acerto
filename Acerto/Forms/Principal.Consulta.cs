@@ -63,12 +63,11 @@ namespace Acerto
             }
         }
 
-
         /// TESTES
         /// 
         private string[] arruma(string str)
         {
-            char[] toTrim = { '.', '-', ' ', '_','*','"' };
+            char[] toTrim = { '.', '-', ' ', '_','*','"','%' };
             string[] materialSerie  = new string[2];
             // remover todos os especiais
             foreach(char chars in toTrim)

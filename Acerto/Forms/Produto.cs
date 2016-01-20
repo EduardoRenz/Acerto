@@ -54,7 +54,7 @@ namespace Acerto
             foreach (DataGridViewRow row in ProdGridHist.Rows)
             {
                 // Muda para Checkin o Tipo
-                if (row.Cells["Origem"].Value.ToString() == "98" && row.Cells["Destino"].Value.ToString() == filial.ToString())
+                if (row.Cells["Origem"].Value.ToString() == "98" && row.Cells["Destino"].Value.ToString() != "98")
                 {
                     row.Cells["Tipo"].Value = "Check-in";
                 }
@@ -100,7 +100,7 @@ namespace Acerto
             errosProc = conecta.Consulta(query);
             if (errosProc.Rows.Count > 0)
             {
-                lblErrProc.Text = "Erro de processamento em: " + errosProc.Rows[0]["Data"].ToString().Replace("00:00:00", "") + " Nota: " + errosProc.Rows[0]["NF"] + " - " + errosProc.Rows[0]["Processamento"].ToString();
+                lblErrProc.Text = "Erro de processamento em: " + errosProc.Rows[0]["Data"].ToString().Replace("00:00:00","") + " Nota: " + errosProc.Rows[0]["NF"] + " - " + errosProc.Rows[0]["Processamento"].ToString();
             }
             else
             {

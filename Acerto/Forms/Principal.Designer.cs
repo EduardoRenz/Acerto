@@ -53,8 +53,6 @@ namespace Acerto
             this.dataInicio = new System.Windows.Forms.DateTimePicker();
             this.lblData = new System.Windows.Forms.Label();
             this.btPesquisa = new System.Windows.Forms.Button();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.lblConexao = new System.Windows.Forms.Label();
             this.topo = new System.Windows.Forms.FlowLayoutPanel();
             this.painelFilial = new System.Windows.Forms.FlowLayoutPanel();
             this.splseparator = new System.Windows.Forms.Splitter();
@@ -62,11 +60,12 @@ namespace Acerto
             this.lblConsultaMaterial = new System.Windows.Forms.Label();
             this.lblCodProd = new System.Windows.Forms.TextBox();
             this.btConsultaPesquisar = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelDatas = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
+            this.mercadoriaPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textProduto = new System.Windows.Forms.TextBox();
             this.ConsultaNumLinhas = new System.Windows.Forms.Label();
-            this.txtProcessos = new System.Windows.Forms.RichTextBox();
-            this.lblResults = new System.Windows.Forms.Label();
             this.tabelaNProc = new System.Windows.Forms.DataGridView();
             this.lblnaoproc = new System.Windows.Forms.Label();
             this.divCentro = new System.Windows.Forms.TableLayoutPanel();
@@ -74,18 +73,23 @@ namespace Acerto
             this.tabConsultar = new System.Windows.Forms.TabPage();
             this.gridConsulta = new System.Windows.Forms.DataGridView();
             this.pagErros = new System.Windows.Forms.TabPage();
+            this.tabMercadorias = new System.Windows.Forms.TabPage();
+            this.listaMercadorias = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.intFilial)).BeginInit();
             this.grpCondi.SuspendLayout();
             this.topo.SuspendLayout();
             this.painelFilial.SuspendLayout();
             this.menuConsulta.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.panelDatas.SuspendLayout();
+            this.mercadoriaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).BeginInit();
             this.divCentro.SuspendLayout();
             this.abas.SuspendLayout();
             this.tabConsultar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridConsulta)).BeginInit();
             this.pagErros.SuspendLayout();
+            this.tabMercadorias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaMercadorias)).BeginInit();
             this.SuspendLayout();
             // 
             // divTopo
@@ -166,18 +170,7 @@ namespace Acerto
             this.grpCondi.Size = new System.Drawing.Size(356, 23);
             this.grpCondi.TabIndex = 8;
             this.grpCondi.Visible = false;
-            // 
-            // btCorrigir
-            // 
-            this.btCorrigir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCorrigir.Location = new System.Drawing.Point(250, 1);
-            this.btCorrigir.Margin = new System.Windows.Forms.Padding(0);
-            this.btCorrigir.Name = "btCorrigir";
-            this.btCorrigir.Size = new System.Drawing.Size(97, 20);
-            this.btCorrigir.TabIndex = 7;
-            this.btCorrigir.Text = "Corrigir";
-            this.btCorrigir.UseVisualStyleBackColor = true;
-            this.btCorrigir.Click += new System.EventHandler(this.btCorrigir_Click);
+          
             // 
             // condLabel
             // 
@@ -243,37 +236,13 @@ namespace Acerto
             this.btPesquisa.UseVisualStyleBackColor = true;
             this.btPesquisa.Click += new System.EventHandler(this.btPesquisa_Click);
             // 
-            // splitter1
-            // 
-            this.splitter1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.splitter1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitter1.Location = new System.Drawing.Point(139, 8);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(1, 25);
-            this.splitter1.TabIndex = 0;
-            this.splitter1.TabStop = false;
-            // 
-            // lblConexao
-            // 
-            this.lblConexao.AutoSize = true;
-            this.lblConexao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblConexao.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblConexao.Location = new System.Drawing.Point(8, 5);
-            this.lblConexao.Name = "lblConexao";
-            this.lblConexao.Size = new System.Drawing.Size(125, 31);
-            this.lblConexao.TabIndex = 1;
-            this.lblConexao.Text = "Desconectado";
-            this.lblConexao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblConexao.Visible = false;
-            // 
             // topo
             // 
             this.topo.AutoSize = true;
-            this.topo.Controls.Add(this.lblConexao);
-            this.topo.Controls.Add(this.splitter1);
             this.topo.Controls.Add(this.painelFilial);
             this.topo.Controls.Add(this.menuConsulta);
-            this.topo.Controls.Add(this.flowLayoutPanel1);
+            this.topo.Controls.Add(this.panelDatas);
+            this.topo.Controls.Add(this.mercadoriaPanel);
             this.topo.Controls.Add(this.ConsultaNumLinhas);
             this.topo.Dock = System.Windows.Forms.DockStyle.Top;
             this.topo.Location = new System.Drawing.Point(0, 0);
@@ -288,7 +257,7 @@ namespace Acerto
             this.painelFilial.Controls.Add(this.lblFilial);
             this.painelFilial.Controls.Add(this.intFilial);
             this.painelFilial.Controls.Add(this.splseparator);
-            this.painelFilial.Location = new System.Drawing.Point(143, 5);
+            this.painelFilial.Location = new System.Drawing.Point(5, 5);
             this.painelFilial.Margin = new System.Windows.Forms.Padding(0);
             this.painelFilial.Name = "painelFilial";
             this.painelFilial.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
@@ -310,7 +279,7 @@ namespace Acerto
             this.menuConsulta.Controls.Add(this.lblConsultaMaterial);
             this.menuConsulta.Controls.Add(this.lblCodProd);
             this.menuConsulta.Controls.Add(this.btConsultaPesquisar);
-            this.menuConsulta.Location = new System.Drawing.Point(271, 5);
+            this.menuConsulta.Location = new System.Drawing.Point(133, 5);
             this.menuConsulta.Margin = new System.Windows.Forms.Padding(0);
             this.menuConsulta.Name = "menuConsulta";
             this.menuConsulta.Padding = new System.Windows.Forms.Padding(3, 6, 0, 0);
@@ -349,22 +318,22 @@ namespace Acerto
             this.btConsultaPesquisar.UseVisualStyleBackColor = true;
             this.btConsultaPesquisar.Click += new System.EventHandler(this.btConsultaPesquisar_Click);
             // 
-            // flowLayoutPanel1
+            // panelDatas
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label3);
-            this.flowLayoutPanel1.Controls.Add(this.lblData);
-            this.flowLayoutPanel1.Controls.Add(this.dataInicio);
-            this.flowLayoutPanel1.Controls.Add(this.lblA);
-            this.flowLayoutPanel1.Controls.Add(this.dataFim);
-            this.flowLayoutPanel1.Controls.Add(this.btPesquisa);
-            this.flowLayoutPanel1.Controls.Add(this.grpCondi);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(709, 5);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(382, 31);
-            this.flowLayoutPanel1.TabIndex = 2;
-            this.flowLayoutPanel1.Visible = false;
+            this.panelDatas.Controls.Add(this.label3);
+            this.panelDatas.Controls.Add(this.lblData);
+            this.panelDatas.Controls.Add(this.dataInicio);
+            this.panelDatas.Controls.Add(this.lblA);
+            this.panelDatas.Controls.Add(this.dataFim);
+            this.panelDatas.Controls.Add(this.btPesquisa);
+            this.panelDatas.Controls.Add(this.grpCondi);
+            this.panelDatas.Location = new System.Drawing.Point(571, 5);
+            this.panelDatas.Margin = new System.Windows.Forms.Padding(0);
+            this.panelDatas.Name = "panelDatas";
+            this.panelDatas.Padding = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.panelDatas.Size = new System.Drawing.Size(382, 31);
+            this.panelDatas.TabIndex = 2;
+            this.panelDatas.Visible = false;
             // 
             // label3
             // 
@@ -377,38 +346,50 @@ namespace Acerto
             this.label3.Size = new System.Drawing.Size(0, 18);
             this.label3.TabIndex = 14;
             // 
+            // mercadoriaPanel
+            // 
+            this.mercadoriaPanel.AutoSize = true;
+            this.mercadoriaPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mercadoriaPanel.Controls.Add(this.label1);
+            this.mercadoriaPanel.Controls.Add(this.textProduto);
+            this.mercadoriaPanel.Location = new System.Drawing.Point(953, 5);
+            this.mercadoriaPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.mercadoriaPanel.Name = "mercadoriaPanel";
+            this.mercadoriaPanel.Padding = new System.Windows.Forms.Padding(3, 6, 0, 0);
+            this.mercadoriaPanel.Size = new System.Drawing.Size(281, 26);
+            this.mercadoriaPanel.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Produto:";
+            // 
+            // textProduto
+            // 
+            this.textProduto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textProduto.Location = new System.Drawing.Point(76, 6);
+            this.textProduto.Margin = new System.Windows.Forms.Padding(0);
+            this.textProduto.Name = "textProduto";
+            this.textProduto.Size = new System.Drawing.Size(205, 20);
+            this.textProduto.TabIndex = 17;
+            // 
             // ConsultaNumLinhas
             // 
             this.ConsultaNumLinhas.AutoSize = true;
             this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
-            this.ConsultaNumLinhas.Location = new System.Drawing.Point(1094, 11);
+            this.ConsultaNumLinhas.Location = new System.Drawing.Point(1237, 11);
             this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
             this.ConsultaNumLinhas.Size = new System.Drawing.Size(131, 18);
             this.ConsultaNumLinhas.TabIndex = 14;
             this.ConsultaNumLinhas.Text = "0 = Todas as filiais";
-            // 
-            // txtProcessos
-            // 
-            this.txtProcessos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtProcessos.Location = new System.Drawing.Point(1078, 28);
-            this.txtProcessos.Name = "txtProcessos";
-            this.txtProcessos.ReadOnly = true;
-            this.txtProcessos.Size = new System.Drawing.Size(356, 643);
-            this.txtProcessos.TabIndex = 3;
-            this.txtProcessos.Text = "";
-            // 
-            // lblResults
-            // 
-            this.lblResults.AutoSize = true;
-            this.lblResults.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblResults.Location = new System.Drawing.Point(1078, 8);
-            this.lblResults.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.lblResults.Name = "lblResults";
-            this.lblResults.Size = new System.Drawing.Size(88, 17);
-            this.lblResults.TabIndex = 1;
-            this.lblResults.Text = "Processos:";
             // 
             // tabelaNProc
             // 
@@ -439,7 +420,7 @@ namespace Acerto
             this.tabelaNProc.Name = "tabelaNProc";
             this.tabelaNProc.ReadOnly = true;
             this.tabelaNProc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tabelaNProc.Size = new System.Drawing.Size(1064, 643);
+            this.tabelaNProc.Size = new System.Drawing.Size(1426, 643);
             this.tabelaNProc.TabIndex = 5;
             this.tabelaNProc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaNProc_CellDoubleClick);
             // 
@@ -456,11 +437,8 @@ namespace Acerto
             // 
             // divCentro
             // 
-            this.divCentro.ColumnCount = 2;
+            this.divCentro.ColumnCount = 1;
             this.divCentro.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.72067F));
-            this.divCentro.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.27933F));
-            this.divCentro.Controls.Add(this.lblResults, 1, 0);
-            this.divCentro.Controls.Add(this.txtProcessos, 1, 1);
             this.divCentro.Controls.Add(this.lblnaoproc, 0, 0);
             this.divCentro.Controls.Add(this.tabelaNProc, 0, 1);
             this.divCentro.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -477,6 +455,7 @@ namespace Acerto
             // 
             this.abas.Controls.Add(this.tabConsultar);
             this.abas.Controls.Add(this.pagErros);
+            this.abas.Controls.Add(this.tabMercadorias);
             this.abas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.abas.Location = new System.Drawing.Point(0, 41);
             this.abas.Margin = new System.Windows.Forms.Padding(0);
@@ -504,7 +483,7 @@ namespace Acerto
             this.gridConsulta.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -513,7 +492,7 @@ namespace Acerto
             this.gridConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -525,7 +504,7 @@ namespace Acerto
             this.gridConsulta.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -547,6 +526,26 @@ namespace Acerto
             this.pagErros.Size = new System.Drawing.Size(1448, 685);
             this.pagErros.TabIndex = 0;
             this.pagErros.Text = "Erros de Processamento";
+            // 
+            // tabMercadorias
+            // 
+            this.tabMercadorias.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.tabMercadorias.Controls.Add(this.listaMercadorias);
+            this.tabMercadorias.Location = new System.Drawing.Point(4, 22);
+            this.tabMercadorias.Name = "tabMercadorias";
+            this.tabMercadorias.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMercadorias.Size = new System.Drawing.Size(1448, 685);
+            this.tabMercadorias.TabIndex = 2;
+            this.tabMercadorias.Text = "Busca Mercadoria";
+            // 
+            // listaMercadorias
+            // 
+            this.listaMercadorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.listaMercadorias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listaMercadorias.Location = new System.Drawing.Point(3, 3);
+            this.listaMercadorias.Name = "listaMercadorias";
+            this.listaMercadorias.Size = new System.Drawing.Size(1442, 679);
+            this.listaMercadorias.TabIndex = 0;
             // 
             // Principal
             // 
@@ -575,8 +574,10 @@ namespace Acerto
             this.painelFilial.PerformLayout();
             this.menuConsulta.ResumeLayout(false);
             this.menuConsulta.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.panelDatas.ResumeLayout(false);
+            this.panelDatas.PerformLayout();
+            this.mercadoriaPanel.ResumeLayout(false);
+            this.mercadoriaPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).EndInit();
             this.divCentro.ResumeLayout(false);
             this.divCentro.PerformLayout();
@@ -584,6 +585,8 @@ namespace Acerto
             this.tabConsultar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridConsulta)).EndInit();
             this.pagErros.ResumeLayout(false);
+            this.tabMercadorias.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.listaMercadorias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -606,13 +609,9 @@ namespace Acerto
         private System.Windows.Forms.NumericUpDown intFilial;
         private System.Windows.Forms.Label lblFilial;
         private System.Windows.Forms.Button btPesquisa;
-        private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.Label lblConexao;
         private System.Windows.Forms.FlowLayoutPanel topo;
         private System.Windows.Forms.Label lblnaoproc;
         private System.Windows.Forms.DataGridView tabelaNProc;
-        private System.Windows.Forms.Label lblResults;
-        private System.Windows.Forms.RichTextBox txtProcessos;
         private System.Windows.Forms.TableLayoutPanel divCentro;
         private System.Windows.Forms.TabControl abas;
         private System.Windows.Forms.TabPage pagErros;
@@ -623,10 +622,15 @@ namespace Acerto
         private DataGridView gridConsulta;
         private Label ConsultaNumLinhas;
         private FlowLayoutPanel painelFilial;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel panelDatas;
         private Label label3;
         private Splitter splseparator;
         private TextBox lblCodProd;
+        private TabPage tabMercadorias;
+        private DataGridView listaMercadorias;
+        private FlowLayoutPanel mercadoriaPanel;
+        private Label label1;
+        private TextBox textProduto;
     }
 }
 
