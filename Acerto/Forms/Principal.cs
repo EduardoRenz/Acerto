@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Data;
-using System.Drawing;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Acerto
@@ -19,6 +17,7 @@ namespace Acerto
             Text = "Consulta  v:1.1.0.0";
             VerificaAbas();
             VerificaConexao();
+            listarGrupo(conecta);
             //conecta.GetTabelas(); // DESENVOLVEDOR  pega as tabelas do db
             // conecta.GetColunas("OC");
             //conecta.GetBD();
@@ -49,7 +48,7 @@ namespace Acerto
                 default:
                     break;
             }
-        }
+        } // executa ação de aba trocada
         private void VerificaConexao()
         {
             if (conecta.conectado)
@@ -65,6 +64,8 @@ namespace Acerto
         {
             conecta.Close();
         } // Ao fechar o Form      
+
+      
     }
 }
 

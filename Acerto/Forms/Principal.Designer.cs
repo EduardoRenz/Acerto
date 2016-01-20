@@ -65,6 +65,9 @@ namespace Acerto
             this.mercadoriaPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.textProduto = new System.Windows.Forms.TextBox();
+            this.lblcomboGrupo = new System.Windows.Forms.Label();
+            this.comboBoxGrupo = new System.Windows.Forms.ComboBox();
+            this.btMercadoriaPesquisa = new System.Windows.Forms.Button();
             this.ConsultaNumLinhas = new System.Windows.Forms.Label();
             this.tabelaNProc = new System.Windows.Forms.DataGridView();
             this.lblnaoproc = new System.Windows.Forms.Label();
@@ -170,7 +173,13 @@ namespace Acerto
             this.grpCondi.Size = new System.Drawing.Size(356, 23);
             this.grpCondi.TabIndex = 8;
             this.grpCondi.Visible = false;
-          
+            // 
+            // btCorrigir
+            // 
+            this.btCorrigir.Location = new System.Drawing.Point(0, 0);
+            this.btCorrigir.Name = "btCorrigir";
+            this.btCorrigir.Size = new System.Drawing.Size(75, 23);
+            this.btCorrigir.TabIndex = 0;
             // 
             // condLabel
             // 
@@ -249,7 +258,7 @@ namespace Acerto
             this.topo.Margin = new System.Windows.Forms.Padding(0);
             this.topo.Name = "topo";
             this.topo.Padding = new System.Windows.Forms.Padding(5);
-            this.topo.Size = new System.Drawing.Size(1456, 41);
+            this.topo.Size = new System.Drawing.Size(1456, 73);
             this.topo.TabIndex = 4;
             // 
             // painelFilial
@@ -352,11 +361,14 @@ namespace Acerto
             this.mercadoriaPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.mercadoriaPanel.Controls.Add(this.label1);
             this.mercadoriaPanel.Controls.Add(this.textProduto);
-            this.mercadoriaPanel.Location = new System.Drawing.Point(953, 5);
+            this.mercadoriaPanel.Controls.Add(this.lblcomboGrupo);
+            this.mercadoriaPanel.Controls.Add(this.comboBoxGrupo);
+            this.mercadoriaPanel.Controls.Add(this.btMercadoriaPesquisa);
+            this.mercadoriaPanel.Location = new System.Drawing.Point(5, 36);
             this.mercadoriaPanel.Margin = new System.Windows.Forms.Padding(0);
             this.mercadoriaPanel.Name = "mercadoriaPanel";
-            this.mercadoriaPanel.Padding = new System.Windows.Forms.Padding(3, 6, 0, 0);
-            this.mercadoriaPanel.Size = new System.Drawing.Size(281, 26);
+            this.mercadoriaPanel.Padding = new System.Windows.Forms.Padding(3, 6, 0, 5);
+            this.mercadoriaPanel.Size = new System.Drawing.Size(554, 32);
             this.mercadoriaPanel.TabIndex = 15;
             // 
             // label1
@@ -366,25 +378,58 @@ namespace Acerto
             this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.Size = new System.Drawing.Size(94, 17);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Produto:";
+            this.label1.Text = "Mercadoria:";
             // 
             // textProduto
             // 
             this.textProduto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textProduto.Location = new System.Drawing.Point(76, 6);
-            this.textProduto.Margin = new System.Windows.Forms.Padding(0);
+            this.textProduto.Location = new System.Drawing.Point(100, 6);
+            this.textProduto.Margin = new System.Windows.Forms.Padding(0, 0, 6, 0);
             this.textProduto.Name = "textProduto";
             this.textProduto.Size = new System.Drawing.Size(205, 20);
             this.textProduto.TabIndex = 17;
+            // 
+            // lblcomboGrupo
+            // 
+            this.lblcomboGrupo.AutoSize = true;
+            this.lblcomboGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblcomboGrupo.Location = new System.Drawing.Point(311, 6);
+            this.lblcomboGrupo.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.lblcomboGrupo.Name = "lblcomboGrupo";
+            this.lblcomboGrupo.Size = new System.Drawing.Size(58, 17);
+            this.lblcomboGrupo.TabIndex = 19;
+            this.lblcomboGrupo.Text = "Grupo:";
+            // 
+            // comboBoxGrupo
+            // 
+            this.comboBoxGrupo.FormattingEnabled = true;
+            this.comboBoxGrupo.Location = new System.Drawing.Point(372, 6);
+            this.comboBoxGrupo.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.comboBoxGrupo.Name = "comboBoxGrupo";
+            this.comboBoxGrupo.Size = new System.Drawing.Size(79, 21);
+            this.comboBoxGrupo.TabIndex = 18;
+            this.comboBoxGrupo.Text = "---";
+            // 
+            // btMercadoriaPesquisa
+            // 
+            this.btMercadoriaPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btMercadoriaPesquisa.Location = new System.Drawing.Point(454, 6);
+            this.btMercadoriaPesquisa.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.btMercadoriaPesquisa.Name = "btMercadoriaPesquisa";
+            this.btMercadoriaPesquisa.Size = new System.Drawing.Size(97, 20);
+            this.btMercadoriaPesquisa.TabIndex = 20;
+            this.btMercadoriaPesquisa.Text = "Pesquisar";
+            this.btMercadoriaPesquisa.UseVisualStyleBackColor = true;
+            this.btMercadoriaPesquisa.Click += new System.EventHandler(this.btMercadoriaPesquisa_Click);
             // 
             // ConsultaNumLinhas
             // 
             this.ConsultaNumLinhas.AutoSize = true;
             this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
-            this.ConsultaNumLinhas.Location = new System.Drawing.Point(1237, 11);
+            this.ConsultaNumLinhas.Location = new System.Drawing.Point(562, 42);
             this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
             this.ConsultaNumLinhas.Size = new System.Drawing.Size(131, 18);
@@ -420,7 +465,7 @@ namespace Acerto
             this.tabelaNProc.Name = "tabelaNProc";
             this.tabelaNProc.ReadOnly = true;
             this.tabelaNProc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tabelaNProc.Size = new System.Drawing.Size(1426, 643);
+            this.tabelaNProc.Size = new System.Drawing.Size(1426, 611);
             this.tabelaNProc.TabIndex = 5;
             this.tabelaNProc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaNProc_CellDoubleClick);
             // 
@@ -448,7 +493,7 @@ namespace Acerto
             this.divCentro.RowCount = 2;
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.divCentro.Size = new System.Drawing.Size(1442, 679);
+            this.divCentro.Size = new System.Drawing.Size(1442, 647);
             this.divCentro.TabIndex = 6;
             // 
             // abas
@@ -457,11 +502,11 @@ namespace Acerto
             this.abas.Controls.Add(this.pagErros);
             this.abas.Controls.Add(this.tabMercadorias);
             this.abas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.abas.Location = new System.Drawing.Point(0, 41);
+            this.abas.Location = new System.Drawing.Point(0, 73);
             this.abas.Margin = new System.Windows.Forms.Padding(0);
             this.abas.Name = "abas";
             this.abas.SelectedIndex = 0;
-            this.abas.Size = new System.Drawing.Size(1456, 711);
+            this.abas.Size = new System.Drawing.Size(1456, 679);
             this.abas.TabIndex = 0;
             this.abas.Selected += new System.Windows.Forms.TabControlEventHandler(this.AbasChanged);
             // 
@@ -471,7 +516,7 @@ namespace Acerto
             this.tabConsultar.Controls.Add(this.gridConsulta);
             this.tabConsultar.Location = new System.Drawing.Point(4, 22);
             this.tabConsultar.Name = "tabConsultar";
-            this.tabConsultar.Size = new System.Drawing.Size(1448, 685);
+            this.tabConsultar.Size = new System.Drawing.Size(1448, 653);
             this.tabConsultar.TabIndex = 1;
             this.tabConsultar.Text = "Consultar Mercadorias";
             // 
@@ -510,7 +555,7 @@ namespace Acerto
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridConsulta.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gridConsulta.Size = new System.Drawing.Size(1448, 685);
+            this.gridConsulta.Size = new System.Drawing.Size(1448, 653);
             this.gridConsulta.TabIndex = 0;
             this.gridConsulta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridConsulta_CellDoubleClick);
             // 
@@ -523,7 +568,7 @@ namespace Acerto
             this.pagErros.Margin = new System.Windows.Forms.Padding(0);
             this.pagErros.Name = "pagErros";
             this.pagErros.Padding = new System.Windows.Forms.Padding(3);
-            this.pagErros.Size = new System.Drawing.Size(1448, 685);
+            this.pagErros.Size = new System.Drawing.Size(1448, 653);
             this.pagErros.TabIndex = 0;
             this.pagErros.Text = "Erros de Processamento";
             // 
@@ -534,17 +579,19 @@ namespace Acerto
             this.tabMercadorias.Location = new System.Drawing.Point(4, 22);
             this.tabMercadorias.Name = "tabMercadorias";
             this.tabMercadorias.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMercadorias.Size = new System.Drawing.Size(1448, 685);
+            this.tabMercadorias.Size = new System.Drawing.Size(1448, 653);
             this.tabMercadorias.TabIndex = 2;
             this.tabMercadorias.Text = "Busca Mercadoria";
             // 
             // listaMercadorias
             // 
+            this.listaMercadorias.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.listaMercadorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listaMercadorias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listaMercadorias.GridColor = System.Drawing.SystemColors.HotTrack;
             this.listaMercadorias.Location = new System.Drawing.Point(3, 3);
             this.listaMercadorias.Name = "listaMercadorias";
-            this.listaMercadorias.Size = new System.Drawing.Size(1442, 679);
+            this.listaMercadorias.Size = new System.Drawing.Size(1442, 647);
             this.listaMercadorias.TabIndex = 0;
             // 
             // Principal
@@ -631,6 +678,9 @@ namespace Acerto
         private FlowLayoutPanel mercadoriaPanel;
         private Label label1;
         private TextBox textProduto;
+        private ComboBox comboBoxGrupo;
+        private Label lblcomboGrupo;
+        private Button btMercadoriaPesquisa;
     }
 }
 
