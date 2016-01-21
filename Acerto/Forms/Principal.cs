@@ -34,6 +34,7 @@ namespace Acerto
             menuConsulta.Visible = false;
             tabConsultar.Visible = false;
             mercadoriaPanel.Visible = false;
+            contComboGrupo.Visible = false;
             switch (abas.SelectedTab.Name)
             {
                 case "pagErros":
@@ -44,6 +45,7 @@ namespace Acerto
                     break;
                 case "tabMercadorias":
                     mercadoriaPanel.Visible = true;
+                    contComboGrupo.Visible = true;
                     break;
                 default:
                     break;
@@ -64,8 +66,6 @@ namespace Acerto
         {
             conecta.Close();
         } // Ao fechar o Form      
-
-      
     }
 }
 
