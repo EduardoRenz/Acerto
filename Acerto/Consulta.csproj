@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\Corretor.cs" />
+    <Compile Include="classes\Grupo.cs" />
     <Compile Include="Forms\Principal.BuscaMercadoria.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -30,10 +30,6 @@ namespace Acerto
             prodSerie.Text = serie;
             prodFilial.Text = filial.ToString();
             Text = filial + " | " + material + " | " + serie;
-            prodDescr.Text = dadosProduto.Rows[0].Field<string>("MERCADO_DES").ToLower();
-            anoEst.Text = dadosProduto.Rows[0].Field<string>("MERCADO_ANOEST");
-            subGrp.Text = dadosProduto.Rows[0].Field<string>("MERCADO_SGRP");
-            prodGrp.Text = dadosProduto.Rows[0].Field<string>("MERCADO_GRP");
             prodDescr.Text = Eduardo.UpperFirst(prodDescr.Text);
 
         }
@@ -87,6 +83,10 @@ namespace Acerto
         {
             string query = "select * from MERCADORIAS where MERCADO_COD = '" + material + "'";
             dadosProduto = conecta.Consulta(query);
+            prodDescr.Text = dadosProduto.Rows[0].Field<string>("MERCADO_DES").ToLower();
+            anoEst.Text = dadosProduto.Rows[0].Field<string>("MERCADO_ANOEST");
+            subGrp.Text = dadosProduto.Rows[0].Field<string>("MERCADO_SGRP");
+            prodGrp.Text = dadosProduto.Rows[0].Field<string>("MERCADO_GRP");
         } // Detalhes do produto tabela MERCADORIAS
         // Verifica erros de processamento
         private void VerificaErrosProcessamento(OracleConexao conecta)

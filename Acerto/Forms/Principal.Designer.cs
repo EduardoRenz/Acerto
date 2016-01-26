@@ -70,6 +70,7 @@ namespace Acerto
             this.comboBoxGrupo = new System.Windows.Forms.ComboBox();
             this.lblSubGrupo = new System.Windows.Forms.Label();
             this.comboBoxSubGrupo = new System.Windows.Forms.ComboBox();
+            this.checkBoxMercadoSaldo = new System.Windows.Forms.CheckBox();
             this.btMercadoriaPesquisa = new System.Windows.Forms.Button();
             this.ConsultaNumLinhas = new System.Windows.Forms.Label();
             this.tabelaNProc = new System.Windows.Forms.DataGridView();
@@ -81,7 +82,6 @@ namespace Acerto
             this.pagErros = new System.Windows.Forms.TabPage();
             this.tabMercadorias = new System.Windows.Forms.TabPage();
             this.gridMercadorias = new System.Windows.Forms.DataGridView();
-            this.checkBoxMercadoSaldo = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.intFilial)).BeginInit();
             this.grpCondi.SuspendLayout();
             this.topo.SuspendLayout();
@@ -453,6 +453,20 @@ namespace Acerto
             this.comboBoxSubGrupo.Size = new System.Drawing.Size(147, 21);
             this.comboBoxSubGrupo.TabIndex = 21;
             // 
+            // checkBoxMercadoSaldo
+            // 
+            this.checkBoxMercadoSaldo.AutoSize = true;
+            this.checkBoxMercadoSaldo.Checked = true;
+            this.checkBoxMercadoSaldo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxMercadoSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMercadoSaldo.Location = new System.Drawing.Point(441, 0);
+            this.checkBoxMercadoSaldo.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
+            this.checkBoxMercadoSaldo.Name = "checkBoxMercadoSaldo";
+            this.checkBoxMercadoSaldo.Size = new System.Drawing.Size(102, 22);
+            this.checkBoxMercadoSaldo.TabIndex = 23;
+            this.checkBoxMercadoSaldo.Text = "Com Saldo";
+            this.checkBoxMercadoSaldo.UseVisualStyleBackColor = true;
+            // 
             // btMercadoriaPesquisa
             // 
             this.btMercadoriaPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -506,7 +520,7 @@ namespace Acerto
             this.tabelaNProc.Name = "tabelaNProc";
             this.tabelaNProc.ReadOnly = true;
             this.tabelaNProc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tabelaNProc.Size = new System.Drawing.Size(1426, 616);
+            this.tabelaNProc.Size = new System.Drawing.Size(1426, 615);
             this.tabelaNProc.TabIndex = 5;
             this.tabelaNProc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaNProc_CellDoubleClick);
             // 
@@ -534,7 +548,7 @@ namespace Acerto
             this.divCentro.RowCount = 2;
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.divCentro.Size = new System.Drawing.Size(1442, 652);
+            this.divCentro.Size = new System.Drawing.Size(1442, 651);
             this.divCentro.TabIndex = 6;
             // 
             // abas
@@ -557,7 +571,7 @@ namespace Acerto
             this.tabConsultar.Controls.Add(this.gridConsulta);
             this.tabConsultar.Location = new System.Drawing.Point(4, 22);
             this.tabConsultar.Name = "tabConsultar";
-            this.tabConsultar.Size = new System.Drawing.Size(1448, 658);
+            this.tabConsultar.Size = new System.Drawing.Size(1448, 657);
             this.tabConsultar.TabIndex = 1;
             this.tabConsultar.Text = "Consultar Mercadorias";
             // 
@@ -596,7 +610,7 @@ namespace Acerto
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridConsulta.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gridConsulta.Size = new System.Drawing.Size(1448, 658);
+            this.gridConsulta.Size = new System.Drawing.Size(1448, 657);
             this.gridConsulta.TabIndex = 0;
             this.gridConsulta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridConsulta_CellDoubleClick);
             // 
@@ -609,7 +623,7 @@ namespace Acerto
             this.pagErros.Margin = new System.Windows.Forms.Padding(0);
             this.pagErros.Name = "pagErros";
             this.pagErros.Padding = new System.Windows.Forms.Padding(3);
-            this.pagErros.Size = new System.Drawing.Size(1448, 658);
+            this.pagErros.Size = new System.Drawing.Size(1448, 657);
             this.pagErros.TabIndex = 0;
             this.pagErros.Text = "Erros de Processamento";
             // 
@@ -634,20 +648,6 @@ namespace Acerto
             this.gridMercadorias.Name = "gridMercadorias";
             this.gridMercadorias.Size = new System.Drawing.Size(1442, 651);
             this.gridMercadorias.TabIndex = 0;
-            // 
-            // checkBoxMercadoSaldo
-            // 
-            this.checkBoxMercadoSaldo.AutoSize = true;
-            this.checkBoxMercadoSaldo.Checked = true;
-            this.checkBoxMercadoSaldo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxMercadoSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxMercadoSaldo.Location = new System.Drawing.Point(441, 0);
-            this.checkBoxMercadoSaldo.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.checkBoxMercadoSaldo.Name = "checkBoxMercadoSaldo";
-            this.checkBoxMercadoSaldo.Size = new System.Drawing.Size(102, 22);
-            this.checkBoxMercadoSaldo.TabIndex = 23;
-            this.checkBoxMercadoSaldo.Text = "Com Saldo";
-            this.checkBoxMercadoSaldo.UseVisualStyleBackColor = true;
             // 
             // Principal
             // 
