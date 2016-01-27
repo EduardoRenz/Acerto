@@ -42,10 +42,12 @@ namespace Acerto
                     break;
                 case "tabConsultar":
                     menuConsulta.Visible = true;
+                    this.AcceptButton = this.btConsultaPesquisar;
                     break;
                 case "tabMercadorias":
                     mercadoriaPanel.Visible = true;
                     contComboGrupo.Visible = true;
+                    this.AcceptButton = this.btMercadoriaPesquisa;
                     break;
                 default:
                     break;
