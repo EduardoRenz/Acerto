@@ -3,6 +3,7 @@ using System.Data;
 using Consulta.utilitarios;
 using Consulta.classes;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace Acerto
 {
@@ -36,28 +37,41 @@ namespace Acerto
         } // Ao trocar de grupo, o que gera o subgrupo
         private void listaMercadorias(string busca)
         {
-          string query = "select * from MERCADORIAS where MERCADO_DES LIKE '%"+textProduto.Text+ "%' and ROWNUM <= 100";
-            Console.WriteLine(query);
-           gridMercadorias.DataSource = conecta.Consulta(query);
-
+           query = "select * from MERCADORIAS where MERCADO_DES LIKE '%"+textProduto.Text+ "%' and ROWNUM < 500";
+            if (!worker.IsBusy)
+            {
+                worker.RunWorkerAsync();
+            }
         }// só com busca
         private void listaMercadorias(string busca, Grupo grupo) // com busca e grupo
         {
-            string query = "select EST_SET as Filial, MERCADO_DES as Mercadoria, EST_SAL as Saldo, MERCADO_COD as Material, EST_SER as serie,GRUPO_DESC as grupo, MERCADO_SGRP as subgrupo" +
-                           " from MERCADORIAS, ESTOQUES,GRUPO where MERCADO_DES LIKE '%" + textProduto.Text + "%' and MERCADO_GRP = " + grupo.codigo + 
-                           " and EST_REF = MERCADO_COD and GRUPO_COD = MERCADO_GRP and  ROWNUM <= 100";
-            gridMercadorias.DataSource = conecta.Consulta(query);
-            Console.WriteLine(query);
+            query = "select EST_SET as Filial, MERCADO_DES as Mercadoria,MERCADO_PRC preco, EST_SAL as Saldo, MERCADO_COD as Material, EST_SER as serie, MERCADO_SGRP as subgrupo" +
+                    " from MERCADORIAS, ESTOQUES,GRUPO where MERCADO_DES LIKE '%" +Eduardo.SqlScape(textProduto.Text) + "%' and MERCADO_GRP = " + grupo.codigo;
+            if(intFilial.Value != 0)
+            {
+                query += " and EST_SET =" + Eduardo.SqlScape(intFilial.Value.ToString()); // se não for qualquer filial
+            }
+            if (checkBoxMercadoSaldo.Checked)
+            {
+                query += " and EST_SAL = 1 "; // Apenas com saldo
+            } 
+            query+=" and EST_REF = MERCADO_COD and GRUPO_COD = MERCADO_GRP and  ROWNUM < 500";
+            if (!worker.IsBusy)
+            {
+                worker.RunWorkerAsync();
+            }
         }  
         private void btMercadoriaPesquisa_Click(object sender, EventArgs e)
         {
-
             worker = new BackgroundWorker();
             worker.DoWork += new DoWorkEventHandler(PesquisaMercadoAsync);
-
+            worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(PesquisaMercadoAsyncCompleta);
+            worker.WorkerReportsProgress = true;
+            worker.WorkerSupportsCancellation = true;
 
             Grupo res = comboBoxGrupo.SelectedItem as Grupo;
             btMercadoriaPesquisa.Text = "Pesquisando...";
+            btMercadoriaPesquisa.Enabled = false;
             if (comboBoxGrupo.SelectedIndex == -1 || res.codigo == -1)
             {
                 listaMercadorias(textProduto.Text);
@@ -66,13 +80,29 @@ namespace Acerto
             {
                 listaMercadorias(textProduto.Text, comboBoxGrupo.SelectedItem as Grupo);
             }
-            //  Console.WriteLine((Datata)comboBoxGrupo.SelectedItem + (MyEnum)comboBoxGrupo.SelectedText);
         } // Ao pesquisar mercadorias
-
-        private void PesquisaMercadoAsync(object sender, EventArgs e)
+        private void PesquisaMercadoAsync(object sender, DoWorkEventArgs e)
         {
+            e.Result = conecta.Consulta(query);
+            Console.WriteLine(query);
+        } // Pesquisa mercadoria assincronamente
+        private void PesquisaMercadoAsyncCompleta(object sender, RunWorkerCompletedEventArgs e)
+        {
+            gridMercadorias.DataSource = e.Result;
+            btMercadoriaPesquisa.Text = "Pesquisar";
+            btMercadoriaPesquisa.Enabled = true;
+            ConsultaNumLinhas.Text = gridMercadorias.RowCount + " encontradas (max:500)";
+            textProduto.SelectAll();
+        } // ao finalizar a busca assincrona, exibe o resultado
 
+
+        private void gridMercadorias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                produto = new Produto(gridMercadorias.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridMercadorias.Rows[e.RowIndex].Cells["serie"].Value.ToString(), Convert.ToInt32(gridMercadorias.Rows[e.RowIndex].Cells["Filial"].Value), conecta);
+
+            }
         }
-
     }
 }

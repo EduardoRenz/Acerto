@@ -573,7 +573,7 @@ namespace Acerto
             this.tabConsultar.Name = "tabConsultar";
             this.tabConsultar.Size = new System.Drawing.Size(1448, 657);
             this.tabConsultar.TabIndex = 1;
-            this.tabConsultar.Text = "Consultar Mercadorias";
+            this.tabConsultar.Text = "Consultar Codigo";
             // 
             // gridConsulta
             // 
@@ -649,6 +649,7 @@ namespace Acerto
             this.gridMercadorias.Name = "gridMercadorias";
             this.gridMercadorias.Size = new System.Drawing.Size(1442, 651);
             this.gridMercadorias.TabIndex = 0;
+            this.gridMercadorias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMercadorias_CellDoubleClick);
             // 
             // Principal
             // 

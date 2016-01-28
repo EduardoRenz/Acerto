@@ -55,6 +55,7 @@ namespace Acerto
             isPesquiando = false;
             btConsultaPesquisar.Text = "Pesquisar";
             btConsultaPesquisar.Enabled = true;
+            lblCodProd.SelectAll();
         }   
         private void gridConsulta_CellDoubleClick(object sender, DataGridViewCellEventArgs e) // Ao dar click duplo em uma celula | Abre nova janela com a pesquisa do produto
         {
