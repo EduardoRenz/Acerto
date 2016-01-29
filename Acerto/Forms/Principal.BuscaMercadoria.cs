@@ -25,19 +25,29 @@ namespace Acerto
         {
             Grupo resultado = comboBoxGrupo.SelectedItem as Grupo;
             comboBoxSubGrupo.Items.Clear();
+            comboBoxSubGrupo.Items.Add(new Grupo(-1, "---"));
             if (resultado.codigo != -1)
             {
                 string query = "select * from SUBGRUPO where SUBGRP_GRP = "+ resultado.codigo + "";
                 subGrupo =  conecta.Consulta(query);
                 foreach (DataRow row in subGrupo.Rows)
                 {
-                comboBoxSubGrupo.Items.Add(row[2]);
+                comboBoxSubGrupo.Items.Add(new Grupo(Convert.ToInt32(row[1]), row[2].ToString()));
                 }
             }
         } // Ao trocar de grupo, o que gera o subgrupo
         private void listaMercadorias(string busca)
         {
-           query = "select * from MERCADORIAS where MERCADO_DES LIKE '%"+textProduto.Text+ "%' and ROWNUM < 500";
+            query = "select EST_SET as Filial, MERCADO_DES as Mercadoria,MERCADO_PRC preco, EST_SAL as Saldo, MERCADO_COD as Material, EST_SER as serie,MERCADO_GRP as grupo, MERCADO_SGRP as subgrupo" +
+                      " from MERCADORIAS, ESTOQUES,GRUPO where MERCADO_DES LIKE '%" + Eduardo.SqlScape(textProduto.Text) + "%' and  ROWNUM <= 500";
+            if (intFilial.Value != 0)
+            {
+                query += " and EST_SET =" + Eduardo.SqlScape(intFilial.Value.ToString()); // se não for qualquer filial
+            }
+            if (checkBoxMercadoSaldo.Checked)
+            {
+                query += " and EST_SAL = 1 "; // Apenas com saldo
+            }
             if (!worker.IsBusy)
             {
                 worker.RunWorkerAsync();
@@ -55,12 +65,30 @@ namespace Acerto
             {
                 query += " and EST_SAL = 1 "; // Apenas com saldo
             } 
-            query+=" and EST_REF = MERCADO_COD and GRUPO_COD = MERCADO_GRP and  ROWNUM < 500";
+            query+=" and EST_REF = MERCADO_COD and GRUPO_COD = MERCADO_GRP and  ROWNUM <= 500";
             if (!worker.IsBusy)
             {
                 worker.RunWorkerAsync();
             }
-        }  
+        }
+        private void listaMercadorias(string busca, Grupo grupo, Grupo subgrupo) // com busca e grupo e subgrupo
+        {
+            query = "select EST_SET as Filial, MERCADO_DES as Mercadoria,MERCADO_PRC preco, EST_SAL as Saldo, MERCADO_COD as Material, EST_SER as serie" +
+                    " from MERCADORIAS, ESTOQUES,GRUPO where MERCADO_DES LIKE '%" + Eduardo.SqlScape(textProduto.Text) + "%' and MERCADO_GRP = " + grupo.codigo + " and MERCADO_SGRP = "+subgrupo.codigo+"";
+            if (intFilial.Value != 0)
+            {
+                query += " and EST_SET =" + Eduardo.SqlScape(intFilial.Value.ToString()); // se não for qualquer filial
+            }
+            if (checkBoxMercadoSaldo.Checked)
+            {
+                query += " and EST_SAL = 1 "; // Apenas com saldo
+            }
+            query += " and EST_REF = MERCADO_COD and GRUPO_COD = MERCADO_GRP and  ROWNUM <= 500";
+            if (!worker.IsBusy)
+            {
+                worker.RunWorkerAsync();
+            }
+        }
         private void btMercadoriaPesquisa_Click(object sender, EventArgs e)
         {
             worker = new BackgroundWorker();
@@ -70,6 +98,7 @@ namespace Acerto
             worker.WorkerSupportsCancellation = true;
 
             Grupo res = comboBoxGrupo.SelectedItem as Grupo;
+            Grupo subres = comboBoxSubGrupo.SelectedItem as Grupo;
             btMercadoriaPesquisa.Text = "Pesquisando...";
             btMercadoriaPesquisa.Enabled = false;
             if (comboBoxGrupo.SelectedIndex == -1 || res.codigo == -1)
@@ -78,7 +107,15 @@ namespace Acerto
             }
             else
             {
-                listaMercadorias(textProduto.Text, comboBoxGrupo.SelectedItem as Grupo);
+                if(comboBoxSubGrupo.SelectedIndex == -1 || subres.codigo == -1)
+                {
+                    listaMercadorias(textProduto.Text, comboBoxGrupo.SelectedItem as Grupo);
+                }
+                else
+                {
+                    listaMercadorias(textProduto.Text, comboBoxGrupo.SelectedItem as Grupo,comboBoxSubGrupo.SelectedItem as Grupo);
+                }
+              
             }
         } // Ao pesquisar mercadorias
         private void PesquisaMercadoAsync(object sender, DoWorkEventArgs e)
@@ -89,13 +126,12 @@ namespace Acerto
         private void PesquisaMercadoAsyncCompleta(object sender, RunWorkerCompletedEventArgs e)
         {
             gridMercadorias.DataSource = e.Result;
+            gridMercadorias.Columns["MERCADORIA"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             btMercadoriaPesquisa.Text = "Pesquisar";
             btMercadoriaPesquisa.Enabled = true;
             ConsultaNumLinhas.Text = gridMercadorias.RowCount + " encontradas (max:500)";
             textProduto.SelectAll();
         } // ao finalizar a busca assincrona, exibe o resultado
-
-
         private void gridMercadorias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)

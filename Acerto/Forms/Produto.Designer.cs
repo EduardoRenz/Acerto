@@ -361,7 +361,7 @@
             this.ProdGridHist.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ProdGridHist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.ProdGridHist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ProdGridHist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.ProdGridHist.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.ProdGridHist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

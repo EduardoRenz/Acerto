@@ -46,6 +46,7 @@ namespace Acerto
         {
             string query = "select mov_dat Data, mov_seo Origem, mov_sed Destino,TIP_DES Tipo, mov_doc nf,MOV_CDEMP cpf_cnpj, MOV_CDVDR Vendedor, MOV_VAL Valor from movimento, TIPMOV where mov_ref = '" + material + "' and mov_ser = '" + serie + "' and mov_tip = TIP_COD order by mov_dat";
             ProdGridHist.DataSource = conecta.Consulta(query);
+            ProdGridHist.Columns["TIPO"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             // Loop para verificação e ajuste
             foreach (DataGridViewRow row in ProdGridHist.Rows)
             {

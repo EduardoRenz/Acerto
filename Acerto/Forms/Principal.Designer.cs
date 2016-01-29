@@ -640,7 +640,9 @@ namespace Acerto
             // 
             // gridMercadorias
             // 
-            this.gridMercadorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridMercadorias.AllowUserToAddRows = false;
+            this.gridMercadorias.AllowUserToOrderColumns = true;
+            this.gridMercadorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridMercadorias.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.gridMercadorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridMercadorias.Dock = System.Windows.Forms.DockStyle.Fill;
