@@ -14,7 +14,7 @@ namespace Acerto
         public Principal() { InitializeComponent(); }
         private void Form1_Load(object sender, EventArgs e) //  AO CARREGAR O FORM 
         {
-            Text = "Consulta  v:1.1.0.0";
+            Text = "Consulta  v:1.1.0.1";
             VerificaAbas();
             VerificaConexao();
             listarGrupo(conecta);
@@ -34,7 +34,9 @@ namespace Acerto
             menuConsulta.Visible = false;
             tabConsultar.Visible = false;
             mercadoriaPanel.Visible = false;
-            contComboGrupo.Visible = false;
+            contTopBusca1.Visible = false;
+            contTopBusca2.Visible =false;
+            contTopBusca3.Visible = false;
             switch (abas.SelectedTab.Name)
             {
                 case "pagErros":
@@ -46,7 +48,9 @@ namespace Acerto
                     break;
                 case "tabMercadorias":
                     mercadoriaPanel.Visible = true;
-                    contComboGrupo.Visible = true;
+                    contTopBusca1.Visible = true;
+                    contTopBusca2.Visible = true;
+                    contTopBusca3.Visible = true;
                     this.AcceptButton = this.btMercadoriaPesquisa;
                     break;
                 default:

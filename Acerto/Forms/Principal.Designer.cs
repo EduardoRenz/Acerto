@@ -65,9 +65,10 @@ namespace Acerto
             this.mercadoriaPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.textProduto = new System.Windows.Forms.TextBox();
-            this.contComboGrupo = new System.Windows.Forms.FlowLayoutPanel();
+            this.contTopBusca1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblcomboGrupo = new System.Windows.Forms.Label();
             this.comboBoxGrupo = new System.Windows.Forms.ComboBox();
+            this.contTopBusca2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblSubGrupo = new System.Windows.Forms.Label();
             this.comboBoxSubGrupo = new System.Windows.Forms.ComboBox();
             this.checkBoxMercadoSaldo = new System.Windows.Forms.CheckBox();
@@ -82,6 +83,7 @@ namespace Acerto
             this.pagErros = new System.Windows.Forms.TabPage();
             this.tabMercadorias = new System.Windows.Forms.TabPage();
             this.gridMercadorias = new System.Windows.Forms.DataGridView();
+            this.contTopBusca3 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.intFilial)).BeginInit();
             this.grpCondi.SuspendLayout();
             this.topo.SuspendLayout();
@@ -89,7 +91,8 @@ namespace Acerto
             this.menuConsulta.SuspendLayout();
             this.panelDatas.SuspendLayout();
             this.mercadoriaPanel.SuspendLayout();
-            this.contComboGrupo.SuspendLayout();
+            this.contTopBusca1.SuspendLayout();
+            this.contTopBusca2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).BeginInit();
             this.divCentro.SuspendLayout();
             this.abas.SuspendLayout();
@@ -98,6 +101,7 @@ namespace Acerto
             this.pagErros.SuspendLayout();
             this.tabMercadorias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridMercadorias)).BeginInit();
+            this.contTopBusca3.SuspendLayout();
             this.SuspendLayout();
             // 
             // divTopo
@@ -257,7 +261,9 @@ namespace Acerto
             this.topo.Controls.Add(this.menuConsulta);
             this.topo.Controls.Add(this.panelDatas);
             this.topo.Controls.Add(this.mercadoriaPanel);
-            this.topo.Controls.Add(this.contComboGrupo);
+            this.topo.Controls.Add(this.contTopBusca1);
+            this.topo.Controls.Add(this.contTopBusca2);
+            this.topo.Controls.Add(this.contTopBusca3);
             this.topo.Controls.Add(this.ConsultaNumLinhas);
             this.topo.Dock = System.Windows.Forms.DockStyle.Top;
             this.topo.Location = new System.Drawing.Point(0, 0);
@@ -393,20 +399,16 @@ namespace Acerto
             this.textProduto.Size = new System.Drawing.Size(205, 20);
             this.textProduto.TabIndex = 17;
             // 
-            // contComboGrupo
+            // contTopBusca1
             // 
-            this.contComboGrupo.AutoSize = true;
-            this.contComboGrupo.Controls.Add(this.lblcomboGrupo);
-            this.contComboGrupo.Controls.Add(this.comboBoxGrupo);
-            this.contComboGrupo.Controls.Add(this.lblSubGrupo);
-            this.contComboGrupo.Controls.Add(this.comboBoxSubGrupo);
-            this.contComboGrupo.Controls.Add(this.checkBoxMercadoSaldo);
-            this.contComboGrupo.Controls.Add(this.btMercadoriaPesquisa);
-            this.contComboGrupo.Location = new System.Drawing.Point(5, 42);
-            this.contComboGrupo.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.contComboGrupo.Name = "contComboGrupo";
-            this.contComboGrupo.Size = new System.Drawing.Size(646, 22);
-            this.contComboGrupo.TabIndex = 23;
+            this.contTopBusca1.AutoSize = true;
+            this.contTopBusca1.Controls.Add(this.lblcomboGrupo);
+            this.contTopBusca1.Controls.Add(this.comboBoxGrupo);
+            this.contTopBusca1.Location = new System.Drawing.Point(5, 42);
+            this.contTopBusca1.Margin = new System.Windows.Forms.Padding(0, 6, 3, 0);
+            this.contTopBusca1.Name = "contTopBusca1";
+            this.contTopBusca1.Size = new System.Drawing.Size(248, 21);
+            this.contTopBusca1.TabIndex = 23;
             // 
             // lblcomboGrupo
             // 
@@ -427,15 +429,26 @@ namespace Acerto
             this.comboBoxGrupo.Location = new System.Drawing.Point(61, 0);
             this.comboBoxGrupo.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.comboBoxGrupo.Name = "comboBoxGrupo";
-            this.comboBoxGrupo.Size = new System.Drawing.Size(134, 21);
+            this.comboBoxGrupo.Size = new System.Drawing.Size(184, 21);
             this.comboBoxGrupo.TabIndex = 18;
             this.comboBoxGrupo.SelectedIndexChanged += new System.EventHandler(this.comboBoxGrupo_SelectedIndexChanged);
+            // 
+            // contTopBusca2
+            // 
+            this.contTopBusca2.AutoSize = true;
+            this.contTopBusca2.Controls.Add(this.lblSubGrupo);
+            this.contTopBusca2.Controls.Add(this.comboBoxSubGrupo);
+            this.contTopBusca2.Location = new System.Drawing.Point(256, 42);
+            this.contTopBusca2.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.contTopBusca2.Name = "contTopBusca2";
+            this.contTopBusca2.Size = new System.Drawing.Size(277, 21);
+            this.contTopBusca2.TabIndex = 24;
             // 
             // lblSubGrupo
             // 
             this.lblSubGrupo.AutoSize = true;
             this.lblSubGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblSubGrupo.Location = new System.Drawing.Point(198, 0);
+            this.lblSubGrupo.Location = new System.Drawing.Point(0, 0);
             this.lblSubGrupo.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.lblSubGrupo.Name = "lblSubGrupo";
             this.lblSubGrupo.Size = new System.Drawing.Size(86, 17);
@@ -447,10 +460,10 @@ namespace Acerto
             this.comboBoxSubGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSubGrupo.FormattingEnabled = true;
-            this.comboBoxSubGrupo.Location = new System.Drawing.Point(287, 0);
+            this.comboBoxSubGrupo.Location = new System.Drawing.Point(89, 0);
             this.comboBoxSubGrupo.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
             this.comboBoxSubGrupo.Name = "comboBoxSubGrupo";
-            this.comboBoxSubGrupo.Size = new System.Drawing.Size(147, 21);
+            this.comboBoxSubGrupo.Size = new System.Drawing.Size(184, 21);
             this.comboBoxSubGrupo.TabIndex = 21;
             // 
             // checkBoxMercadoSaldo
@@ -459,7 +472,7 @@ namespace Acerto
             this.checkBoxMercadoSaldo.Checked = true;
             this.checkBoxMercadoSaldo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxMercadoSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxMercadoSaldo.Location = new System.Drawing.Point(441, 0);
+            this.checkBoxMercadoSaldo.Location = new System.Drawing.Point(3, 0);
             this.checkBoxMercadoSaldo.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.checkBoxMercadoSaldo.Name = "checkBoxMercadoSaldo";
             this.checkBoxMercadoSaldo.Size = new System.Drawing.Size(102, 22);
@@ -470,7 +483,7 @@ namespace Acerto
             // btMercadoriaPesquisa
             // 
             this.btMercadoriaPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btMercadoriaPesquisa.Location = new System.Drawing.Point(546, 0);
+            this.btMercadoriaPesquisa.Location = new System.Drawing.Point(108, 0);
             this.btMercadoriaPesquisa.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.btMercadoriaPesquisa.Name = "btMercadoriaPesquisa";
             this.btMercadoriaPesquisa.Size = new System.Drawing.Size(97, 20);
@@ -484,7 +497,7 @@ namespace Acerto
             this.ConsultaNumLinhas.AutoSize = true;
             this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
-            this.ConsultaNumLinhas.Location = new System.Drawing.Point(654, 42);
+            this.ConsultaNumLinhas.Location = new System.Drawing.Point(744, 42);
             this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
             this.ConsultaNumLinhas.Size = new System.Drawing.Size(131, 18);
@@ -649,9 +662,21 @@ namespace Acerto
             this.gridMercadorias.GridColor = System.Drawing.SystemColors.HotTrack;
             this.gridMercadorias.Location = new System.Drawing.Point(3, 3);
             this.gridMercadorias.Name = "gridMercadorias";
+            this.gridMercadorias.ReadOnly = true;
             this.gridMercadorias.Size = new System.Drawing.Size(1442, 651);
             this.gridMercadorias.TabIndex = 0;
             this.gridMercadorias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMercadorias_CellDoubleClick);
+            // 
+            // contTopBusca3
+            // 
+            this.contTopBusca3.AutoSize = true;
+            this.contTopBusca3.Controls.Add(this.checkBoxMercadoSaldo);
+            this.contTopBusca3.Controls.Add(this.btMercadoriaPesquisa);
+            this.contTopBusca3.Location = new System.Drawing.Point(533, 42);
+            this.contTopBusca3.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.contTopBusca3.Name = "contTopBusca3";
+            this.contTopBusca3.Size = new System.Drawing.Size(208, 22);
+            this.contTopBusca3.TabIndex = 25;
             // 
             // Principal
             // 
@@ -684,8 +709,10 @@ namespace Acerto
             this.panelDatas.PerformLayout();
             this.mercadoriaPanel.ResumeLayout(false);
             this.mercadoriaPanel.PerformLayout();
-            this.contComboGrupo.ResumeLayout(false);
-            this.contComboGrupo.PerformLayout();
+            this.contTopBusca1.ResumeLayout(false);
+            this.contTopBusca1.PerformLayout();
+            this.contTopBusca2.ResumeLayout(false);
+            this.contTopBusca2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).EndInit();
             this.divCentro.ResumeLayout(false);
             this.divCentro.PerformLayout();
@@ -695,6 +722,8 @@ namespace Acerto
             this.pagErros.ResumeLayout(false);
             this.tabMercadorias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridMercadorias)).EndInit();
+            this.contTopBusca3.ResumeLayout(false);
+            this.contTopBusca3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -744,8 +773,10 @@ namespace Acerto
         private Button btMercadoriaPesquisa;
         private Label lblSubGrupo;
         private ComboBox comboBoxSubGrupo;
-        private FlowLayoutPanel contComboGrupo;
+        private FlowLayoutPanel contTopBusca1;
         private CheckBox checkBoxMercadoSaldo;
+        private FlowLayoutPanel contTopBusca2;
+        private FlowLayoutPanel contTopBusca3;
     }
 }
 

@@ -32,7 +32,7 @@ namespace Acerto
             {
                 query += "and est_set = " + Eduardo.SqlScape(intFilial.Value.ToString());
             }
-            query += " and ROWNUM <= 1000";
+            query += " and ROWNUM <= 500";
             // ==================================================================================================================================================
             if (!isPesquiando && !worker.IsBusy) {
                 btConsultaPesquisar.Text = "pesquisando...";
@@ -51,7 +51,7 @@ namespace Acerto
         private void PesquisaAsyncCompleta(object sender, RunWorkerCompletedEventArgs e)
         {
             gridConsulta.DataSource = e.Result;
-            ConsultaNumLinhas.Text = gridConsulta.RowCount + " mercadorias encontradas (max por consulta:1000)";
+            ConsultaNumLinhas.Text = gridConsulta.RowCount + " mercadorias encontradas (max: 500)";
             isPesquiando = false;
             btConsultaPesquisar.Text = "Pesquisar";
             btConsultaPesquisar.Enabled = true;
