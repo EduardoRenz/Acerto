@@ -38,8 +38,9 @@ namespace Acerto
         } // Ao trocar de grupo, o que gera o subgrupo
         private void listaMercadorias(string busca)
         {
-            query = "select EST_SET as Filial, MERCADO_DES as Mercadoria,MERCADO_PRC preco, EST_SAL as Saldo, MERCADO_COD as Material, EST_SER as serie,MERCADO_GRP as grupo, MERCADO_SGRP as subgrupo" +
-                      " from MERCADORIAS, ESTOQUES,GRUPO where MERCADO_DES LIKE '%" + Eduardo.SqlScape(textProduto.Text) + "%' and  ROWNUM <= 500";
+
+            query = "select EST_SET as Filial, MERCADO_DES as Mercadoria,MERCADO_PRC preco, EST_SAL as Saldo, MERCADO_COD as Material, EST_SER as serie, MERCADO_SGRP as subgrupo" +
+                   " from MERCADORIAS, ESTOQUES,GRUPO where MERCADO_DES LIKE '%" + Eduardo.SqlScape(textProduto.Text) + "%' and EST_REF = MERCADO_COD and GRUPO_COD = MERCADO_GRP and  ROWNUM <= 500";
             if (intFilial.Value != 0)
             {
                 query += " and EST_SET =" + Eduardo.SqlScape(intFilial.Value.ToString()); // se não for qualquer filial
