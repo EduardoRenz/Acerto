@@ -21,7 +21,8 @@ namespace Acerto
             //conecta.GetTabelas(); // DESENVOLVEDOR  pega as tabelas do db
             // conecta.GetColunas("OC");
             //conecta.GetBD();
-           // conecta.Getschemas();
+            // conecta.Getschemas();
+            conecta.Teste("select trf_sed as destino from transferido where trf_doc = '11288' and trf_ser='CCHDYQ' and trf_ref='051936'");
         }
         private void AbasChanged(object sender, TabControlEventArgs e)
         {
@@ -37,6 +38,7 @@ namespace Acerto
             contTopBusca1.Visible = false;
             contTopBusca2.Visible =false;
             contTopBusca3.Visible = false;
+            topVolumes.Visible = false;
             switch (abas.SelectedTab.Name)
             {
                 case "pagErros":
@@ -52,6 +54,9 @@ namespace Acerto
                     contTopBusca2.Visible = true;
                     contTopBusca3.Visible = true;
                     this.AcceptButton = this.btMercadoriaPesquisa;
+                    break;
+                case "tabVolumes":
+                    topVolumes.Visible = true;
                     break;
                 default:
                     break;
@@ -72,6 +77,7 @@ namespace Acerto
         {
             conecta.Close();
         } // Ao fechar o Form      
+       
     }
 }
 

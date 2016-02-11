@@ -50,27 +50,10 @@ namespace Acerto
             // Loop para verificação e ajuste
             foreach (DataGridViewRow row in ProdGridHist.Rows)
             {
-                // Muda para Checkin o Tipo
-                if (row.Cells["Origem"].Value.ToString() == "98" && row.Cells["Destino"].Value.ToString() != "98")
-                {
-                    row.Cells["Tipo"].Value = "Check-in";
-                }
-                if (row.Cells["nf"].Value.ToString() == "opc9")
-                { // Tem opção 9
-                    string query2 = "select mov_ser serie, mov_dat from MOVIMENTO where mov_dat = TO_DATE('" + row.Cells["Data"].Value.ToString() + "', 'DD/MM/YYYY HH24:MI:SS')" +
-                    " and mov_ser != '" + serie + "'";
-                    DataTable retquery2 = new DataTable();
-                    retquery2 = conecta.Consulta(query2);
-                    //  Console.WriteLine(retquery2.Rows[0]["serie"] + "é essa");
-                    if (row.Cells["TIPO"].Value.ToString() == "Vendas")
-                    {
-                        row.Cells["TIPO"].Value = "Sai. por " + retquery2.Rows[0]["serie"];
-                    }
-                    else if (row.Cells["TIPO"].Value.ToString() == "Devolução de Vendas ")
-                    {
-                        row.Cells["TIPO"].Value = "Entra. por " + retquery2.Rows[0]["serie"];
-                    }
-                }
+                CheckCheckin(row);  // Muda para Checkin o Tipo
+                CheckOpc9(row); // Verifica opção 9 e informa a troca
+                Checktrf(row);
+               
             }
         } // tabela de historico do produto oracle MOVIMENTO
         //SALDOS
@@ -104,6 +87,47 @@ namespace Acerto
                 lblErrProc.Text = "";
             }
         }
+        // Mini funções
+        private void CheckCheckin(DataGridViewRow row)
+        {
+            if (row.Cells["Origem"].Value.ToString() == "98" && row.Cells["Destino"].Value.ToString() != "98")
+            {
+                row.Cells["Tipo"].Value = "Check-in";
+            }
+        } // verifica checkin
+        private void CheckOpc9(DataGridViewRow row)
+        {
+            if (row.Cells["nf"].Value.ToString() == "opc9")
+            { // Tem opção 9
+                string query2 = "select mov_ser serie, mov_dat from MOVIMENTO where mov_dat = TO_DATE('" + row.Cells["Data"].Value.ToString() + "', 'DD/MM/YYYY HH24:MI:SS')" +
+                " and mov_ser != '" + serie + "'";
+                DataTable retquery2 = new DataTable();
+                retquery2 = conecta.Consulta(query2);
+                //  Console.WriteLine(retquery2.Rows[0]["serie"] + "é essa");
+                if (row.Cells["TIPO"].Value.ToString() == "Vendas")
+                {
+                    row.Cells["TIPO"].Value = "Sai. por " + retquery2.Rows[0]["serie"];
+                }
+                else if (row.Cells["TIPO"].Value.ToString() == "Devolução de Vendas ")
+                {
+                    row.Cells["TIPO"].Value = "Entra. por " + retquery2.Rows[0]["serie"];
+                }
+            }
+        } // verifica troca
+        private void Checktrf(DataGridViewRow row) // Ira verificar o destino da mercadoria
+        {
+            DataTable dt;
+            if(row.Cells["Destino"].Value.ToString() == "98")
+            {
+                dt = new DataTable();
+                dt = conecta.Consulta("select trf_sed as destino from transferido where trf_doc = '" + row.Cells["nf"].Value.ToString() +"' and trf_ser='"+serie+"' and trf_ref='"+material+"'");
+                if(dt.Rows.Count > 0)
+                {
+                     row.Cells["Destino"].Value =  dt.Rows[0][0];
+                }
+            }
+        }
+
         // Eventos do FORM
         private void Produto_FormClosed(object sender, FormClosedEventArgs e)
         {

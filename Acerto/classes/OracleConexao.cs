@@ -134,6 +134,27 @@ namespace Acerto
             }
            
         }
+        public void Teste(string query)
+        {
+            Console.WriteLine("Iniciar teste...");
+            DataTable dt = new DataTable();
+            command = conexao.CreateCommand();
+            command.CommandText = query;
+            reader = command.ExecuteReader();
+            dt.Load(reader);
+            reader.Close();
+            foreach(DataRow row in dt.Rows)
+            {
+                foreach (DataColumn col in dt.Columns)
+                {
+                    Console.WriteLine(col.ColumnName + " : " + row[col.ColumnName]);
+                }
+                Console.WriteLine(" ");
+            }
+
+          
+
+        }
         public void Close()
         {
             conexao.Close();

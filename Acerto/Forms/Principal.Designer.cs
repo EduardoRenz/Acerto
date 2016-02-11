@@ -37,6 +37,12 @@ namespace Acerto
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.divTopo = new System.Windows.Forms.FlowLayoutPanel();
             this.painelPesquisa = new System.Windows.Forms.TextBox();
@@ -71,8 +77,13 @@ namespace Acerto
             this.contTopBusca2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblSubGrupo = new System.Windows.Forms.Label();
             this.comboBoxSubGrupo = new System.Windows.Forms.ComboBox();
+            this.contTopBusca3 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxMercadoSaldo = new System.Windows.Forms.CheckBox();
             this.btMercadoriaPesquisa = new System.Windows.Forms.Button();
+            this.topVolumes = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelVolume = new System.Windows.Forms.Label();
+            this.textVolumes = new System.Windows.Forms.TextBox();
+            this.btVolume = new System.Windows.Forms.Button();
             this.ConsultaNumLinhas = new System.Windows.Forms.Label();
             this.tabelaNProc = new System.Windows.Forms.DataGridView();
             this.lblnaoproc = new System.Windows.Forms.Label();
@@ -83,7 +94,13 @@ namespace Acerto
             this.pagErros = new System.Windows.Forms.TabPage();
             this.tabMercadorias = new System.Windows.Forms.TabPage();
             this.gridMercadorias = new System.Windows.Forms.DataGridView();
-            this.contTopBusca3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabVolumes = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.gridVolumeFilial = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblvolMatriz = new System.Windows.Forms.Label();
+            this.gridVolumeMatriz = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.intFilial)).BeginInit();
             this.grpCondi.SuspendLayout();
             this.topo.SuspendLayout();
@@ -93,6 +110,8 @@ namespace Acerto
             this.mercadoriaPanel.SuspendLayout();
             this.contTopBusca1.SuspendLayout();
             this.contTopBusca2.SuspendLayout();
+            this.contTopBusca3.SuspendLayout();
+            this.topVolumes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).BeginInit();
             this.divCentro.SuspendLayout();
             this.abas.SuspendLayout();
@@ -101,7 +120,11 @@ namespace Acerto
             this.pagErros.SuspendLayout();
             this.tabMercadorias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridMercadorias)).BeginInit();
-            this.contTopBusca3.SuspendLayout();
+            this.tabVolumes.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridVolumeFilial)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridVolumeMatriz)).BeginInit();
             this.SuspendLayout();
             // 
             // divTopo
@@ -264,13 +287,14 @@ namespace Acerto
             this.topo.Controls.Add(this.contTopBusca1);
             this.topo.Controls.Add(this.contTopBusca2);
             this.topo.Controls.Add(this.contTopBusca3);
+            this.topo.Controls.Add(this.topVolumes);
             this.topo.Controls.Add(this.ConsultaNumLinhas);
             this.topo.Dock = System.Windows.Forms.DockStyle.Top;
             this.topo.Location = new System.Drawing.Point(0, 0);
             this.topo.Margin = new System.Windows.Forms.Padding(0);
             this.topo.Name = "topo";
             this.topo.Padding = new System.Windows.Forms.Padding(5);
-            this.topo.Size = new System.Drawing.Size(1456, 69);
+            this.topo.Size = new System.Drawing.Size(1456, 72);
             this.topo.TabIndex = 4;
             // 
             // painelFilial
@@ -466,6 +490,17 @@ namespace Acerto
             this.comboBoxSubGrupo.Size = new System.Drawing.Size(184, 21);
             this.comboBoxSubGrupo.TabIndex = 21;
             // 
+            // contTopBusca3
+            // 
+            this.contTopBusca3.AutoSize = true;
+            this.contTopBusca3.Controls.Add(this.checkBoxMercadoSaldo);
+            this.contTopBusca3.Controls.Add(this.btMercadoriaPesquisa);
+            this.contTopBusca3.Location = new System.Drawing.Point(533, 42);
+            this.contTopBusca3.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.contTopBusca3.Name = "contTopBusca3";
+            this.contTopBusca3.Size = new System.Drawing.Size(208, 22);
+            this.contTopBusca3.TabIndex = 25;
+            // 
             // checkBoxMercadoSaldo
             // 
             this.checkBoxMercadoSaldo.AutoSize = true;
@@ -492,12 +527,56 @@ namespace Acerto
             this.btMercadoriaPesquisa.UseVisualStyleBackColor = true;
             this.btMercadoriaPesquisa.Click += new System.EventHandler(this.btMercadoriaPesquisa_Click);
             // 
+            // topVolumes
+            // 
+            this.topVolumes.Controls.Add(this.labelVolume);
+            this.topVolumes.Controls.Add(this.textVolumes);
+            this.topVolumes.Controls.Add(this.btVolume);
+            this.topVolumes.Location = new System.Drawing.Point(741, 36);
+            this.topVolumes.Margin = new System.Windows.Forms.Padding(0);
+            this.topVolumes.Name = "topVolumes";
+            this.topVolumes.Padding = new System.Windows.Forms.Padding(3, 6, 0, 0);
+            this.topVolumes.Size = new System.Drawing.Size(375, 31);
+            this.topVolumes.TabIndex = 26;
+            this.topVolumes.Visible = false;
+            // 
+            // labelVolume
+            // 
+            this.labelVolume.AutoSize = true;
+            this.labelVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.labelVolume.Location = new System.Drawing.Point(3, 6);
+            this.labelVolume.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.labelVolume.Name = "labelVolume";
+            this.labelVolume.Size = new System.Drawing.Size(61, 17);
+            this.labelVolume.TabIndex = 10;
+            this.labelVolume.Text = "Volume";
+            // 
+            // textVolumes
+            // 
+            this.textVolumes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textVolumes.Location = new System.Drawing.Point(67, 6);
+            this.textVolumes.Margin = new System.Windows.Forms.Padding(0);
+            this.textVolumes.Name = "textVolumes";
+            this.textVolumes.Size = new System.Drawing.Size(205, 20);
+            this.textVolumes.TabIndex = 15;
+            // 
+            // btVolume
+            // 
+            this.btVolume.Location = new System.Drawing.Point(275, 6);
+            this.btVolume.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btVolume.Name = "btVolume";
+            this.btVolume.Size = new System.Drawing.Size(97, 20);
+            this.btVolume.TabIndex = 4;
+            this.btVolume.Text = "Pesquisar";
+            this.btVolume.UseVisualStyleBackColor = true;
+            this.btVolume.Click += new System.EventHandler(this.btVolume_Click);
+            // 
             // ConsultaNumLinhas
             // 
             this.ConsultaNumLinhas.AutoSize = true;
             this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
-            this.ConsultaNumLinhas.Location = new System.Drawing.Point(744, 42);
+            this.ConsultaNumLinhas.Location = new System.Drawing.Point(1119, 42);
             this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
             this.ConsultaNumLinhas.Size = new System.Drawing.Size(131, 18);
@@ -511,6 +590,7 @@ namespace Acerto
             this.tabelaNProc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tabelaNProc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.tabelaNProc.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            this.tabelaNProc.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -533,7 +613,7 @@ namespace Acerto
             this.tabelaNProc.Name = "tabelaNProc";
             this.tabelaNProc.ReadOnly = true;
             this.tabelaNProc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tabelaNProc.Size = new System.Drawing.Size(1426, 615);
+            this.tabelaNProc.Size = new System.Drawing.Size(1426, 612);
             this.tabelaNProc.TabIndex = 5;
             this.tabelaNProc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaNProc_CellDoubleClick);
             // 
@@ -561,7 +641,7 @@ namespace Acerto
             this.divCentro.RowCount = 2;
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.divCentro.Size = new System.Drawing.Size(1442, 651);
+            this.divCentro.Size = new System.Drawing.Size(1442, 648);
             this.divCentro.TabIndex = 6;
             // 
             // abas
@@ -569,12 +649,13 @@ namespace Acerto
             this.abas.Controls.Add(this.tabConsultar);
             this.abas.Controls.Add(this.pagErros);
             this.abas.Controls.Add(this.tabMercadorias);
+            this.abas.Controls.Add(this.tabVolumes);
             this.abas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.abas.Location = new System.Drawing.Point(0, 69);
+            this.abas.Location = new System.Drawing.Point(0, 72);
             this.abas.Margin = new System.Windows.Forms.Padding(0);
             this.abas.Name = "abas";
             this.abas.SelectedIndex = 0;
-            this.abas.Size = new System.Drawing.Size(1456, 683);
+            this.abas.Size = new System.Drawing.Size(1456, 680);
             this.abas.TabIndex = 0;
             this.abas.Selected += new System.Windows.Forms.TabControlEventHandler(this.AbasChanged);
             // 
@@ -584,7 +665,7 @@ namespace Acerto
             this.tabConsultar.Controls.Add(this.gridConsulta);
             this.tabConsultar.Location = new System.Drawing.Point(4, 22);
             this.tabConsultar.Name = "tabConsultar";
-            this.tabConsultar.Size = new System.Drawing.Size(1448, 657);
+            this.tabConsultar.Size = new System.Drawing.Size(1448, 654);
             this.tabConsultar.TabIndex = 1;
             this.tabConsultar.Text = "Consultar Codigo";
             // 
@@ -594,6 +675,7 @@ namespace Acerto
             this.gridConsulta.AllowUserToOrderColumns = true;
             this.gridConsulta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridConsulta.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            this.gridConsulta.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
@@ -623,7 +705,7 @@ namespace Acerto
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridConsulta.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.gridConsulta.Size = new System.Drawing.Size(1448, 657);
+            this.gridConsulta.Size = new System.Drawing.Size(1448, 654);
             this.gridConsulta.TabIndex = 0;
             this.gridConsulta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridConsulta_CellDoubleClick);
             // 
@@ -636,7 +718,7 @@ namespace Acerto
             this.pagErros.Margin = new System.Windows.Forms.Padding(0);
             this.pagErros.Name = "pagErros";
             this.pagErros.Padding = new System.Windows.Forms.Padding(3);
-            this.pagErros.Size = new System.Drawing.Size(1448, 657);
+            this.pagErros.Size = new System.Drawing.Size(1448, 654);
             this.pagErros.TabIndex = 0;
             this.pagErros.Text = "Erros de Processamento";
             // 
@@ -647,7 +729,7 @@ namespace Acerto
             this.tabMercadorias.Location = new System.Drawing.Point(4, 22);
             this.tabMercadorias.Name = "tabMercadorias";
             this.tabMercadorias.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMercadorias.Size = new System.Drawing.Size(1448, 657);
+            this.tabMercadorias.Size = new System.Drawing.Size(1448, 654);
             this.tabMercadorias.TabIndex = 2;
             this.tabMercadorias.Text = "Busca Mercadoria";
             // 
@@ -657,26 +739,153 @@ namespace Acerto
             this.gridMercadorias.AllowUserToOrderColumns = true;
             this.gridMercadorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridMercadorias.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            this.gridMercadorias.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.gridMercadorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridMercadorias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridMercadorias.GridColor = System.Drawing.SystemColors.HotTrack;
             this.gridMercadorias.Location = new System.Drawing.Point(3, 3);
             this.gridMercadorias.Name = "gridMercadorias";
             this.gridMercadorias.ReadOnly = true;
-            this.gridMercadorias.Size = new System.Drawing.Size(1442, 651);
+            this.gridMercadorias.Size = new System.Drawing.Size(1442, 648);
             this.gridMercadorias.TabIndex = 0;
             this.gridMercadorias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMercadorias_CellDoubleClick);
             // 
-            // contTopBusca3
+            // tabVolumes
             // 
-            this.contTopBusca3.AutoSize = true;
-            this.contTopBusca3.Controls.Add(this.checkBoxMercadoSaldo);
-            this.contTopBusca3.Controls.Add(this.btMercadoriaPesquisa);
-            this.contTopBusca3.Location = new System.Drawing.Point(533, 42);
-            this.contTopBusca3.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.contTopBusca3.Name = "contTopBusca3";
-            this.contTopBusca3.Size = new System.Drawing.Size(208, 22);
-            this.contTopBusca3.TabIndex = 25;
+            this.tabVolumes.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.tabVolumes.Controls.Add(this.tableLayoutPanel1);
+            this.tabVolumes.Location = new System.Drawing.Point(4, 22);
+            this.tabVolumes.Name = "tabVolumes";
+            this.tabVolumes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabVolumes.Size = new System.Drawing.Size(1448, 654);
+            this.tabVolumes.TabIndex = 3;
+            this.tabVolumes.Text = "Volumes";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.1398F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.8602F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 727F));
+            this.tableLayoutPanel1.Controls.Add(this.gridVolumeMatriz, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblvolMatriz, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.gridVolumeFilial, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.938272F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95.06173F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1442, 648);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // gridVolumeFilial
+            // 
+            this.gridVolumeFilial.AllowUserToAddRows = false;
+            this.gridVolumeFilial.AllowUserToOrderColumns = true;
+            this.gridVolumeFilial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridVolumeFilial.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridVolumeFilial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.gridVolumeFilial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridVolumeFilial.DefaultCellStyle = dataGridViewCellStyle10;
+            this.gridVolumeFilial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridVolumeFilial.Location = new System.Drawing.Point(347, 34);
+            this.gridVolumeFilial.Name = "gridVolumeFilial";
+            this.gridVolumeFilial.ReadOnly = true;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridVolumeFilial.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.gridVolumeFilial.Size = new System.Drawing.Size(364, 611);
+            this.gridVolumeFilial.TabIndex = 1;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.label2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(347, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(124, 23);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(0, 6);
+            this.label2.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Volume na filial:";
+            // 
+            // lblvolMatriz
+            // 
+            this.lblvolMatriz.AutoSize = true;
+            this.lblvolMatriz.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblvolMatriz.Location = new System.Drawing.Point(0, 6);
+            this.lblvolMatriz.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
+            this.lblvolMatriz.Name = "lblvolMatriz";
+            this.lblvolMatriz.Size = new System.Drawing.Size(138, 17);
+            this.lblvolMatriz.TabIndex = 2;
+            this.lblvolMatriz.Text = "Volume na matriz:";
+            // 
+            // gridVolumeMatriz
+            // 
+            this.gridVolumeMatriz.AllowUserToAddRows = false;
+            this.gridVolumeMatriz.AllowUserToOrderColumns = true;
+            this.gridVolumeMatriz.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridVolumeMatriz.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridVolumeMatriz.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.gridVolumeMatriz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridVolumeMatriz.DefaultCellStyle = dataGridViewCellStyle7;
+            this.gridVolumeMatriz.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridVolumeMatriz.Location = new System.Drawing.Point(3, 34);
+            this.gridVolumeMatriz.Name = "gridVolumeMatriz";
+            this.gridVolumeMatriz.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridVolumeMatriz.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.gridVolumeMatriz.Size = new System.Drawing.Size(338, 611);
+            this.gridVolumeMatriz.TabIndex = 6;
             // 
             // Principal
             // 
@@ -713,6 +922,10 @@ namespace Acerto
             this.contTopBusca1.PerformLayout();
             this.contTopBusca2.ResumeLayout(false);
             this.contTopBusca2.PerformLayout();
+            this.contTopBusca3.ResumeLayout(false);
+            this.contTopBusca3.PerformLayout();
+            this.topVolumes.ResumeLayout(false);
+            this.topVolumes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).EndInit();
             this.divCentro.ResumeLayout(false);
             this.divCentro.PerformLayout();
@@ -722,8 +935,13 @@ namespace Acerto
             this.pagErros.ResumeLayout(false);
             this.tabMercadorias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridMercadorias)).EndInit();
-            this.contTopBusca3.ResumeLayout(false);
-            this.contTopBusca3.PerformLayout();
+            this.tabVolumes.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridVolumeFilial)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridVolumeMatriz)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -777,6 +995,17 @@ namespace Acerto
         private CheckBox checkBoxMercadoSaldo;
         private FlowLayoutPanel contTopBusca2;
         private FlowLayoutPanel contTopBusca3;
+        private FlowLayoutPanel topVolumes;
+        private Label labelVolume;
+        private TextBox textVolumes;
+        private Button btVolume;
+        private TabPage tabVolumes;
+        private DataGridView gridVolumeFilial;
+        private TableLayoutPanel tableLayoutPanel1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private DataGridView gridVolumeMatriz;
+        private Label lblvolMatriz;
+        private Label label2;
     }
 }
 
