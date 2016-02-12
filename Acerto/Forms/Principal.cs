@@ -14,7 +14,7 @@ namespace Acerto
         public Principal() { InitializeComponent(); }
         private void Form1_Load(object sender, EventArgs e) //  AO CARREGAR O FORM 
         {
-            Text = "Consulta  v:1.1.0.1";
+            Text = "Consulta  v:1.1.1.0";
             VerificaAbas();
             VerificaConexao();
             listarGrupo(conecta);
@@ -22,7 +22,7 @@ namespace Acerto
             // conecta.GetColunas("OC");
             //conecta.GetBD();
             // conecta.Getschemas();
-            conecta.Teste("select trf_sed as destino from transferido where trf_doc = '11288' and trf_ser='CCHDYQ' and trf_ref='051936'");
+            //conecta.Teste("select trf_sed as destino from transferido where trf_doc = '11288' and trf_ser='CCHDYQ' and trf_ref='051936'"); // Retorna consultas on console
         }
         private void AbasChanged(object sender, TabControlEventArgs e)
         {
@@ -39,6 +39,8 @@ namespace Acerto
             contTopBusca2.Visible =false;
             contTopBusca3.Visible = false;
             topVolumes.Visible = false;
+            topVolumes2.Visible = false;
+            radioVolMat.Checked = true;
             switch (abas.SelectedTab.Name)
             {
                 case "pagErros":
@@ -57,6 +59,7 @@ namespace Acerto
                     break;
                 case "tabVolumes":
                     topVolumes.Visible = true;
+                    topVolumes2.Visible = true;
                     break;
                 default:
                     break;

@@ -37,9 +37,6 @@ namespace Acerto
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -82,8 +79,10 @@ namespace Acerto
             this.btMercadoriaPesquisa = new System.Windows.Forms.Button();
             this.topVolumes = new System.Windows.Forms.FlowLayoutPanel();
             this.labelVolume = new System.Windows.Forms.Label();
-            this.textVolumes = new System.Windows.Forms.TextBox();
             this.btVolume = new System.Windows.Forms.Button();
+            this.topVolumes2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioVolMat = new System.Windows.Forms.RadioButton();
+            this.radioVolFil = new System.Windows.Forms.RadioButton();
             this.ConsultaNumLinhas = new System.Windows.Forms.Label();
             this.tabelaNProc = new System.Windows.Forms.DataGridView();
             this.lblnaoproc = new System.Windows.Forms.Label();
@@ -96,11 +95,9 @@ namespace Acerto
             this.gridMercadorias = new System.Windows.Forms.DataGridView();
             this.tabVolumes = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.gridVolumeFilial = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.gridVolume = new System.Windows.Forms.DataGridView();
             this.lblvolMatriz = new System.Windows.Forms.Label();
-            this.gridVolumeMatriz = new System.Windows.Forms.DataGridView();
+            this.intVolumes = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.intFilial)).BeginInit();
             this.grpCondi.SuspendLayout();
             this.topo.SuspendLayout();
@@ -112,6 +109,7 @@ namespace Acerto
             this.contTopBusca2.SuspendLayout();
             this.contTopBusca3.SuspendLayout();
             this.topVolumes.SuspendLayout();
+            this.topVolumes2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).BeginInit();
             this.divCentro.SuspendLayout();
             this.abas.SuspendLayout();
@@ -122,9 +120,8 @@ namespace Acerto
             ((System.ComponentModel.ISupportInitialize)(this.gridMercadorias)).BeginInit();
             this.tabVolumes.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridVolumeFilial)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridVolumeMatriz)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridVolume)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intVolumes)).BeginInit();
             this.SuspendLayout();
             // 
             // divTopo
@@ -288,6 +285,7 @@ namespace Acerto
             this.topo.Controls.Add(this.contTopBusca2);
             this.topo.Controls.Add(this.contTopBusca3);
             this.topo.Controls.Add(this.topVolumes);
+            this.topo.Controls.Add(this.topVolumes2);
             this.topo.Controls.Add(this.ConsultaNumLinhas);
             this.topo.Dock = System.Windows.Forms.DockStyle.Top;
             this.topo.Location = new System.Drawing.Point(0, 0);
@@ -530,10 +528,10 @@ namespace Acerto
             // topVolumes
             // 
             this.topVolumes.Controls.Add(this.labelVolume);
-            this.topVolumes.Controls.Add(this.textVolumes);
+            this.topVolumes.Controls.Add(this.intVolumes);
             this.topVolumes.Controls.Add(this.btVolume);
             this.topVolumes.Location = new System.Drawing.Point(741, 36);
-            this.topVolumes.Margin = new System.Windows.Forms.Padding(0);
+            this.topVolumes.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.topVolumes.Name = "topVolumes";
             this.topVolumes.Padding = new System.Windows.Forms.Padding(3, 6, 0, 0);
             this.topVolumes.Size = new System.Drawing.Size(375, 31);
@@ -551,18 +549,9 @@ namespace Acerto
             this.labelVolume.TabIndex = 10;
             this.labelVolume.Text = "Volume";
             // 
-            // textVolumes
-            // 
-            this.textVolumes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textVolumes.Location = new System.Drawing.Point(67, 6);
-            this.textVolumes.Margin = new System.Windows.Forms.Padding(0);
-            this.textVolumes.Name = "textVolumes";
-            this.textVolumes.Size = new System.Drawing.Size(205, 20);
-            this.textVolumes.TabIndex = 15;
-            // 
             // btVolume
             // 
-            this.btVolume.Location = new System.Drawing.Point(275, 6);
+            this.btVolume.Location = new System.Drawing.Point(269, 6);
             this.btVolume.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btVolume.Name = "btVolume";
             this.btVolume.Size = new System.Drawing.Size(97, 20);
@@ -571,12 +560,46 @@ namespace Acerto
             this.btVolume.UseVisualStyleBackColor = true;
             this.btVolume.Click += new System.EventHandler(this.btVolume_Click);
             // 
+            // topVolumes2
+            // 
+            this.topVolumes2.Controls.Add(this.radioVolMat);
+            this.topVolumes2.Controls.Add(this.radioVolFil);
+            this.topVolumes2.Location = new System.Drawing.Point(1119, 39);
+            this.topVolumes2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.topVolumes2.Name = "topVolumes2";
+            this.topVolumes2.Size = new System.Drawing.Size(139, 28);
+            this.topVolumes2.TabIndex = 27;
+            // 
+            // radioVolMat
+            // 
+            this.radioVolMat.AutoSize = true;
+            this.radioVolMat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioVolMat.Location = new System.Drawing.Point(3, 3);
+            this.radioVolMat.Name = "radioVolMat";
+            this.radioVolMat.Size = new System.Drawing.Size(67, 22);
+            this.radioVolMat.TabIndex = 0;
+            this.radioVolMat.TabStop = true;
+            this.radioVolMat.Text = "Matriz";
+            this.radioVolMat.UseVisualStyleBackColor = true;
+            // 
+            // radioVolFil
+            // 
+            this.radioVolFil.AutoSize = true;
+            this.radioVolFil.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioVolFil.Location = new System.Drawing.Point(76, 3);
+            this.radioVolFil.Name = "radioVolFil";
+            this.radioVolFil.Size = new System.Drawing.Size(55, 22);
+            this.radioVolFil.TabIndex = 1;
+            this.radioVolFil.TabStop = true;
+            this.radioVolFil.Text = "Filial";
+            this.radioVolFil.UseVisualStyleBackColor = true;
+            // 
             // ConsultaNumLinhas
             // 
             this.ConsultaNumLinhas.AutoSize = true;
             this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
-            this.ConsultaNumLinhas.Location = new System.Drawing.Point(1119, 42);
+            this.ConsultaNumLinhas.Location = new System.Drawing.Point(1261, 42);
             this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
             this.ConsultaNumLinhas.Size = new System.Drawing.Size(131, 18);
@@ -675,7 +698,7 @@ namespace Acerto
             this.gridConsulta.AllowUserToOrderColumns = true;
             this.gridConsulta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridConsulta.BackgroundColor = System.Drawing.SystemColors.HotTrack;
-            this.gridConsulta.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            this.gridConsulta.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
@@ -763,14 +786,12 @@ namespace Acerto
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.1398F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.8602F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 727F));
-            this.tableLayoutPanel1.Controls.Add(this.gridVolumeMatriz, 0, 1);
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.gridVolume, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblvolMatriz, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.gridVolumeFilial, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -780,63 +801,43 @@ namespace Acerto
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1442, 648);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // gridVolumeFilial
+            // gridVolume
             // 
-            this.gridVolumeFilial.AllowUserToAddRows = false;
-            this.gridVolumeFilial.AllowUserToOrderColumns = true;
-            this.gridVolumeFilial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridVolumeFilial.BackgroundColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridVolumeFilial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.gridVolumeFilial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridVolumeFilial.DefaultCellStyle = dataGridViewCellStyle10;
-            this.gridVolumeFilial.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridVolumeFilial.Location = new System.Drawing.Point(347, 34);
-            this.gridVolumeFilial.Name = "gridVolumeFilial";
-            this.gridVolumeFilial.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridVolumeFilial.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.gridVolumeFilial.Size = new System.Drawing.Size(364, 611);
-            this.gridVolumeFilial.TabIndex = 1;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(347, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(124, 23);
-            this.flowLayoutPanel1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 6);
-            this.label2.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Volume na filial:";
+            this.gridVolume.AllowUserToAddRows = false;
+            this.gridVolume.AllowUserToOrderColumns = true;
+            this.gridVolume.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridVolume.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridVolume.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.gridVolume.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridVolume.DefaultCellStyle = dataGridViewCellStyle7;
+            this.gridVolume.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridVolume.Location = new System.Drawing.Point(3, 35);
+            this.gridVolume.Name = "gridVolume";
+            this.gridVolume.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridVolume.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.gridVolume.Size = new System.Drawing.Size(1436, 610);
+            this.gridVolume.TabIndex = 6;
             // 
             // lblvolMatriz
             // 
@@ -845,47 +846,27 @@ namespace Acerto
             this.lblvolMatriz.Location = new System.Drawing.Point(0, 6);
             this.lblvolMatriz.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
             this.lblvolMatriz.Name = "lblvolMatriz";
-            this.lblvolMatriz.Size = new System.Drawing.Size(138, 17);
+            this.lblvolMatriz.Size = new System.Drawing.Size(71, 17);
             this.lblvolMatriz.TabIndex = 2;
-            this.lblvolMatriz.Text = "Volume na matriz:";
+            this.lblvolMatriz.Text = "Volume :";
             // 
-            // gridVolumeMatriz
+            // intVolumes
             // 
-            this.gridVolumeMatriz.AllowUserToAddRows = false;
-            this.gridVolumeMatriz.AllowUserToOrderColumns = true;
-            this.gridVolumeMatriz.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridVolumeMatriz.BackgroundColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridVolumeMatriz.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.gridVolumeMatriz.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridVolumeMatriz.DefaultCellStyle = dataGridViewCellStyle7;
-            this.gridVolumeMatriz.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridVolumeMatriz.Location = new System.Drawing.Point(3, 34);
-            this.gridVolumeMatriz.Name = "gridVolumeMatriz";
-            this.gridVolumeMatriz.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridVolumeMatriz.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.gridVolumeMatriz.Size = new System.Drawing.Size(338, 611);
-            this.gridVolumeMatriz.TabIndex = 6;
+            this.intVolumes.Increment = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.intVolumes.Location = new System.Drawing.Point(67, 6);
+            this.intVolumes.Margin = new System.Windows.Forms.Padding(0);
+            this.intVolumes.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.intVolumes.Name = "intVolumes";
+            this.intVolumes.Size = new System.Drawing.Size(199, 20);
+            this.intVolumes.TabIndex = 28;
             // 
             // Principal
             // 
@@ -926,6 +907,8 @@ namespace Acerto
             this.contTopBusca3.PerformLayout();
             this.topVolumes.ResumeLayout(false);
             this.topVolumes.PerformLayout();
+            this.topVolumes2.ResumeLayout(false);
+            this.topVolumes2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).EndInit();
             this.divCentro.ResumeLayout(false);
             this.divCentro.PerformLayout();
@@ -938,10 +921,8 @@ namespace Acerto
             this.tabVolumes.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridVolumeFilial)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridVolumeMatriz)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.intVolumes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -997,15 +978,15 @@ namespace Acerto
         private FlowLayoutPanel contTopBusca3;
         private FlowLayoutPanel topVolumes;
         private Label labelVolume;
-        private TextBox textVolumes;
         private Button btVolume;
         private TabPage tabVolumes;
-        private DataGridView gridVolumeFilial;
         private TableLayoutPanel tableLayoutPanel1;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private DataGridView gridVolumeMatriz;
+        private DataGridView gridVolume;
         private Label lblvolMatriz;
-        private Label label2;
+        private FlowLayoutPanel topVolumes2;
+        private RadioButton radioVolMat;
+        private RadioButton radioVolFil;
+        private NumericUpDown intVolumes;
     }
 }
 

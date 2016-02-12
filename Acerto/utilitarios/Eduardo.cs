@@ -31,6 +31,8 @@ namespace Consulta.utilitarios
                             return "\\t";
                         case "\u001A":          // Ctrl-Z
                             return "\\Z";
+                        case "'":              // aspa
+                            return "''";
                         default:
                             return "\\" + v;
                     }

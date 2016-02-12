@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Consulta.utilitarios;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Data;
+using System.Windows.Forms;
 
 namespace Acerto
 {
@@ -11,27 +12,59 @@ namespace Acerto
         private void btVolume_Click(object sender, EventArgs e)
         {
 
-            volFilial();
-            volMatriz();
+            worker = new BackgroundWorker();
+            worker.DoWork += new DoWorkEventHandler(PesquisaVolAsync);
+            worker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(PesquisaVolAsyncCompleta);
+            worker.WorkerReportsProgress = true;
+            worker.WorkerSupportsCancellation = true;
+            btVolume.Text = "Pesquisando...";
+            btVolume.Enabled = false;
+            worker.RunWorkerAsync();
           //  ConsultaNumLinhas.Text = gridVolumeMatriz.RowCount + " mercadorias encontradas no volume";
         }
 
-        private void volFilial()
+        private void PesquisaVolAsyncCompleta(object sender, RunWorkerCompletedEventArgs e)
         {
-            query = "SELECT mov_ser as serie from movimento where mov_doc = '" + textVolumes.Text+"'";
+            btVolume.Text = "Pesquisar";
+            btVolume.Enabled = true;
+            gridVolume.DataSource = e.Result;
+            ConsultaNumLinhas.Text = gridVolume.Rows.Count + " Mercadorias encontradas no volume.";
+        }
+        private void PesquisaVolAsync(object sender, DoWorkEventArgs e)
+        {
+            if (radioVolFil.Checked)
+            {
+                if(intFilial.Value != 0)
+                {
+                    e.Result = volFilial();
+                }
+                else
+                {
+                    MessageBox.Show("Necessário selecionar filial");
+                    worker.CancelAsync();
+                }
+                
+            }
+            else if (radioVolMat.Checked)
+            {
+                e.Result = volMatriz();
+            }    
+        }
+
+        private DataTable volFilial()
+        {
+            query = "SELECT mov_ser as serie from movimento where mov_doc = '" +intVolumes.Value+"'";
 
             if (intFilial.Value != 0)
             {
-                query += " and mov_sed ='" + intFilial.Value+"'";
+                query += " and mov_sed ='" + intFilial.Value+ "' and ROWNUM <= 500";
             }
-            gridVolumeFilial.DataSource = conecta.Consulta(query);
+            return conecta.Consulta(query);
         }
-
-        private void volMatriz()
+        private DataTable volMatriz()
         {
-            gridVolumeMatriz.DataSource = conecta.Consulta("SELECT  trf_ser as serie from transferido where trf_vol  = '" + textVolumes.Text + "'  and trf_dtc is null order by trf_ser");
+          return  conecta.Consulta("SELECT  trf_ser as serie from transferido where trf_vol  = '" +intVolumes.Value + "'  and trf_dtc is null order by trf_ser");
         }
-
 
     }
 }
