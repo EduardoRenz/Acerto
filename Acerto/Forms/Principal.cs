@@ -38,9 +38,7 @@ namespace Acerto
             contTopBusca1.Visible = false;
             contTopBusca2.Visible =false;
             contTopBusca3.Visible = false;
-            topVolumes.Visible = false;
-            topVolumes2.Visible = false;
-            radioVolMat.Checked = true;
+            topCPF.Visible = false;
             switch (abas.SelectedTab.Name)
             {
                 case "pagErros":
@@ -57,9 +55,9 @@ namespace Acerto
                     contTopBusca3.Visible = true;
                     this.AcceptButton = this.btMercadoriaPesquisa;
                     break;
-                case "tabVolumes":
-                    topVolumes.Visible = true;
-                    topVolumes2.Visible = true;
+                case "tabCPF":
+                    topCPF.Visible = true;
+                    this.AcceptButton = this.btCPF;
                     break;
                 default:
                     break;
@@ -80,7 +78,8 @@ namespace Acerto
         {
             conecta.Close();
         } // Ao fechar o Form      
-       
+
+ 
     }
 }
 

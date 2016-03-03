@@ -120,13 +120,13 @@
   <ItemGroup>
     <Compile Include="classes\Corretor.cs" />
     <Compile Include="classes\Grupo.cs" />
+    <Compile Include="Forms\Principal.CPF.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Principal.BuscaMercadoria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Principal.Consulta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Principal.Volume.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaces\ICorretor.cs" />
