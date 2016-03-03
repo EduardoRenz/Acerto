@@ -49,6 +49,7 @@ namespace Acerto
             this.chkTrans = new System.Windows.Forms.CheckBox();
             this.intFilial = new System.Windows.Forms.NumericUpDown();
             this.lblFilial = new System.Windows.Forms.Label();
+            this.numericDoc = new System.Windows.Forms.NumericUpDown();
             this.grpCondi = new System.Windows.Forms.Panel();
             this.btCorrigir = new System.Windows.Forms.Button();
             this.condLabel = new System.Windows.Forms.Label();
@@ -82,6 +83,11 @@ namespace Acerto
             this.lblCPF = new System.Windows.Forms.Label();
             this.textCPF = new System.Windows.Forms.TextBox();
             this.btCPF = new System.Windows.Forms.Button();
+            this.panelVolDocs = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblDoc = new System.Windows.Forms.Label();
+            this.radioMatriz = new System.Windows.Forms.RadioButton();
+            this.radioFilial = new System.Windows.Forms.RadioButton();
+            this.btVolDoc = new System.Windows.Forms.Button();
             this.ConsultaNumLinhas = new System.Windows.Forms.Label();
             this.tabelaNProc = new System.Windows.Forms.DataGridView();
             this.lblnaoproc = new System.Windows.Forms.Label();
@@ -94,11 +100,14 @@ namespace Acerto
             this.gridMercadorias = new System.Windows.Forms.DataGridView();
             this.tabCPF = new System.Windows.Forms.TabPage();
             this.tableCPF = new System.Windows.Forms.TableLayoutPanel();
+            this.cpfLblMercadorias = new System.Windows.Forms.Label();
+            this.cpfDocsLabel = new System.Windows.Forms.Label();
             this.cpfResultDoc = new System.Windows.Forms.DataGridView();
             this.gridCPF = new System.Windows.Forms.DataGridView();
-            this.cpfDocsLabel = new System.Windows.Forms.Label();
-            this.cpfLblMercadorias = new System.Windows.Forms.Label();
+            this.tabVolDoc = new System.Windows.Forms.TabPage();
+            this.dataVolDoc = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.intFilial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericDoc)).BeginInit();
             this.grpCondi.SuspendLayout();
             this.topo.SuspendLayout();
             this.painelFilial.SuspendLayout();
@@ -109,6 +118,7 @@ namespace Acerto
             this.contTopBusca2.SuspendLayout();
             this.contTopBusca3.SuspendLayout();
             this.topCPF.SuspendLayout();
+            this.panelVolDocs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).BeginInit();
             this.divCentro.SuspendLayout();
             this.abas.SuspendLayout();
@@ -121,6 +131,8 @@ namespace Acerto
             this.tableCPF.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cpfResultDoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCPF)).BeginInit();
+            this.tabVolDoc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataVolDoc)).BeginInit();
             this.SuspendLayout();
             // 
             // divTopo
@@ -188,6 +200,20 @@ namespace Acerto
             this.lblFilial.TabIndex = 0;
             this.lblFilial.Text = "Filial:";
             this.toolTip.SetToolTip(this.lblFilial, "0 = Todas as Filiais");
+            // 
+            // numericDoc
+            // 
+            this.numericDoc.Location = new System.Drawing.Point(47, 6);
+            this.numericDoc.Margin = new System.Windows.Forms.Padding(0);
+            this.numericDoc.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.numericDoc.Name = "numericDoc";
+            this.numericDoc.Size = new System.Drawing.Size(154, 20);
+            this.numericDoc.TabIndex = 12;
+            this.toolTip.SetToolTip(this.numericDoc, "0 = Todas as Filiais");
             // 
             // grpCondi
             // 
@@ -284,6 +310,7 @@ namespace Acerto
             this.topo.Controls.Add(this.contTopBusca2);
             this.topo.Controls.Add(this.contTopBusca3);
             this.topo.Controls.Add(this.topCPF);
+            this.topo.Controls.Add(this.panelVolDocs);
             this.topo.Controls.Add(this.ConsultaNumLinhas);
             this.topo.Dock = System.Windows.Forms.DockStyle.Top;
             this.topo.Location = new System.Drawing.Point(0, 0);
@@ -567,12 +594,74 @@ namespace Acerto
             this.btCPF.UseVisualStyleBackColor = true;
             this.btCPF.Click += new System.EventHandler(this.btCPF_Click);
             // 
+            // panelVolDocs
+            // 
+            this.panelVolDocs.Controls.Add(this.lblDoc);
+            this.panelVolDocs.Controls.Add(this.numericDoc);
+            this.panelVolDocs.Controls.Add(this.radioMatriz);
+            this.panelVolDocs.Controls.Add(this.radioFilial);
+            this.panelVolDocs.Controls.Add(this.btVolDoc);
+            this.panelVolDocs.Location = new System.Drawing.Point(370, 67);
+            this.panelVolDocs.Margin = new System.Windows.Forms.Padding(0);
+            this.panelVolDocs.Name = "panelVolDocs";
+            this.panelVolDocs.Padding = new System.Windows.Forms.Padding(3, 6, 0, 0);
+            this.panelVolDocs.Size = new System.Drawing.Size(441, 31);
+            this.panelVolDocs.TabIndex = 27;
+            // 
+            // lblDoc
+            // 
+            this.lblDoc.AutoSize = true;
+            this.lblDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblDoc.Location = new System.Drawing.Point(3, 6);
+            this.lblDoc.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.lblDoc.Name = "lblDoc";
+            this.lblDoc.Size = new System.Drawing.Size(41, 17);
+            this.lblDoc.TabIndex = 11;
+            this.lblDoc.Text = "Doc:";
+            // 
+            // radioMatriz
+            // 
+            this.radioMatriz.AutoSize = true;
+            this.radioMatriz.Checked = true;
+            this.radioMatriz.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioMatriz.Location = new System.Drawing.Point(207, 6);
+            this.radioMatriz.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.radioMatriz.Name = "radioMatriz";
+            this.radioMatriz.Size = new System.Drawing.Size(67, 22);
+            this.radioMatriz.TabIndex = 13;
+            this.radioMatriz.TabStop = true;
+            this.radioMatriz.Text = "Matriz";
+            this.radioMatriz.UseVisualStyleBackColor = true;
+            // 
+            // radioFilial
+            // 
+            this.radioFilial.AutoSize = true;
+            this.radioFilial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioFilial.Location = new System.Drawing.Point(280, 6);
+            this.radioFilial.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.radioFilial.Name = "radioFilial";
+            this.radioFilial.Size = new System.Drawing.Size(55, 22);
+            this.radioFilial.TabIndex = 14;
+            this.radioFilial.Text = "Filial";
+            this.radioFilial.UseVisualStyleBackColor = true;
+            // 
+            // btVolDoc
+            // 
+            this.btVolDoc.Location = new System.Drawing.Point(338, 6);
+            this.btVolDoc.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btVolDoc.Name = "btVolDoc";
+            this.btVolDoc.Size = new System.Drawing.Size(97, 20);
+            this.btVolDoc.TabIndex = 15;
+            this.btVolDoc.Text = "Pesquisar";
+            this.btVolDoc.UseVisualStyleBackColor = true;
+            this.btVolDoc.Click += new System.EventHandler(this.btVolDoc_Click);
+            // 
             // ConsultaNumLinhas
             // 
             this.ConsultaNumLinhas.AutoSize = true;
             this.ConsultaNumLinhas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConsultaNumLinhas.ForeColor = System.Drawing.SystemColors.Control;
-            this.ConsultaNumLinhas.Location = new System.Drawing.Point(373, 73);
+            this.ConsultaNumLinhas.Location = new System.Drawing.Point(814, 73);
             this.ConsultaNumLinhas.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
             this.ConsultaNumLinhas.Name = "ConsultaNumLinhas";
             this.ConsultaNumLinhas.Size = new System.Drawing.Size(131, 18);
@@ -646,6 +735,7 @@ namespace Acerto
             this.abas.Controls.Add(this.pagErros);
             this.abas.Controls.Add(this.tabMercadorias);
             this.abas.Controls.Add(this.tabCPF);
+            this.abas.Controls.Add(this.tabVolDoc);
             this.abas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.abas.Location = new System.Drawing.Point(0, 103);
             this.abas.Margin = new System.Windows.Forms.Padding(0);
@@ -775,6 +865,28 @@ namespace Acerto
             this.tableCPF.Size = new System.Drawing.Size(1048, 617);
             this.tableCPF.TabIndex = 2;
             // 
+            // cpfLblMercadorias
+            // 
+            this.cpfLblMercadorias.AutoSize = true;
+            this.cpfLblMercadorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.cpfLblMercadorias.Location = new System.Drawing.Point(524, 0);
+            this.cpfLblMercadorias.Margin = new System.Windows.Forms.Padding(0);
+            this.cpfLblMercadorias.Name = "cpfLblMercadorias";
+            this.cpfLblMercadorias.Size = new System.Drawing.Size(97, 17);
+            this.cpfLblMercadorias.TabIndex = 24;
+            this.cpfLblMercadorias.Text = "Mercadorias";
+            // 
+            // cpfDocsLabel
+            // 
+            this.cpfDocsLabel.AutoSize = true;
+            this.cpfDocsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.cpfDocsLabel.Location = new System.Drawing.Point(0, 0);
+            this.cpfDocsLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.cpfDocsLabel.Name = "cpfDocsLabel";
+            this.cpfDocsLabel.Size = new System.Drawing.Size(101, 17);
+            this.cpfDocsLabel.TabIndex = 23;
+            this.cpfDocsLabel.Text = "Docs do CPF";
+            // 
             // cpfResultDoc
             // 
             this.cpfResultDoc.AllowUserToAddRows = false;
@@ -844,27 +956,32 @@ namespace Acerto
             this.gridCPF.TabIndex = 6;
             this.gridCPF.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCPF_RowEnter);
             // 
-            // cpfDocsLabel
+            // tabVolDoc
             // 
-            this.cpfDocsLabel.AutoSize = true;
-            this.cpfDocsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.cpfDocsLabel.Location = new System.Drawing.Point(0, 0);
-            this.cpfDocsLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.cpfDocsLabel.Name = "cpfDocsLabel";
-            this.cpfDocsLabel.Size = new System.Drawing.Size(101, 17);
-            this.cpfDocsLabel.TabIndex = 23;
-            this.cpfDocsLabel.Text = "Docs do CPF";
+            this.tabVolDoc.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.tabVolDoc.Controls.Add(this.dataVolDoc);
+            this.tabVolDoc.Location = new System.Drawing.Point(4, 22);
+            this.tabVolDoc.Name = "tabVolDoc";
+            this.tabVolDoc.Padding = new System.Windows.Forms.Padding(3);
+            this.tabVolDoc.Size = new System.Drawing.Size(1054, 623);
+            this.tabVolDoc.TabIndex = 4;
+            this.tabVolDoc.Text = "Volumes / Docs";
             // 
-            // cpfLblMercadorias
+            // dataVolDoc
             // 
-            this.cpfLblMercadorias.AutoSize = true;
-            this.cpfLblMercadorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.cpfLblMercadorias.Location = new System.Drawing.Point(524, 0);
-            this.cpfLblMercadorias.Margin = new System.Windows.Forms.Padding(0);
-            this.cpfLblMercadorias.Name = "cpfLblMercadorias";
-            this.cpfLblMercadorias.Size = new System.Drawing.Size(97, 17);
-            this.cpfLblMercadorias.TabIndex = 24;
-            this.cpfLblMercadorias.Text = "Mercadorias";
+            this.dataVolDoc.AllowUserToAddRows = false;
+            this.dataVolDoc.AllowUserToOrderColumns = true;
+            this.dataVolDoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataVolDoc.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            this.dataVolDoc.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            this.dataVolDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataVolDoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataVolDoc.GridColor = System.Drawing.SystemColors.HotTrack;
+            this.dataVolDoc.Location = new System.Drawing.Point(3, 3);
+            this.dataVolDoc.Name = "dataVolDoc";
+            this.dataVolDoc.ReadOnly = true;
+            this.dataVolDoc.Size = new System.Drawing.Size(1048, 617);
+            this.dataVolDoc.TabIndex = 1;
             // 
             // Principal
             // 
@@ -885,6 +1002,7 @@ namespace Acerto
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Principal_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.intFilial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericDoc)).EndInit();
             this.grpCondi.ResumeLayout(false);
             this.grpCondi.PerformLayout();
             this.topo.ResumeLayout(false);
@@ -905,6 +1023,8 @@ namespace Acerto
             this.contTopBusca3.PerformLayout();
             this.topCPF.ResumeLayout(false);
             this.topCPF.PerformLayout();
+            this.panelVolDocs.ResumeLayout(false);
+            this.panelVolDocs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).EndInit();
             this.divCentro.ResumeLayout(false);
             this.divCentro.PerformLayout();
@@ -919,6 +1039,8 @@ namespace Acerto
             this.tableCPF.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cpfResultDoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCPF)).EndInit();
+            this.tabVolDoc.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataVolDoc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -984,6 +1106,14 @@ namespace Acerto
         private DataGridView cpfResultDoc;
         private Label cpfLblMercadorias;
         private Label cpfDocsLabel;
+        private TabPage tabVolDoc;
+        private FlowLayoutPanel panelVolDocs;
+        private Label lblDoc;
+        private NumericUpDown numericDoc;
+        private RadioButton radioMatriz;
+        private RadioButton radioFilial;
+        private Button btVolDoc;
+        private DataGridView dataVolDoc;
     }
 }
 

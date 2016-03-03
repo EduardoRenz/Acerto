@@ -14,7 +14,7 @@ namespace Acerto
         public Principal() { InitializeComponent(); }
         private void Form1_Load(object sender, EventArgs e) //  AO CARREGAR O FORM 
         {
-            Text = "Consulta  v:1.1.1.0";
+            Text = "Consulta  v:1.1.2.0";
             VerificaAbas();
             VerificaConexao();
             listarGrupo(conecta);
@@ -39,6 +39,7 @@ namespace Acerto
             contTopBusca2.Visible =false;
             contTopBusca3.Visible = false;
             topCPF.Visible = false;
+            panelVolDocs.Visible = false;
             switch (abas.SelectedTab.Name)
             {
                 case "pagErros":
@@ -58,6 +59,10 @@ namespace Acerto
                 case "tabCPF":
                     topCPF.Visible = true;
                     this.AcceptButton = this.btCPF;
+                    break;
+                case "tabVolDoc":
+                    panelVolDocs .Visible = true;
+                    this.AcceptButton = this.btVolDoc;
                     break;
                 default:
                     break;
@@ -79,7 +84,6 @@ namespace Acerto
             conecta.Close();
         } // Ao fechar o Form      
 
- 
     }
 }
 
