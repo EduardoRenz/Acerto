@@ -8,7 +8,8 @@ namespace Acerto
     {
          private void btCPF_Click(object sender, EventArgs e)
         {
-            query = "select count (mov_doc) as Itens,mov_dat data,mov_tip tipo, mov_cdemp CPF ,mov_doc NF from movimento where mov_cdemp = '" + Eduardo.SqlScape(textCPF.Text) +"' and rownum <=1000 group by mov_dat,mov_tip, mov_cdemp,mov_doc";
+            cpfResultDoc.DataSource = null;
+            query = "select count (mov_doc) as Itens,mov_dat data,mov_tip tipo, mov_cdemp CPF ,mov_doc NF from movimento where mov_cdemp = '" + textCPF.Value +"' and rownum <=1000 group by mov_dat,mov_tip, mov_cdemp,mov_doc";
             gridCPF.DataSource = conecta.Consulta(query);
             gridCPF.Columns["CPF"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }

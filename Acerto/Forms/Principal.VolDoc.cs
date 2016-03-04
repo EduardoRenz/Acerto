@@ -17,7 +17,8 @@ namespace Acerto
 
             if (radioMatriz.Checked) // Matriz
             {
-                query = "SELECT  trf_ser as serie from transferido where trf_vol  = '"+numericDoc.Value+"'  and trf_dtc is null order by trf_ser";
+                query = "SELECT  trf_ser as serie from transferido where trf_vol  = '"+ numericDoc.Value+ "'  and trf_dtc is null and ROWNUM <= 500 order by trf_ser";
+                //Console.WriteLine(query);
                 worker.RunWorkerAsync();
             }
             else // Filial

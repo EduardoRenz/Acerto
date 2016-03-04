@@ -18,6 +18,7 @@ namespace Acerto
             prodErros = conecta.Consulta(listaME);
             tabelaNProc.DataSource = prodErros;
             ConsultaNumLinhas.Text = tabelaNProc.RowCount + " Acertos encontrados.";
+            tabelaNProc.Columns["PROCESSAMENTO"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         } // Ao clicar na pesquisa
       
         private void tabelaNProc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

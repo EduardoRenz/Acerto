@@ -81,7 +81,7 @@ namespace Acerto
             this.btMercadoriaPesquisa = new System.Windows.Forms.Button();
             this.topCPF = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCPF = new System.Windows.Forms.Label();
-            this.textCPF = new System.Windows.Forms.TextBox();
+            this.textCPF = new System.Windows.Forms.NumericUpDown();
             this.btCPF = new System.Windows.Forms.Button();
             this.panelVolDocs = new System.Windows.Forms.FlowLayoutPanel();
             this.lblDoc = new System.Windows.Forms.Label();
@@ -118,6 +118,7 @@ namespace Acerto
             this.contTopBusca2.SuspendLayout();
             this.contTopBusca3.SuspendLayout();
             this.topCPF.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textCPF)).BeginInit();
             this.panelVolDocs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).BeginInit();
             this.divCentro.SuspendLayout();
@@ -264,7 +265,7 @@ namespace Acerto
             this.dataFim.Name = "dataFim";
             this.dataFim.Size = new System.Drawing.Size(100, 20);
             this.dataFim.TabIndex = 3;
-            this.dataFim.Value = new System.DateTime(2016, 3, 3, 0, 0, 0, 0);
+            this.dataFim.Value = new System.DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0, 0);
             // 
             // dataInicio
             // 
@@ -274,7 +275,7 @@ namespace Acerto
             this.dataInicio.Name = "dataInicio";
             this.dataInicio.Size = new System.Drawing.Size(103, 20);
             this.dataInicio.TabIndex = 2;
-            this.dataInicio.Value = new System.DateTime(2016, 3, 1, 10, 48, 49, 957);
+            this.dataInicio.Value = new System.DateTime(DateTime.Now.Year,DateTime.Now.Month, 1, 10, 48, 49, 957);
             // 
             // lblData
             // 
@@ -576,12 +577,16 @@ namespace Acerto
             // 
             // textCPF
             // 
-            this.textCPF.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textCPF.Location = new System.Drawing.Point(48, 6);
             this.textCPF.Margin = new System.Windows.Forms.Padding(0);
+            this.textCPF.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
             this.textCPF.Name = "textCPF";
             this.textCPF.Size = new System.Drawing.Size(205, 20);
-            this.textCPF.TabIndex = 15;
+            this.textCPF.TabIndex = 16;
             // 
             // btCPF
             // 
@@ -672,7 +677,7 @@ namespace Acerto
             // 
             this.tabelaNProc.AllowUserToAddRows = false;
             this.tabelaNProc.AllowUserToOrderColumns = true;
-            this.tabelaNProc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tabelaNProc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.tabelaNProc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.tabelaNProc.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.tabelaNProc.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
@@ -1023,6 +1028,7 @@ namespace Acerto
             this.contTopBusca3.PerformLayout();
             this.topCPF.ResumeLayout(false);
             this.topCPF.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textCPF)).EndInit();
             this.panelVolDocs.ResumeLayout(false);
             this.panelVolDocs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).EndInit();
@@ -1100,7 +1106,6 @@ namespace Acerto
         private RadioButton radioVolFil;
         private FlowLayoutPanel topCPF;
         private Label lblCPF;
-        private TextBox textCPF;
         private Button btCPF;
         private DataGridView gridCPF;
         private DataGridView cpfResultDoc;
@@ -1109,11 +1114,12 @@ namespace Acerto
         private TabPage tabVolDoc;
         private FlowLayoutPanel panelVolDocs;
         private Label lblDoc;
-        private NumericUpDown numericDoc;
         private RadioButton radioMatriz;
         private RadioButton radioFilial;
         private Button btVolDoc;
         private DataGridView dataVolDoc;
+        private NumericUpDown textCPF;
+        private NumericUpDown numericDoc;
     }
 }
 
