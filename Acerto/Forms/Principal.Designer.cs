@@ -265,7 +265,7 @@ namespace Acerto
             this.dataFim.Name = "dataFim";
             this.dataFim.Size = new System.Drawing.Size(100, 20);
             this.dataFim.TabIndex = 3;
-            this.dataFim.Value = new System.DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0, 0);
+            this.dataFim.Value = new System.DateTime(2016, 3, 4, 0, 0, 0, 0);
             // 
             // dataInicio
             // 
@@ -275,7 +275,7 @@ namespace Acerto
             this.dataInicio.Name = "dataInicio";
             this.dataInicio.Size = new System.Drawing.Size(103, 20);
             this.dataInicio.TabIndex = 2;
-            this.dataInicio.Value = new System.DateTime(DateTime.Now.Year,DateTime.Now.Month, 1, 10, 48, 49, 957);
+            this.dataInicio.Value = new System.DateTime(2016, 3, 1, 10, 48, 49, 957);
             // 
             // lblData
             // 
@@ -680,7 +680,7 @@ namespace Acerto
             this.tabelaNProc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.tabelaNProc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.tabelaNProc.BackgroundColor = System.Drawing.SystemColors.HotTrack;
-            this.tabelaNProc.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            this.tabelaNProc.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -830,7 +830,7 @@ namespace Acerto
             this.gridMercadorias.AllowUserToOrderColumns = true;
             this.gridMercadorias.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridMercadorias.BackgroundColor = System.Drawing.SystemColors.HotTrack;
-            this.gridMercadorias.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            this.gridMercadorias.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.gridMercadorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridMercadorias.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridMercadorias.GridColor = System.Drawing.SystemColors.HotTrack;
@@ -925,6 +925,7 @@ namespace Acerto
             this.cpfResultDoc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.cpfResultDoc.Size = new System.Drawing.Size(518, 611);
             this.cpfResultDoc.TabIndex = 7;
+            this.cpfResultDoc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cpfResultDoc_CellDoubleClick);
             // 
             // gridCPF
             // 
@@ -978,7 +979,7 @@ namespace Acerto
             this.dataVolDoc.AllowUserToOrderColumns = true;
             this.dataVolDoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataVolDoc.BackgroundColor = System.Drawing.SystemColors.HotTrack;
-            this.dataVolDoc.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            this.dataVolDoc.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.dataVolDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataVolDoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataVolDoc.GridColor = System.Drawing.SystemColors.HotTrack;
