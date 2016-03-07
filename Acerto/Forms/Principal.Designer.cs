@@ -81,7 +81,6 @@ namespace Acerto
             this.btMercadoriaPesquisa = new System.Windows.Forms.Button();
             this.topCPF = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCPF = new System.Windows.Forms.Label();
-            this.textCPF = new System.Windows.Forms.NumericUpDown();
             this.btCPF = new System.Windows.Forms.Button();
             this.panelVolDocs = new System.Windows.Forms.FlowLayoutPanel();
             this.lblDoc = new System.Windows.Forms.Label();
@@ -100,12 +99,17 @@ namespace Acerto
             this.gridMercadorias = new System.Windows.Forms.DataGridView();
             this.tabCPF = new System.Windows.Forms.TabPage();
             this.tableCPF = new System.Windows.Forms.TableLayoutPanel();
-            this.cpfLblMercadorias = new System.Windows.Forms.Label();
-            this.cpfDocsLabel = new System.Windows.Forms.Label();
-            this.cpfResultDoc = new System.Windows.Forms.DataGridView();
+            this.flowCPFLeft = new System.Windows.Forms.FlowLayoutPanel();
             this.gridCPF = new System.Windows.Forms.DataGridView();
+            this.cpfResultDoc = new System.Windows.Forms.DataGridView();
+            this.cpfDocsLabel = new System.Windows.Forms.Label();
+            this.cpfLblMercadorias = new System.Windows.Forms.Label();
+            this.cpfFlowLeft = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelNomeCliente = new System.Windows.Forms.Label();
+            this.lblClienteNome = new System.Windows.Forms.Label();
             this.tabVolDoc = new System.Windows.Forms.TabPage();
             this.dataVolDoc = new System.Windows.Forms.DataGridView();
+            this.textCPF = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.intFilial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericDoc)).BeginInit();
             this.grpCondi.SuspendLayout();
@@ -118,7 +122,6 @@ namespace Acerto
             this.contTopBusca2.SuspendLayout();
             this.contTopBusca3.SuspendLayout();
             this.topCPF.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textCPF)).BeginInit();
             this.panelVolDocs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).BeginInit();
             this.divCentro.SuspendLayout();
@@ -130,8 +133,9 @@ namespace Acerto
             ((System.ComponentModel.ISupportInitialize)(this.gridMercadorias)).BeginInit();
             this.tabCPF.SuspendLayout();
             this.tableCPF.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cpfResultDoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCPF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpfResultDoc)).BeginInit();
+            this.cpfFlowLeft.SuspendLayout();
             this.tabVolDoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataVolDoc)).BeginInit();
             this.SuspendLayout();
@@ -575,22 +579,9 @@ namespace Acerto
             this.lblCPF.TabIndex = 10;
             this.lblCPF.Text = "CPF:";
             // 
-            // textCPF
-            // 
-            this.textCPF.Location = new System.Drawing.Point(48, 6);
-            this.textCPF.Margin = new System.Windows.Forms.Padding(0);
-            this.textCPF.Maximum = new decimal(new int[] {
-            1215752191,
-            23,
-            0,
-            0});
-            this.textCPF.Name = "textCPF";
-            this.textCPF.Size = new System.Drawing.Size(205, 20);
-            this.textCPF.TabIndex = 16;
-            // 
             // btCPF
             // 
-            this.btCPF.Location = new System.Drawing.Point(256, 6);
+            this.btCPF.Location = new System.Drawing.Point(262, 6);
             this.btCPF.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btCPF.Name = "btCPF";
             this.btCPF.Size = new System.Drawing.Size(97, 20);
@@ -857,75 +848,29 @@ namespace Acerto
             this.tableCPF.ColumnCount = 2;
             this.tableCPF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableCPF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableCPF.Controls.Add(this.cpfLblMercadorias, 1, 0);
-            this.tableCPF.Controls.Add(this.cpfDocsLabel, 0, 0);
-            this.tableCPF.Controls.Add(this.cpfResultDoc, 1, 1);
-            this.tableCPF.Controls.Add(this.gridCPF, 0, 1);
+            this.tableCPF.Controls.Add(this.flowCPFLeft, 1, 0);
+            this.tableCPF.Controls.Add(this.gridCPF, 0, 2);
+            this.tableCPF.Controls.Add(this.cpfResultDoc, 1, 2);
+            this.tableCPF.Controls.Add(this.cpfDocsLabel, 0, 1);
+            this.tableCPF.Controls.Add(this.cpfLblMercadorias, 1, 1);
+            this.tableCPF.Controls.Add(this.cpfFlowLeft, 0, 0);
             this.tableCPF.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableCPF.Location = new System.Drawing.Point(3, 3);
             this.tableCPF.Name = "tableCPF";
-            this.tableCPF.RowCount = 2;
+            this.tableCPF.RowCount = 3;
+            this.tableCPF.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableCPF.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableCPF.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableCPF.Size = new System.Drawing.Size(1048, 617);
             this.tableCPF.TabIndex = 2;
             // 
-            // cpfLblMercadorias
+            // flowCPFLeft
             // 
-            this.cpfLblMercadorias.AutoSize = true;
-            this.cpfLblMercadorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.cpfLblMercadorias.Location = new System.Drawing.Point(524, 0);
-            this.cpfLblMercadorias.Margin = new System.Windows.Forms.Padding(0);
-            this.cpfLblMercadorias.Name = "cpfLblMercadorias";
-            this.cpfLblMercadorias.Size = new System.Drawing.Size(97, 17);
-            this.cpfLblMercadorias.TabIndex = 24;
-            this.cpfLblMercadorias.Text = "Mercadorias";
-            // 
-            // cpfDocsLabel
-            // 
-            this.cpfDocsLabel.AutoSize = true;
-            this.cpfDocsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.cpfDocsLabel.Location = new System.Drawing.Point(0, 0);
-            this.cpfDocsLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.cpfDocsLabel.Name = "cpfDocsLabel";
-            this.cpfDocsLabel.Size = new System.Drawing.Size(101, 17);
-            this.cpfDocsLabel.TabIndex = 23;
-            this.cpfDocsLabel.Text = "Docs do CPF";
-            // 
-            // cpfResultDoc
-            // 
-            this.cpfResultDoc.AllowUserToAddRows = false;
-            this.cpfResultDoc.AllowUserToOrderColumns = true;
-            this.cpfResultDoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cpfResultDoc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
-            this.cpfResultDoc.BackgroundColor = System.Drawing.SystemColors.HotTrack;
-            this.cpfResultDoc.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cpfResultDoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.cpfResultDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cpfResultDoc.DefaultCellStyle = dataGridViewCellStyle7;
-            this.cpfResultDoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cpfResultDoc.Location = new System.Drawing.Point(527, 23);
-            this.cpfResultDoc.MultiSelect = false;
-            this.cpfResultDoc.Name = "cpfResultDoc";
-            this.cpfResultDoc.ReadOnly = true;
-            this.cpfResultDoc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.cpfResultDoc.Size = new System.Drawing.Size(518, 611);
-            this.cpfResultDoc.TabIndex = 7;
-            this.cpfResultDoc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cpfResultDoc_CellDoubleClick);
+            this.flowCPFLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowCPFLeft.Location = new System.Drawing.Point(527, 3);
+            this.flowCPFLeft.Name = "flowCPFLeft";
+            this.flowCPFLeft.Size = new System.Drawing.Size(518, 17);
+            this.flowCPFLeft.TabIndex = 26;
             // 
             // gridCPF
             // 
@@ -935,6 +880,41 @@ namespace Acerto
             this.gridCPF.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.gridCPF.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.gridCPF.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCPF.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.gridCPF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridCPF.DefaultCellStyle = dataGridViewCellStyle7;
+            this.gridCPF.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridCPF.Location = new System.Drawing.Point(3, 46);
+            this.gridCPF.MultiSelect = false;
+            this.gridCPF.Name = "gridCPF";
+            this.gridCPF.ReadOnly = true;
+            this.gridCPF.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.gridCPF.Size = new System.Drawing.Size(518, 568);
+            this.gridCPF.TabIndex = 6;
+            this.gridCPF.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCPF_RowEnter);
+            // 
+            // cpfResultDoc
+            // 
+            this.cpfResultDoc.AllowUserToAddRows = false;
+            this.cpfResultDoc.AllowUserToOrderColumns = true;
+            this.cpfResultDoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cpfResultDoc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.cpfResultDoc.BackgroundColor = System.Drawing.SystemColors.HotTrack;
+            this.cpfResultDoc.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -942,8 +922,8 @@ namespace Acerto
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridCPF.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.gridCPF.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cpfResultDoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.cpfResultDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -951,16 +931,71 @@ namespace Acerto
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridCPF.DefaultCellStyle = dataGridViewCellStyle9;
-            this.gridCPF.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridCPF.Location = new System.Drawing.Point(3, 23);
-            this.gridCPF.MultiSelect = false;
-            this.gridCPF.Name = "gridCPF";
-            this.gridCPF.ReadOnly = true;
-            this.gridCPF.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gridCPF.Size = new System.Drawing.Size(518, 611);
-            this.gridCPF.TabIndex = 6;
-            this.gridCPF.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCPF_RowEnter);
+            this.cpfResultDoc.DefaultCellStyle = dataGridViewCellStyle9;
+            this.cpfResultDoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cpfResultDoc.Location = new System.Drawing.Point(527, 46);
+            this.cpfResultDoc.MultiSelect = false;
+            this.cpfResultDoc.Name = "cpfResultDoc";
+            this.cpfResultDoc.ReadOnly = true;
+            this.cpfResultDoc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.cpfResultDoc.Size = new System.Drawing.Size(518, 568);
+            this.cpfResultDoc.TabIndex = 7;
+            this.cpfResultDoc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cpfResultDoc_CellDoubleClick);
+            // 
+            // cpfDocsLabel
+            // 
+            this.cpfDocsLabel.AutoSize = true;
+            this.cpfDocsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.cpfDocsLabel.Location = new System.Drawing.Point(0, 23);
+            this.cpfDocsLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.cpfDocsLabel.Name = "cpfDocsLabel";
+            this.cpfDocsLabel.Size = new System.Drawing.Size(101, 17);
+            this.cpfDocsLabel.TabIndex = 23;
+            this.cpfDocsLabel.Text = "Docs do CPF";
+            // 
+            // cpfLblMercadorias
+            // 
+            this.cpfLblMercadorias.AutoSize = true;
+            this.cpfLblMercadorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.cpfLblMercadorias.Location = new System.Drawing.Point(524, 23);
+            this.cpfLblMercadorias.Margin = new System.Windows.Forms.Padding(0);
+            this.cpfLblMercadorias.Name = "cpfLblMercadorias";
+            this.cpfLblMercadorias.Size = new System.Drawing.Size(97, 17);
+            this.cpfLblMercadorias.TabIndex = 24;
+            this.cpfLblMercadorias.Text = "Mercadorias";
+            // 
+            // cpfFlowLeft
+            // 
+            this.cpfFlowLeft.Controls.Add(this.labelNomeCliente);
+            this.cpfFlowLeft.Controls.Add(this.lblClienteNome);
+            this.cpfFlowLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cpfFlowLeft.Location = new System.Drawing.Point(0, 3);
+            this.cpfFlowLeft.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.cpfFlowLeft.Name = "cpfFlowLeft";
+            this.cpfFlowLeft.Size = new System.Drawing.Size(521, 17);
+            this.cpfFlowLeft.TabIndex = 25;
+            // 
+            // labelNomeCliente
+            // 
+            this.labelNomeCliente.AutoSize = true;
+            this.labelNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.labelNomeCliente.Location = new System.Drawing.Point(0, 0);
+            this.labelNomeCliente.Margin = new System.Windows.Forms.Padding(0);
+            this.labelNomeCliente.Name = "labelNomeCliente";
+            this.labelNomeCliente.Size = new System.Drawing.Size(63, 17);
+            this.labelNomeCliente.TabIndex = 24;
+            this.labelNomeCliente.Text = "Cliente:";
+            // 
+            // lblClienteNome
+            // 
+            this.lblClienteNome.AutoSize = true;
+            this.lblClienteNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lblClienteNome.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblClienteNome.Location = new System.Drawing.Point(63, 0);
+            this.lblClienteNome.Margin = new System.Windows.Forms.Padding(0);
+            this.lblClienteNome.Name = "lblClienteNome";
+            this.lblClienteNome.Size = new System.Drawing.Size(0, 17);
+            this.lblClienteNome.TabIndex = 25;
             // 
             // tabVolDoc
             // 
@@ -988,6 +1023,14 @@ namespace Acerto
             this.dataVolDoc.ReadOnly = true;
             this.dataVolDoc.Size = new System.Drawing.Size(1048, 617);
             this.dataVolDoc.TabIndex = 1;
+            // 
+            // textCPF
+            // 
+            this.textCPF.Location = new System.Drawing.Point(48, 6);
+            this.textCPF.Margin = new System.Windows.Forms.Padding(0);
+            this.textCPF.Name = "textCPF";
+            this.textCPF.Size = new System.Drawing.Size(211, 20);
+            this.textCPF.TabIndex = 17;
             // 
             // Principal
             // 
@@ -1029,7 +1072,6 @@ namespace Acerto
             this.contTopBusca3.PerformLayout();
             this.topCPF.ResumeLayout(false);
             this.topCPF.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textCPF)).EndInit();
             this.panelVolDocs.ResumeLayout(false);
             this.panelVolDocs.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaNProc)).EndInit();
@@ -1044,8 +1086,10 @@ namespace Acerto
             this.tabCPF.ResumeLayout(false);
             this.tableCPF.ResumeLayout(false);
             this.tableCPF.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cpfResultDoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCPF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cpfResultDoc)).EndInit();
+            this.cpfFlowLeft.ResumeLayout(false);
+            this.cpfFlowLeft.PerformLayout();
             this.tabVolDoc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataVolDoc)).EndInit();
             this.ResumeLayout(false);
@@ -1108,9 +1152,6 @@ namespace Acerto
         private FlowLayoutPanel topCPF;
         private Label lblCPF;
         private Button btCPF;
-        private DataGridView gridCPF;
-        private DataGridView cpfResultDoc;
-        private Label cpfLblMercadorias;
         private Label cpfDocsLabel;
         private TabPage tabVolDoc;
         private FlowLayoutPanel panelVolDocs;
@@ -1119,8 +1160,15 @@ namespace Acerto
         private RadioButton radioFilial;
         private Button btVolDoc;
         private DataGridView dataVolDoc;
-        private NumericUpDown textCPF;
         private NumericUpDown numericDoc;
+        private FlowLayoutPanel flowCPFLeft;
+        private DataGridView gridCPF;
+        private DataGridView cpfResultDoc;
+        private Label cpfLblMercadorias;
+        private FlowLayoutPanel cpfFlowLeft;
+        private Label labelNomeCliente;
+        private Label lblClienteNome;
+        private TextBox textCPF;
     }
 }
 
