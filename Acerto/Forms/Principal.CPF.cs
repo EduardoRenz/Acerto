@@ -13,7 +13,7 @@ namespace Acerto
             cpfResultDoc.DataSource = null;
             query = "select distinct trim(mov_dat) data ,mov_doc NF from movimento where mov_cdemp = '"+Eduardo.SqlScape(textCPF.Text)+"' and rownum <=1000 group by mov_dat,mov_doc";
             gridCPF.DataSource = conecta.Consulta(query);
-            setNomeCliente(textCPF.Text);
+            setNomeCliente(Eduardo.SqlScape(textCPF.Text));
             gridCPF.Sort(gridCPF.Columns["DATA"], ListSortDirection.Ascending);
             gridCPF.Columns["NF"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
@@ -21,7 +21,7 @@ namespace Acerto
         {
             if(e.RowIndex != -1){
                 query = "select mov_doc nf, mov_seo filial,mov_ref material,mov_ser serie,mov_val preco from movimento where mov_doc= '"+
-                         gridCPF["NF", e.RowIndex ].Value+ "' and mov_cdemp = '" + textCPF.Text + "' and rownum <=100";
+                         gridCPF["NF", e.RowIndex ].Value+ "' and mov_cdemp = '" + Eduardo.SqlScape(textCPF.Text) + "' and rownum <=100";
                 cpfResultDoc.DataSource = conecta.Consulta(query);
             }
         }

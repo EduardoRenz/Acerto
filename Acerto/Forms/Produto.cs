@@ -44,7 +44,7 @@ namespace Acerto
         // HISTORICOS
         private void MostraHistorico(OracleConexao conecta)
         {
-            string query = "select mov_dat Data, mov_seo Origem, mov_sed Destino,TIP_DES Tipo, mov_doc nf,MOV_CDEMP cpf_cnpj, MOV_CDVDR Vendedor, MOV_VAL Valor from movimento, TIPMOV where mov_ref = '" + material + "' and mov_ser = '" + serie + "' and mov_tip = TIP_COD order by mov_dat";
+            string query = "select mov_dat Data, mov_seo Origem, mov_sed Destino,TIP_DES Tipo, mov_doc nf, 'Cpf: ' || MOV_CDEMP || ' Vdr:' ||  MOV_CDVDR || ' R$:' || MOV_VAL obs from movimento, TIPMOV where mov_ref = '" + material + "' and mov_ser = '" + serie + "' and mov_tip = TIP_COD order by mov_dat";
             ProdGridHist.DataSource = conecta.Consulta(query);
             ProdGridHist.Columns["TIPO"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             // Loop para verificação e ajuste
@@ -65,12 +65,12 @@ namespace Acerto
         // DADOS DO PRODUTO
         private void DetalhesProduto(OracleConexao conecta)
         {
-            string query = "select * from MERCADORIAS where MERCADO_COD = '" + material + "'";
+            string query = "select MERCADO_DES,MERCADO_ANOEST,MERCADO_SGRP,MERCADO_GRP,grupo_desc,subgrp_desc from MERCADORIAS,grupo,subgrupo where MERCADO_COD = '"+material+"' and mercado_grp = grupo_cod and mercado_grp = subgrp_cod";
             dadosProduto = conecta.Consulta(query);
             prodDescr.Text = dadosProduto.Rows[0].Field<string>("MERCADO_DES").ToLower();
             anoEst.Text = dadosProduto.Rows[0].Field<string>("MERCADO_ANOEST");
-            subGrp.Text = dadosProduto.Rows[0].Field<string>("MERCADO_SGRP");
-            prodGrp.Text = dadosProduto.Rows[0].Field<string>("MERCADO_GRP");
+            subGrp.Text = dadosProduto.Rows[0].Field<string>("MERCADO_SGRP") + " - " + dadosProduto.Rows[0].Field<string>("subgrp_desc")+ " ";
+            prodGrp.Text = dadosProduto.Rows[0].Field<string>("MERCADO_GRP") + " - " + dadosProduto.Rows[0].Field<string>("grupo_desc") + " "; ;
         } // Detalhes do produto tabela MERCADORIAS
         // Verifica erros de processamento
         private void VerificaErrosProcessamento(OracleConexao conecta)
