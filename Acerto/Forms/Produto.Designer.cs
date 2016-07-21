@@ -270,11 +270,11 @@
             // 
             this.flowGrptoEst.Controls.Add(this.flowDivProdMais);
             this.flowLayoutPanel1.SetFlowBreak(this.flowGrptoEst, true);
-            this.flowGrptoEst.Location = new System.Drawing.Point(0, 30);
-            this.flowGrptoEst.Margin = new System.Windows.Forms.Padding(0);
+            this.flowGrptoEst.Location = new System.Drawing.Point(3, 30);
+            this.flowGrptoEst.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.flowGrptoEst.Name = "flowGrptoEst";
-            this.flowGrptoEst.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.flowGrptoEst.Size = new System.Drawing.Size(721, 28);
+            this.flowGrptoEst.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.flowGrptoEst.Size = new System.Drawing.Size(792, 28);
             this.flowGrptoEst.TabIndex = 12;
             // 
             // flowDivProdMais
@@ -284,11 +284,11 @@
             this.flowDivProdMais.Controls.Add(this.prodGrp);
             this.flowDivProdMais.Controls.Add(this.panelsubGrp);
             this.flowDivProdMais.Controls.Add(this.panelAnoEst);
-            this.flowDivProdMais.Location = new System.Drawing.Point(2, 8);
+            this.flowDivProdMais.Location = new System.Drawing.Point(2, 6);
             this.flowDivProdMais.Margin = new System.Windows.Forms.Padding(2, 3, 0, 3);
             this.flowDivProdMais.MinimumSize = new System.Drawing.Size(200, 0);
             this.flowDivProdMais.Name = "flowDivProdMais";
-            this.flowDivProdMais.Size = new System.Drawing.Size(451, 34);
+            this.flowDivProdMais.Size = new System.Drawing.Size(679, 17);
             this.flowDivProdMais.TabIndex = 10;
             // 
             // lblProdGrp
@@ -311,7 +311,7 @@
             this.prodGrp.Margin = new System.Windows.Forms.Padding(0);
             this.prodGrp.Name = "prodGrp";
             this.prodGrp.ReadOnly = true;
-            this.prodGrp.Size = new System.Drawing.Size(186, 15);
+            this.prodGrp.Size = new System.Drawing.Size(136, 15);
             this.prodGrp.TabIndex = 2;
             this.prodGrp.Text = "grupo";
             // 
@@ -320,10 +320,10 @@
             this.panelsubGrp.AutoSize = true;
             this.panelsubGrp.Controls.Add(this.lblSubGrp);
             this.panelsubGrp.Controls.Add(this.subGrp);
-            this.panelsubGrp.Location = new System.Drawing.Point(242, 0);
+            this.panelsubGrp.Location = new System.Drawing.Point(192, 0);
             this.panelsubGrp.Margin = new System.Windows.Forms.Padding(0);
             this.panelsubGrp.Name = "panelsubGrp";
-            this.panelsubGrp.Size = new System.Drawing.Size(209, 17);
+            this.panelsubGrp.Size = new System.Drawing.Size(286, 17);
             this.panelsubGrp.TabIndex = 6;
             // 
             // lblSubGrp
@@ -346,7 +346,7 @@
             this.subGrp.Margin = new System.Windows.Forms.Padding(0);
             this.subGrp.Name = "subGrp";
             this.subGrp.ReadOnly = true;
-            this.subGrp.Size = new System.Drawing.Size(120, 15);
+            this.subGrp.Size = new System.Drawing.Size(197, 15);
             this.subGrp.TabIndex = 2;
             this.subGrp.Text = "SubGrp";
             // 
@@ -355,10 +355,10 @@
             this.panelAnoEst.AutoSize = true;
             this.panelAnoEst.Controls.Add(this.lblAnoEst);
             this.panelAnoEst.Controls.Add(this.anoEst);
-            this.panelAnoEst.Location = new System.Drawing.Point(0, 17);
+            this.panelAnoEst.Location = new System.Drawing.Point(478, 0);
             this.panelAnoEst.Margin = new System.Windows.Forms.Padding(0);
             this.panelAnoEst.Name = "panelAnoEst";
-            this.panelAnoEst.Size = new System.Drawing.Size(327, 17);
+            this.panelAnoEst.Size = new System.Drawing.Size(201, 17);
             this.panelAnoEst.TabIndex = 7;
             // 
             // lblAnoEst
@@ -381,7 +381,7 @@
             this.anoEst.Margin = new System.Windows.Forms.Padding(0);
             this.anoEst.Name = "anoEst";
             this.anoEst.ReadOnly = true;
-            this.anoEst.Size = new System.Drawing.Size(216, 15);
+            this.anoEst.Size = new System.Drawing.Size(90, 15);
             this.anoEst.TabIndex = 2;
             this.anoEst.Text = "SubGrp";
             // 

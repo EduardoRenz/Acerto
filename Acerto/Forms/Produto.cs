@@ -29,7 +29,7 @@ namespace Acerto
             // Aplicando os labels e texts
             prodMaterial.Text = material.Trim();
             prodSerie.Text = serie;
-            prodFilial.Text = filial.ToString();
+            //prodFilial.Text = filial.ToString();
             Text = filial + " | " + material + " | " + serie;
             prodDescr.Text = Eduardo.UpperFirst(prodDescr.Text);
 
@@ -48,6 +48,14 @@ namespace Acerto
             string query = "select mov_dat Data, mov_seo Origem, mov_sed Destino,TIP_DES Tipo, mov_doc nf, 'Cpf: ' || MOV_CDEMP || ' Vdr:' ||  MOV_CDVDR || ' R$:' || MOV_VAL obs from movimento, TIPMOV where mov_ref = '" + material + "' and mov_ser = '" + serie + "' and mov_tip = TIP_COD order by mov_dat";
             ProdGridHist.DataSource = conecta.Consulta(query);
             ProdGridHist.Columns["TIPO"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            if(ProdGridHist.Rows.Count > 0)
+            {
+                prodFilial.Text = ProdGridHist.Rows[ProdGridHist.Rows.Count - 1].Cells["destino"].Value.ToString();
+            }
+            else
+            {
+                prodFilial.Text = filial.ToString();
+            }
             // Loop para verificação e ajuste
             foreach (DataGridViewRow row in ProdGridHist.Rows)
             {
