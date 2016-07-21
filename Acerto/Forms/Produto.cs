@@ -11,6 +11,7 @@ namespace Acerto
         private string material { get; set; }
         private int filial { get; set; }
         private DataTable dadosProduto = new DataTable();
+        private DataTable dadosTrf = new DataTable();
         private OracleConexao conecta;
         public Produto(string material, string serie, int filial, OracleConexao conecta)
         {
@@ -26,7 +27,7 @@ namespace Acerto
             DetalhesProduto(conecta);
             VerificaErrosProcessamento(conecta);
             // Aplicando os labels e texts
-            prodMaterial.Text = material;
+            prodMaterial.Text = material.Trim();
             prodSerie.Text = serie;
             prodFilial.Text = filial.ToString();
             Text = filial + " | " + material + " | " + serie;
@@ -53,7 +54,6 @@ namespace Acerto
                 CheckCheckin(row);  // Muda para Checkin o Tipo
                 CheckOpc9(row); // Verifica opção 9 e informa a troca
                 Checktrf(row);
-               
             }
         } // tabela de historico do produto oracle MOVIMENTO
         //SALDOS
@@ -65,12 +65,31 @@ namespace Acerto
         // DADOS DO PRODUTO
         private void DetalhesProduto(OracleConexao conecta)
         {
-            string query = "select MERCADO_DES,MERCADO_ANOEST,MERCADO_SGRP,MERCADO_GRP,grupo_desc,subgrp_desc from MERCADORIAS,grupo,subgrupo where MERCADO_COD = '"+material+"' and mercado_grp = grupo_cod and mercado_grp = subgrp_cod";
-            dadosProduto = conecta.Consulta(query);
-            prodDescr.Text = dadosProduto.Rows[0].Field<string>("MERCADO_DES").ToLower();
-            anoEst.Text = dadosProduto.Rows[0].Field<string>("MERCADO_ANOEST");
-            subGrp.Text = dadosProduto.Rows[0].Field<string>("MERCADO_SGRP") + " - " + dadosProduto.Rows[0].Field<string>("subgrp_desc")+ " ";
-            prodGrp.Text = dadosProduto.Rows[0].Field<string>("MERCADO_GRP") + " - " + dadosProduto.Rows[0].Field<string>("grupo_desc") + " "; ;
+            string query = "select MERCADO_DES,MERCADO_ANOEST,MERCADO_SGRP,MERCADO_GRP,grupo_desc,subgrp_desc from MERCADORIAS,grupo,subgrupo where MERCADO_COD = '"+material+"' and mercado_grp = grupo_cod and mercado_sgrp = subgrp_cod";
+            // Dados da Mercadoria
+            try
+            {
+                dadosProduto = conecta.Consulta(query);
+                prodDescr.Text = dadosProduto.Rows[0]["MERCADO_DES"].ToString().ToLower();
+                anoEst.Text = dadosProduto.Rows[0]["MERCADO_ANOEST"].ToString();
+                subGrp.Text = dadosProduto.Rows[0]["MERCADO_SGRP"] + " - " + dadosProduto.Rows[0]["subgrp_desc"] + " ";
+                prodGrp.Text = dadosProduto.Rows[0]["MERCADO_GRP"] + " - " + dadosProduto.Rows[0]["grupo_desc"] + " ";
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine("error" + e.Message);
+            }
+         
+            // Dados da Trasnferencia
+            dadosTrf = conecta.Consulta("select trf_vol from transferido where trf_ser = '" + serie + "' and trf_ref = '" + material + "'");
+            if (dadosTrf.Rows.Count >0)
+            {
+                textVol.Text = dadosTrf.Rows[0]["trf_vol"].ToString();
+            } 
+            
+
+
         } // Detalhes do produto tabela MERCADORIAS
         // Verifica erros de processamento
         private void VerificaErrosProcessamento(OracleConexao conecta)

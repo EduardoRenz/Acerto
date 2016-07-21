@@ -110,7 +110,7 @@ namespace Acerto
                 
 
             }
-            Console.WriteLine("MAterial:{0}  Serie: {1}", materialSerie[0], materialSerie[1]);
+            //Console.WriteLine("MAterial:{0}  Serie: {1}", materialSerie[0], materialSerie[1]);
             return materialSerie;
         }
     }

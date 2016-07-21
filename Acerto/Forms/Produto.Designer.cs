@@ -67,6 +67,9 @@
             this.flowFilial = new System.Windows.Forms.FlowLayoutPanel();
             this.ProdLblFilial = new System.Windows.Forms.Label();
             this.prodFilial = new System.Windows.Forms.TextBox();
+            this.flowVol = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelVol = new System.Windows.Forms.Label();
+            this.textVol = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.prodGridSaldos)).BeginInit();
             this.tableLayoutProd.SuspendLayout();
             this.groupBoxProduto.SuspendLayout();
@@ -81,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProdGridHist)).BeginInit();
             this.groupTransporte.SuspendLayout();
             this.flowFilial.SuspendLayout();
+            this.flowVol.SuspendLayout();
             this.SuspendLayout();
             // 
             // prodGridSaldos
@@ -112,7 +116,7 @@
             this.prodGridSaldos.DefaultCellStyle = dataGridViewCellStyle3;
             this.prodGridSaldos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.prodGridSaldos.EnableHeadersVisualStyles = false;
-            this.prodGridSaldos.Location = new System.Drawing.Point(3, 395);
+            this.prodGridSaldos.Location = new System.Drawing.Point(3, 403);
             this.prodGridSaldos.Name = "prodGridSaldos";
             this.prodGridSaldos.ReadOnly = true;
             this.prodGridSaldos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -131,7 +135,7 @@
             this.prodGridSaldos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.prodGridSaldos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.prodGridSaldos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.prodGridSaldos.Size = new System.Drawing.Size(798, 82);
+            this.prodGridSaldos.Size = new System.Drawing.Size(798, 74);
             this.prodGridSaldos.TabIndex = 1;
             // 
             // tableLayoutProd
@@ -164,7 +168,7 @@
             this.groupBoxProduto.ForeColor = System.Drawing.Color.Chocolate;
             this.groupBoxProduto.Location = new System.Drawing.Point(3, 3);
             this.groupBoxProduto.Name = "groupBoxProduto";
-            this.groupBoxProduto.Size = new System.Drawing.Size(798, 80);
+            this.groupBoxProduto.Size = new System.Drawing.Size(798, 108);
             this.groupBoxProduto.TabIndex = 13;
             this.groupBoxProduto.TabStop = false;
             this.groupBoxProduto.Text = "Mercadoria";
@@ -178,16 +182,17 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 25);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(792, 52);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(792, 80);
             this.flowLayoutPanel1.TabIndex = 14;
             // 
             // flowTopMercadoria
             // 
             this.flowTopMercadoria.Controls.Add(this.panelMaterial);
             this.flowTopMercadoria.Controls.Add(this.panelSerie);
+            this.flowLayoutPanel1.SetFlowBreak(this.flowTopMercadoria, true);
             this.flowTopMercadoria.Location = new System.Drawing.Point(3, 3);
             this.flowTopMercadoria.Name = "flowTopMercadoria";
-            this.flowTopMercadoria.Size = new System.Drawing.Size(362, 24);
+            this.flowTopMercadoria.Size = new System.Drawing.Size(355, 24);
             this.flowTopMercadoria.TabIndex = 13;
             // 
             // panelMaterial
@@ -259,17 +264,17 @@
             this.prodSerie.ReadOnly = true;
             this.prodSerie.Size = new System.Drawing.Size(97, 22);
             this.prodSerie.TabIndex = 3;
-            this.prodSerie.Text = "Serie";
+            this.prodSerie.Text = "SERIES";
             // 
             // flowGrptoEst
             // 
             this.flowGrptoEst.Controls.Add(this.flowDivProdMais);
             this.flowLayoutPanel1.SetFlowBreak(this.flowGrptoEst, true);
-            this.flowGrptoEst.Location = new System.Drawing.Point(368, 0);
+            this.flowGrptoEst.Location = new System.Drawing.Point(0, 30);
             this.flowGrptoEst.Margin = new System.Windows.Forms.Padding(0);
             this.flowGrptoEst.Name = "flowGrptoEst";
             this.flowGrptoEst.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.flowGrptoEst.Size = new System.Drawing.Size(419, 27);
+            this.flowGrptoEst.Size = new System.Drawing.Size(721, 28);
             this.flowGrptoEst.TabIndex = 12;
             // 
             // flowDivProdMais
@@ -283,7 +288,7 @@
             this.flowDivProdMais.Margin = new System.Windows.Forms.Padding(2, 3, 0, 3);
             this.flowDivProdMais.MinimumSize = new System.Drawing.Size(200, 0);
             this.flowDivProdMais.Name = "flowDivProdMais";
-            this.flowDivProdMais.Size = new System.Drawing.Size(398, 17);
+            this.flowDivProdMais.Size = new System.Drawing.Size(451, 34);
             this.flowDivProdMais.TabIndex = 10;
             // 
             // lblProdGrp
@@ -306,7 +311,7 @@
             this.prodGrp.Margin = new System.Windows.Forms.Padding(0);
             this.prodGrp.Name = "prodGrp";
             this.prodGrp.ReadOnly = true;
-            this.prodGrp.Size = new System.Drawing.Size(50, 15);
+            this.prodGrp.Size = new System.Drawing.Size(186, 15);
             this.prodGrp.TabIndex = 2;
             this.prodGrp.Text = "grupo";
             // 
@@ -315,10 +320,10 @@
             this.panelsubGrp.AutoSize = true;
             this.panelsubGrp.Controls.Add(this.lblSubGrp);
             this.panelsubGrp.Controls.Add(this.subGrp);
-            this.panelsubGrp.Location = new System.Drawing.Point(106, 0);
+            this.panelsubGrp.Location = new System.Drawing.Point(242, 0);
             this.panelsubGrp.Margin = new System.Windows.Forms.Padding(0);
             this.panelsubGrp.Name = "panelsubGrp";
-            this.panelsubGrp.Size = new System.Drawing.Size(139, 17);
+            this.panelsubGrp.Size = new System.Drawing.Size(209, 17);
             this.panelsubGrp.TabIndex = 6;
             // 
             // lblSubGrp
@@ -341,7 +346,7 @@
             this.subGrp.Margin = new System.Windows.Forms.Padding(0);
             this.subGrp.Name = "subGrp";
             this.subGrp.ReadOnly = true;
-            this.subGrp.Size = new System.Drawing.Size(50, 15);
+            this.subGrp.Size = new System.Drawing.Size(120, 15);
             this.subGrp.TabIndex = 2;
             this.subGrp.Text = "SubGrp";
             // 
@@ -350,17 +355,17 @@
             this.panelAnoEst.AutoSize = true;
             this.panelAnoEst.Controls.Add(this.lblAnoEst);
             this.panelAnoEst.Controls.Add(this.anoEst);
-            this.panelAnoEst.Location = new System.Drawing.Point(245, 0);
+            this.panelAnoEst.Location = new System.Drawing.Point(0, 17);
             this.panelAnoEst.Margin = new System.Windows.Forms.Padding(0);
             this.panelAnoEst.Name = "panelAnoEst";
-            this.panelAnoEst.Size = new System.Drawing.Size(153, 17);
+            this.panelAnoEst.Size = new System.Drawing.Size(327, 17);
             this.panelAnoEst.TabIndex = 7;
             // 
             // lblAnoEst
             // 
             this.lblAnoEst.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnoEst.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblAnoEst.Location = new System.Drawing.Point(0, 0);
+            this.lblAnoEst.Location = new System.Drawing.Point(6, 0);
             this.lblAnoEst.Margin = new System.Windows.Forms.Padding(0);
             this.lblAnoEst.Name = "lblAnoEst";
             this.lblAnoEst.Size = new System.Drawing.Size(103, 17);
@@ -372,11 +377,11 @@
             this.anoEst.BackColor = System.Drawing.SystemColors.HotTrack;
             this.anoEst.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.anoEst.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.anoEst.Location = new System.Drawing.Point(103, 0);
+            this.anoEst.Location = new System.Drawing.Point(111, 0);
             this.anoEst.Margin = new System.Windows.Forms.Padding(0);
             this.anoEst.Name = "anoEst";
             this.anoEst.ReadOnly = true;
-            this.anoEst.Size = new System.Drawing.Size(50, 15);
+            this.anoEst.Size = new System.Drawing.Size(216, 15);
             this.anoEst.TabIndex = 2;
             this.anoEst.Text = "SubGrp";
             // 
@@ -385,7 +390,7 @@
             this.prodDescr.AutoSize = true;
             this.prodDescr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prodDescr.ForeColor = System.Drawing.Color.Lavender;
-            this.prodDescr.Location = new System.Drawing.Point(3, 30);
+            this.prodDescr.Location = new System.Drawing.Point(3, 58);
             this.prodDescr.Margin = new System.Windows.Forms.Padding(3, 0, 0, 2);
             this.prodDescr.Name = "prodDescr";
             this.prodDescr.Size = new System.Drawing.Size(161, 20);
@@ -432,7 +437,7 @@
             this.ProdGridHist.DefaultCellStyle = dataGridViewCellStyle8;
             this.ProdGridHist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProdGridHist.EnableHeadersVisualStyles = false;
-            this.ProdGridHist.Location = new System.Drawing.Point(3, 161);
+            this.ProdGridHist.Location = new System.Drawing.Point(3, 189);
             this.ProdGridHist.Name = "ProdGridHist";
             this.ProdGridHist.ReadOnly = true;
             this.ProdGridHist.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -452,16 +457,17 @@
             this.ProdGridHist.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ProdGridHist.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ProdGridHist.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ProdGridHist.Size = new System.Drawing.Size(798, 228);
+            this.ProdGridHist.Size = new System.Drawing.Size(798, 208);
             this.ProdGridHist.TabIndex = 0;
             // 
             // groupTransporte
             // 
             this.groupTransporte.Controls.Add(this.flowFilial);
+            this.groupTransporte.Controls.Add(this.flowVol);
             this.groupTransporte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupTransporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupTransporte.ForeColor = System.Drawing.Color.Chocolate;
-            this.groupTransporte.Location = new System.Drawing.Point(3, 89);
+            this.groupTransporte.Location = new System.Drawing.Point(3, 117);
             this.groupTransporte.Name = "groupTransporte";
             this.groupTransporte.Size = new System.Drawing.Size(798, 66);
             this.groupTransporte.TabIndex = 14;
@@ -502,6 +508,40 @@
             this.prodFilial.TabIndex = 4;
             this.prodFilial.Text = "00";
             // 
+            // flowVol
+            // 
+            this.flowVol.Controls.Add(this.labelVol);
+            this.flowVol.Controls.Add(this.textVol);
+            this.flowVol.Location = new System.Drawing.Point(175, 28);
+            this.flowVol.Name = "flowVol";
+            this.flowVol.Size = new System.Drawing.Size(281, 27);
+            this.flowVol.TabIndex = 6;
+            // 
+            // labelVol
+            // 
+            this.labelVol.AutoSize = true;
+            this.labelVol.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVol.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelVol.Location = new System.Drawing.Point(0, 0);
+            this.labelVol.Margin = new System.Windows.Forms.Padding(0);
+            this.labelVol.Name = "labelVol";
+            this.labelVol.Size = new System.Drawing.Size(152, 24);
+            this.labelVol.TabIndex = 1;
+            this.labelVol.Text = "Ultimo Volume:";
+            // 
+            // textVol
+            // 
+            this.textVol.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.textVol.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textVol.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textVol.Location = new System.Drawing.Point(152, 0);
+            this.textVol.Margin = new System.Windows.Forms.Padding(0);
+            this.textVol.Name = "textVol";
+            this.textVol.ReadOnly = true;
+            this.textVol.Size = new System.Drawing.Size(127, 22);
+            this.textVol.TabIndex = 4;
+            this.textVol.Text = "sem volume";
+            // 
             // Produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,6 +580,8 @@
             this.groupTransporte.ResumeLayout(false);
             this.flowFilial.ResumeLayout(false);
             this.flowFilial.PerformLayout();
+            this.flowVol.ResumeLayout(false);
+            this.flowVol.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -573,5 +615,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.GroupBox groupTransporte;
         private System.Windows.Forms.FlowLayoutPanel flowFilial;
+        private System.Windows.Forms.FlowLayoutPanel flowVol;
+        private System.Windows.Forms.Label labelVol;
+        private System.Windows.Forms.TextBox textVol;
     }
 }
