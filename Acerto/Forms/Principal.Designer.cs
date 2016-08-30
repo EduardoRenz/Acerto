@@ -81,6 +81,7 @@ namespace Acerto
             this.btMercadoriaPesquisa = new System.Windows.Forms.Button();
             this.topCPF = new System.Windows.Forms.FlowLayoutPanel();
             this.lblCPF = new System.Windows.Forms.Label();
+            this.textCPF = new System.Windows.Forms.TextBox();
             this.btCPF = new System.Windows.Forms.Button();
             this.panelVolDocs = new System.Windows.Forms.FlowLayoutPanel();
             this.lblDoc = new System.Windows.Forms.Label();
@@ -109,7 +110,6 @@ namespace Acerto
             this.lblClienteNome = new System.Windows.Forms.Label();
             this.tabVolDoc = new System.Windows.Forms.TabPage();
             this.dataVolDoc = new System.Windows.Forms.DataGridView();
-            this.textCPF = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.intFilial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericDoc)).BeginInit();
             this.grpCondi.SuspendLayout();
@@ -579,6 +579,14 @@ namespace Acerto
             this.lblCPF.TabIndex = 10;
             this.lblCPF.Text = "CPF:";
             // 
+            // textCPF
+            // 
+            this.textCPF.Location = new System.Drawing.Point(48, 6);
+            this.textCPF.Margin = new System.Windows.Forms.Padding(0);
+            this.textCPF.Name = "textCPF";
+            this.textCPF.Size = new System.Drawing.Size(211, 20);
+            this.textCPF.TabIndex = 17;
+            // 
             // btCPF
             // 
             this.btCPF.Location = new System.Drawing.Point(262, 6);
@@ -694,7 +702,7 @@ namespace Acerto
             this.tabelaNProc.Name = "tabelaNProc";
             this.tabelaNProc.ReadOnly = true;
             this.tabelaNProc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tabelaNProc.Size = new System.Drawing.Size(1032, 581);
+            this.tabelaNProc.Size = new System.Drawing.Size(1032, 555);
             this.tabelaNProc.TabIndex = 5;
             this.tabelaNProc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaNProc_CellDoubleClick);
             // 
@@ -722,7 +730,7 @@ namespace Acerto
             this.divCentro.RowCount = 2;
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.divCentro.Size = new System.Drawing.Size(1048, 617);
+            this.divCentro.Size = new System.Drawing.Size(1048, 591);
             this.divCentro.TabIndex = 6;
             // 
             // abas
@@ -800,7 +808,7 @@ namespace Acerto
             this.pagErros.Margin = new System.Windows.Forms.Padding(0);
             this.pagErros.Name = "pagErros";
             this.pagErros.Padding = new System.Windows.Forms.Padding(3);
-            this.pagErros.Size = new System.Drawing.Size(1054, 623);
+            this.pagErros.Size = new System.Drawing.Size(1054, 597);
             this.pagErros.TabIndex = 0;
             this.pagErros.Text = "Erros de Processamento";
             // 
@@ -811,7 +819,7 @@ namespace Acerto
             this.tabMercadorias.Location = new System.Drawing.Point(4, 22);
             this.tabMercadorias.Name = "tabMercadorias";
             this.tabMercadorias.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMercadorias.Size = new System.Drawing.Size(1054, 623);
+            this.tabMercadorias.Size = new System.Drawing.Size(1054, 597);
             this.tabMercadorias.TabIndex = 2;
             this.tabMercadorias.Text = "Busca Mercadoria";
             // 
@@ -828,7 +836,7 @@ namespace Acerto
             this.gridMercadorias.Location = new System.Drawing.Point(3, 3);
             this.gridMercadorias.Name = "gridMercadorias";
             this.gridMercadorias.ReadOnly = true;
-            this.gridMercadorias.Size = new System.Drawing.Size(1048, 617);
+            this.gridMercadorias.Size = new System.Drawing.Size(1048, 591);
             this.gridMercadorias.TabIndex = 0;
             this.gridMercadorias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMercadorias_CellDoubleClick);
             // 
@@ -839,7 +847,7 @@ namespace Acerto
             this.tabCPF.Location = new System.Drawing.Point(4, 22);
             this.tabCPF.Name = "tabCPF";
             this.tabCPF.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCPF.Size = new System.Drawing.Size(1054, 623);
+            this.tabCPF.Size = new System.Drawing.Size(1054, 597);
             this.tabCPF.TabIndex = 3;
             this.tabCPF.Text = "Consulta CPF";
             // 
@@ -861,7 +869,7 @@ namespace Acerto
             this.tableCPF.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableCPF.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableCPF.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableCPF.Size = new System.Drawing.Size(1048, 617);
+            this.tableCPF.Size = new System.Drawing.Size(1048, 591);
             this.tableCPF.TabIndex = 2;
             // 
             // flowCPFLeft
@@ -1004,7 +1012,7 @@ namespace Acerto
             this.tabVolDoc.Location = new System.Drawing.Point(4, 22);
             this.tabVolDoc.Name = "tabVolDoc";
             this.tabVolDoc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVolDoc.Size = new System.Drawing.Size(1054, 623);
+            this.tabVolDoc.Size = new System.Drawing.Size(1054, 597);
             this.tabVolDoc.TabIndex = 4;
             this.tabVolDoc.Text = "Volumes / Docs";
             // 
@@ -1021,16 +1029,8 @@ namespace Acerto
             this.dataVolDoc.Location = new System.Drawing.Point(3, 3);
             this.dataVolDoc.Name = "dataVolDoc";
             this.dataVolDoc.ReadOnly = true;
-            this.dataVolDoc.Size = new System.Drawing.Size(1048, 617);
+            this.dataVolDoc.Size = new System.Drawing.Size(1048, 591);
             this.dataVolDoc.TabIndex = 1;
-            // 
-            // textCPF
-            // 
-            this.textCPF.Location = new System.Drawing.Point(48, 6);
-            this.textCPF.Margin = new System.Windows.Forms.Padding(0);
-            this.textCPF.Name = "textCPF";
-            this.textCPF.Size = new System.Drawing.Size(211, 20);
-            this.textCPF.TabIndex = 17;
             // 
             // Principal
             // 

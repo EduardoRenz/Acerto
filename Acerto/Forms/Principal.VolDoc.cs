@@ -17,7 +17,7 @@ namespace Acerto
 
             if (radioMatriz.Checked) // Matriz
             {
-                query = "SELECT  trf_ser as serie from transferido where trf_vol  = '"+ numericDoc.Value+ "'  and trf_dtc is null and ROWNUM <= 500 order by trf_ser";
+                query = "SELECT  trim(trf_ref) || trf_ser as serie from transferido where trf_vol  = '"+ numericDoc.Value+ "'  and trf_dtc is null and ROWNUM <= 500 order by trf_ser";
                 //Console.WriteLine(query);
                 worker.RunWorkerAsync();
             }
@@ -25,7 +25,8 @@ namespace Acerto
             {
                 if(intFilial.Value != 0) // Não é filial 0
                 {
-                    query = "SELECT mov_ser as serie from movimento where mov_doc = '" + numericDoc.Value + "' and mov_sed ='" +intFilial.Value + "' and ROWNUM <= 500";
+                   // query = "SELECT mov_ser as serie from movimento where mov_doc = '" + numericDoc.Value + "' and mov_sed ='" +intFilial.Value + "' and ROWNUM <= 500";
+                    query = "SELECT  trim(mov_ref) || mov_ser as mercadoria from movimento where mov_doc = '" + numericDoc.Value + "' and mov_sed ='" + intFilial.Value + "'";
                     worker.RunWorkerAsync();
                 }
                 else
