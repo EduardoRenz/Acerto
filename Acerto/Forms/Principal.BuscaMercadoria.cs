@@ -13,7 +13,7 @@ namespace Acerto
         public DataTable subGrupo;
         public void listarGrupo(OracleConexao conecta)
         {
-            grupo = conecta.Consulta("select * from GRUPO");
+            grupo = conecta.Consulta("select subgrp_cod, subgrp_desc from SUBGRUPO where subgrp_grp='030'");
             comboBoxGrupo.Items.Add(new Grupo(-1, "---"));
             foreach (DataRow row in grupo.Rows)
             {
@@ -21,21 +21,6 @@ namespace Acerto
                 comboBoxGrupo.Items.Add(new Grupo(Convert.ToInt32(row[0]),row[1].ToString()));
             }
         } // Busca grupos no banco e adiciona na comboBox
-        private void comboBoxGrupo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Grupo resultado = comboBoxGrupo.SelectedItem as Grupo;
-            comboBoxSubGrupo.Items.Clear();
-            comboBoxSubGrupo.Items.Add(new Grupo(-1, "---"));
-            if (resultado.codigo != -1)
-            {
-                string query = "select * from SUBGRUPO where SUBGRP_GRP = "+ resultado.codigo + "";
-                subGrupo =  conecta.Consulta(query);
-                foreach (DataRow row in subGrupo.Rows)
-                {
-                comboBoxSubGrupo.Items.Add(new Grupo(Convert.ToInt32(row[1]), row[2].ToString()));
-                }
-            }
-        } // Ao trocar de grupo, o que gera o subgrupo
         private void listaMercadorias(string busca)
         {
 
@@ -56,8 +41,10 @@ namespace Acerto
         }// só com busca
         private void listaMercadorias(string busca, Grupo grupo) // com busca e grupo
         {
+            Console.WriteLine("Iniciou pesquisa com Grupo");
             query = "select EST_SET as Filial, MERCADO_DES as Mercadoria,MERCADO_PRC preco, EST_SAL as Saldo, MERCADO_COD as Material, EST_SER as serie, MERCADO_SGRP as subgrupo" +
-                    " from MERCADORIAS, ESTOQUES,GRUPO where MERCADO_DES LIKE '%" +Eduardo.SqlScape(textProduto.Text) + "%' and MERCADO_GRP = " + grupo.codigo;
+                    " from MERCADORIAS, ESTOQUES, SUBGRUPO where MERCADO_DES LIKE '%" +Eduardo.SqlScape(textProduto.Text) + "%' and MERCADO_SGRP = " + grupo.codigo;
+
             if(intFilial.Value != 0)
             {
                 query += " and EST_SET =" + Eduardo.SqlScape(intFilial.Value.ToString()); // se não for qualquer filial
@@ -66,7 +53,7 @@ namespace Acerto
             {
                 query += " and EST_SAL = 1 "; // Apenas com saldo
             } 
-            query+=" and EST_REF = MERCADO_COD and GRUPO_COD = MERCADO_GRP and  ROWNUM <= 500";
+            query+=" and EST_REF = MERCADO_COD and SUBGRP_COD = MERCADO_SGRP and  ROWNUM <= 500";
             if (!worker.IsBusy)
             {
                 worker.RunWorkerAsync();
@@ -99,7 +86,7 @@ namespace Acerto
             worker.WorkerSupportsCancellation = true;
 
             Grupo res = comboBoxGrupo.SelectedItem as Grupo;
-            Grupo subres = comboBoxSubGrupo.SelectedItem as Grupo;
+           
             btMercadoriaPesquisa.Text = "Pesquisando...";
             btMercadoriaPesquisa.Enabled = false;
             if (comboBoxGrupo.SelectedIndex == -1 || res.codigo == -1)
@@ -108,15 +95,8 @@ namespace Acerto
             }
             else
             {
-                if(comboBoxSubGrupo.SelectedIndex == -1 || subres.codigo == -1)
-                {
-                    listaMercadorias(textProduto.Text, comboBoxGrupo.SelectedItem as Grupo);
-                }
-                else
-                {
-                    listaMercadorias(textProduto.Text, comboBoxGrupo.SelectedItem as Grupo,comboBoxSubGrupo.SelectedItem as Grupo);
-                }
-              
+                listaMercadorias(textProduto.Text,res);
+
             }
         } // Ao pesquisar mercadorias
         private void PesquisaMercadoAsync(object sender, DoWorkEventArgs e)

@@ -73,9 +73,6 @@ namespace Acerto
             this.contTopBusca1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblcomboGrupo = new System.Windows.Forms.Label();
             this.comboBoxGrupo = new System.Windows.Forms.ComboBox();
-            this.contTopBusca2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblSubGrupo = new System.Windows.Forms.Label();
-            this.comboBoxSubGrupo = new System.Windows.Forms.ComboBox();
             this.contTopBusca3 = new System.Windows.Forms.FlowLayoutPanel();
             this.checkBoxMercadoSaldo = new System.Windows.Forms.CheckBox();
             this.btMercadoriaPesquisa = new System.Windows.Forms.Button();
@@ -119,7 +116,6 @@ namespace Acerto
             this.panelDatas.SuspendLayout();
             this.mercadoriaPanel.SuspendLayout();
             this.contTopBusca1.SuspendLayout();
-            this.contTopBusca2.SuspendLayout();
             this.contTopBusca3.SuspendLayout();
             this.topCPF.SuspendLayout();
             this.panelVolDocs.SuspendLayout();
@@ -312,7 +308,6 @@ namespace Acerto
             this.topo.Controls.Add(this.panelDatas);
             this.topo.Controls.Add(this.mercadoriaPanel);
             this.topo.Controls.Add(this.contTopBusca1);
-            this.topo.Controls.Add(this.contTopBusca2);
             this.topo.Controls.Add(this.contTopBusca3);
             this.topo.Controls.Add(this.topCPF);
             this.topo.Controls.Add(this.panelVolDocs);
@@ -483,47 +478,13 @@ namespace Acerto
             this.comboBoxGrupo.Name = "comboBoxGrupo";
             this.comboBoxGrupo.Size = new System.Drawing.Size(184, 21);
             this.comboBoxGrupo.TabIndex = 18;
-            this.comboBoxGrupo.SelectedIndexChanged += new System.EventHandler(this.comboBoxGrupo_SelectedIndexChanged);
-            // 
-            // contTopBusca2
-            // 
-            this.contTopBusca2.AutoSize = true;
-            this.contTopBusca2.Controls.Add(this.lblSubGrupo);
-            this.contTopBusca2.Controls.Add(this.comboBoxSubGrupo);
-            this.contTopBusca2.Location = new System.Drawing.Point(567, 42);
-            this.contTopBusca2.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
-            this.contTopBusca2.Name = "contTopBusca2";
-            this.contTopBusca2.Size = new System.Drawing.Size(277, 21);
-            this.contTopBusca2.TabIndex = 24;
-            // 
-            // lblSubGrupo
-            // 
-            this.lblSubGrupo.AutoSize = true;
-            this.lblSubGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lblSubGrupo.Location = new System.Drawing.Point(0, 0);
-            this.lblSubGrupo.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.lblSubGrupo.Name = "lblSubGrupo";
-            this.lblSubGrupo.Size = new System.Drawing.Size(86, 17);
-            this.lblSubGrupo.TabIndex = 22;
-            this.lblSubGrupo.Text = "SubGrupo:";
-            // 
-            // comboBoxSubGrupo
-            // 
-            this.comboBoxSubGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxSubGrupo.FormattingEnabled = true;
-            this.comboBoxSubGrupo.Location = new System.Drawing.Point(89, 0);
-            this.comboBoxSubGrupo.Margin = new System.Windows.Forms.Padding(0, 0, 4, 0);
-            this.comboBoxSubGrupo.Name = "comboBoxSubGrupo";
-            this.comboBoxSubGrupo.Size = new System.Drawing.Size(184, 21);
-            this.comboBoxSubGrupo.TabIndex = 21;
             // 
             // contTopBusca3
             // 
             this.contTopBusca3.AutoSize = true;
             this.contTopBusca3.Controls.Add(this.checkBoxMercadoSaldo);
             this.contTopBusca3.Controls.Add(this.btMercadoriaPesquisa);
-            this.contTopBusca3.Location = new System.Drawing.Point(844, 42);
+            this.contTopBusca3.Location = new System.Drawing.Point(567, 42);
             this.contTopBusca3.Margin = new System.Windows.Forms.Padding(0, 6, 0, 0);
             this.contTopBusca3.Name = "contTopBusca3";
             this.contTopBusca3.Size = new System.Drawing.Size(208, 22);
@@ -702,7 +663,7 @@ namespace Acerto
             this.tabelaNProc.Name = "tabelaNProc";
             this.tabelaNProc.ReadOnly = true;
             this.tabelaNProc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tabelaNProc.Size = new System.Drawing.Size(1032, 555);
+            this.tabelaNProc.Size = new System.Drawing.Size(1032, 581);
             this.tabelaNProc.TabIndex = 5;
             this.tabelaNProc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaNProc_CellDoubleClick);
             // 
@@ -730,7 +691,7 @@ namespace Acerto
             this.divCentro.RowCount = 2;
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.divCentro.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.divCentro.Size = new System.Drawing.Size(1048, 591);
+            this.divCentro.Size = new System.Drawing.Size(1048, 617);
             this.divCentro.TabIndex = 6;
             // 
             // abas
@@ -808,7 +769,7 @@ namespace Acerto
             this.pagErros.Margin = new System.Windows.Forms.Padding(0);
             this.pagErros.Name = "pagErros";
             this.pagErros.Padding = new System.Windows.Forms.Padding(3);
-            this.pagErros.Size = new System.Drawing.Size(1054, 597);
+            this.pagErros.Size = new System.Drawing.Size(1054, 623);
             this.pagErros.TabIndex = 0;
             this.pagErros.Text = "Erros de Processamento";
             // 
@@ -819,7 +780,7 @@ namespace Acerto
             this.tabMercadorias.Location = new System.Drawing.Point(4, 22);
             this.tabMercadorias.Name = "tabMercadorias";
             this.tabMercadorias.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMercadorias.Size = new System.Drawing.Size(1054, 597);
+            this.tabMercadorias.Size = new System.Drawing.Size(1054, 623);
             this.tabMercadorias.TabIndex = 2;
             this.tabMercadorias.Text = "Busca Mercadoria";
             // 
@@ -836,7 +797,7 @@ namespace Acerto
             this.gridMercadorias.Location = new System.Drawing.Point(3, 3);
             this.gridMercadorias.Name = "gridMercadorias";
             this.gridMercadorias.ReadOnly = true;
-            this.gridMercadorias.Size = new System.Drawing.Size(1048, 591);
+            this.gridMercadorias.Size = new System.Drawing.Size(1048, 617);
             this.gridMercadorias.TabIndex = 0;
             this.gridMercadorias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMercadorias_CellDoubleClick);
             // 
@@ -847,15 +808,15 @@ namespace Acerto
             this.tabCPF.Location = new System.Drawing.Point(4, 22);
             this.tabCPF.Name = "tabCPF";
             this.tabCPF.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCPF.Size = new System.Drawing.Size(1054, 597);
+            this.tabCPF.Size = new System.Drawing.Size(1054, 623);
             this.tabCPF.TabIndex = 3;
             this.tabCPF.Text = "Consulta CPF";
             // 
             // tableCPF
             // 
             this.tableCPF.ColumnCount = 2;
-            this.tableCPF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableCPF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableCPF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.8168F));
+            this.tableCPF.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.1832F));
             this.tableCPF.Controls.Add(this.flowCPFLeft, 1, 0);
             this.tableCPF.Controls.Add(this.gridCPF, 0, 2);
             this.tableCPF.Controls.Add(this.cpfResultDoc, 1, 2);
@@ -869,15 +830,15 @@ namespace Acerto
             this.tableCPF.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableCPF.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableCPF.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableCPF.Size = new System.Drawing.Size(1048, 591);
+            this.tableCPF.Size = new System.Drawing.Size(1048, 617);
             this.tableCPF.TabIndex = 2;
             // 
             // flowCPFLeft
             // 
             this.flowCPFLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowCPFLeft.Location = new System.Drawing.Point(527, 3);
+            this.flowCPFLeft.Location = new System.Drawing.Point(567, 3);
             this.flowCPFLeft.Name = "flowCPFLeft";
-            this.flowCPFLeft.Size = new System.Drawing.Size(518, 17);
+            this.flowCPFLeft.Size = new System.Drawing.Size(478, 17);
             this.flowCPFLeft.TabIndex = 26;
             // 
             // gridCPF
@@ -911,7 +872,7 @@ namespace Acerto
             this.gridCPF.Name = "gridCPF";
             this.gridCPF.ReadOnly = true;
             this.gridCPF.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gridCPF.Size = new System.Drawing.Size(518, 568);
+            this.gridCPF.Size = new System.Drawing.Size(558, 568);
             this.gridCPF.TabIndex = 6;
             this.gridCPF.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCPF_RowEnter);
             // 
@@ -941,12 +902,12 @@ namespace Acerto
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.cpfResultDoc.DefaultCellStyle = dataGridViewCellStyle9;
             this.cpfResultDoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cpfResultDoc.Location = new System.Drawing.Point(527, 46);
+            this.cpfResultDoc.Location = new System.Drawing.Point(567, 46);
             this.cpfResultDoc.MultiSelect = false;
             this.cpfResultDoc.Name = "cpfResultDoc";
             this.cpfResultDoc.ReadOnly = true;
             this.cpfResultDoc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.cpfResultDoc.Size = new System.Drawing.Size(518, 568);
+            this.cpfResultDoc.Size = new System.Drawing.Size(478, 568);
             this.cpfResultDoc.TabIndex = 7;
             this.cpfResultDoc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cpfResultDoc_CellDoubleClick);
             // 
@@ -965,7 +926,7 @@ namespace Acerto
             // 
             this.cpfLblMercadorias.AutoSize = true;
             this.cpfLblMercadorias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.cpfLblMercadorias.Location = new System.Drawing.Point(524, 23);
+            this.cpfLblMercadorias.Location = new System.Drawing.Point(564, 23);
             this.cpfLblMercadorias.Margin = new System.Windows.Forms.Padding(0);
             this.cpfLblMercadorias.Name = "cpfLblMercadorias";
             this.cpfLblMercadorias.Size = new System.Drawing.Size(97, 17);
@@ -980,7 +941,7 @@ namespace Acerto
             this.cpfFlowLeft.Location = new System.Drawing.Point(0, 3);
             this.cpfFlowLeft.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.cpfFlowLeft.Name = "cpfFlowLeft";
-            this.cpfFlowLeft.Size = new System.Drawing.Size(521, 17);
+            this.cpfFlowLeft.Size = new System.Drawing.Size(561, 17);
             this.cpfFlowLeft.TabIndex = 25;
             // 
             // labelNomeCliente
@@ -1012,7 +973,7 @@ namespace Acerto
             this.tabVolDoc.Location = new System.Drawing.Point(4, 22);
             this.tabVolDoc.Name = "tabVolDoc";
             this.tabVolDoc.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVolDoc.Size = new System.Drawing.Size(1054, 597);
+            this.tabVolDoc.Size = new System.Drawing.Size(1054, 623);
             this.tabVolDoc.TabIndex = 4;
             this.tabVolDoc.Text = "Volumes / Docs";
             // 
@@ -1029,7 +990,7 @@ namespace Acerto
             this.dataVolDoc.Location = new System.Drawing.Point(3, 3);
             this.dataVolDoc.Name = "dataVolDoc";
             this.dataVolDoc.ReadOnly = true;
-            this.dataVolDoc.Size = new System.Drawing.Size(1048, 591);
+            this.dataVolDoc.Size = new System.Drawing.Size(1048, 617);
             this.dataVolDoc.TabIndex = 1;
             // 
             // Principal
@@ -1066,8 +1027,6 @@ namespace Acerto
             this.mercadoriaPanel.PerformLayout();
             this.contTopBusca1.ResumeLayout(false);
             this.contTopBusca1.PerformLayout();
-            this.contTopBusca2.ResumeLayout(false);
-            this.contTopBusca2.PerformLayout();
             this.contTopBusca3.ResumeLayout(false);
             this.contTopBusca3.PerformLayout();
             this.topCPF.ResumeLayout(false);
@@ -1139,11 +1098,8 @@ namespace Acerto
         private ComboBox comboBoxGrupo;
         private Label lblcomboGrupo;
         private Button btMercadoriaPesquisa;
-        private Label lblSubGrupo;
-        private ComboBox comboBoxSubGrupo;
         private FlowLayoutPanel contTopBusca1;
         private CheckBox checkBoxMercadoSaldo;
-        private FlowLayoutPanel contTopBusca2;
         private FlowLayoutPanel contTopBusca3;
         private TabPage tabCPF;
         private TableLayoutPanel tableCPF;

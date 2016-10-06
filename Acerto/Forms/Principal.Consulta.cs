@@ -63,8 +63,6 @@ namespace Acerto
                produto = new Produto(gridConsulta.Rows[e.RowIndex].Cells["material"].Value.ToString(), gridConsulta.Rows[e.RowIndex].Cells["serie"].Value.ToString(),Convert.ToInt32(gridConsulta.Rows[e.RowIndex].Cells["Filial"].Value),conecta);
             }
         }
-        /// TESTES
-        /// 
         private string[] arruma(string str)
         {
             char[] toTrim = { '.', '-', ' ', '_','*','"','%' };

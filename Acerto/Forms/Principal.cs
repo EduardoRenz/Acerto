@@ -14,7 +14,7 @@ namespace Acerto
         public Principal() { InitializeComponent(); }
         private void Form1_Load(object sender, EventArgs e) //  AO CARREGAR O FORM 
         {
-            Text = "Consulta  v:1.1.3.3";
+            Text = "Consulta  v:1.1.4.3";
             dataFim.Value = new System.DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day, 0, 0, 0, 0);
             dataInicio.Value = new System.DateTime(DateTime.Now.Year, DateTime.Now.Month,1, 0, 0, 0, 0);
             VerificaAbas();
@@ -38,7 +38,6 @@ namespace Acerto
             tabConsultar.Visible = false;
             mercadoriaPanel.Visible = false;
             contTopBusca1.Visible = false;
-            contTopBusca2.Visible =false;
             contTopBusca3.Visible = false;
             topCPF.Visible = false;
             panelVolDocs.Visible = false;
@@ -54,7 +53,6 @@ namespace Acerto
                 case "tabMercadorias":
                     mercadoriaPanel.Visible = true;
                     contTopBusca1.Visible = true;
-                    contTopBusca2.Visible = true;
                     contTopBusca3.Visible = true;
                     this.AcceptButton = this.btMercadoriaPesquisa;
                     break;

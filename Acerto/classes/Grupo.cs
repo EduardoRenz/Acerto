@@ -15,7 +15,8 @@ namespace Consulta.classes
         {
             this.codigo = codigo;
             this.abreviatura = abreviatura;
-            GeraDesc(abreviatura);
+            descricao = abreviatura;
+            //GeraDesc(abreviatura);
         }
 
         private void GeraDesc(string abreviatura)
