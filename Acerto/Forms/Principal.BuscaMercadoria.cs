@@ -38,6 +38,7 @@ namespace Acerto
             {
                 worker.RunWorkerAsync();
             }
+            Console.WriteLine(query);
         }// só com busca
         private void listaMercadorias(string busca, Grupo grupo) // com busca e grupo
         {

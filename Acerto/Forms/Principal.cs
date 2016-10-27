@@ -14,7 +14,7 @@ namespace Acerto
         public Principal() { InitializeComponent(); }
         private void Form1_Load(object sender, EventArgs e) //  AO CARREGAR O FORM 
         {
-            Text = "Consulta  v:1.1.4.3";
+            Text = "Consulta  v:1.1.4.4";
             dataFim.Value = new System.DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day, 0, 0, 0, 0);
             dataInicio.Value = new System.DateTime(DateTime.Now.Year, DateTime.Now.Month,1, 0, 0, 0, 0);
             VerificaAbas();

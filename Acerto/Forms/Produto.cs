@@ -21,19 +21,19 @@ namespace Acerto
         }  // Construtor Oracle
         private void Produto_Load(object sender, EventArgs e)
         {
-            // Busca os dados
-            MostraHistorico(conecta);
-            MostraSaldo(conecta);
-            DetalhesProduto(conecta);
-            VerificaErrosProcessamento(conecta);
             // Aplicando os labels e texts
             prodMaterial.Text = material.Trim();
             prodSerie.Text = serie;
-            //prodFilial.Text = filial.ToString();
             Text = filial + " | " + material + " | " + serie;
             prodDescr.Text = Eduardo.UpperFirst(prodDescr.Text);
+            // Busca os dados
+            DetalhesProduto(conecta); // Informa grupo, subgrupo etc
+            MostraHistorico(conecta); // Lista o movimento
+            MostraSaldo(conecta); // Informa os saldos
+            VerificaErrosProcessamento(conecta);
+            //prodFilial.Text = filial.ToString();
 
-        }
+        } // Constroi informações da janela (Todos os scripts de busca ao BD)
         private void Initialize(string material, string serie, int filial)
         {
             InitializeComponent();
@@ -71,7 +71,7 @@ namespace Acerto
             prodGridSaldos.DataSource = conecta.Consulta(query);
         } // Tabela dos ESTOQUES
         // DADOS DO PRODUTO
-        private void DetalhesProduto(OracleConexao conecta)
+        private void DetalhesProduto(OracleConexao conecta) // Tabela de grupos, subgrupos e mercadoria
         {
             string query = "select MERCADO_DES,MERCADO_ANOEST,MERCADO_SGRP,MERCADO_GRP,grupo_desc,subgrp_desc from MERCADORIAS,grupo,subgrupo where MERCADO_COD = '"+material+"' and mercado_grp = grupo_cod and mercado_sgrp = subgrp_cod";
             // Dados da Mercadoria
@@ -130,14 +130,18 @@ namespace Acerto
                 " and mov_ser != '" + serie + "'";
                 DataTable retquery2 = new DataTable();
                 retquery2 = conecta.Consulta(query2);
-                //  Console.WriteLine(retquery2.Rows[0]["serie"] + "é essa");
-                if (row.Cells["TIPO"].Value.ToString() == "Vendas")
+
+                if(retquery2.Rows.Count > 0)
                 {
-                    row.Cells["TIPO"].Value = "Sai. por " + retquery2.Rows[0]["serie"];
-                }
-                else if (row.Cells["TIPO"].Value.ToString() == "Devolução de Vendas ")
-                {
-                    row.Cells["TIPO"].Value = "Entra. por " + retquery2.Rows[0]["serie"];
+                    //  Console.WriteLine(retquery2.Rows[0]["serie"] + "é essa");
+                    if (row.Cells["TIPO"].Value.ToString() == "Vendas")
+                    {
+                        row.Cells["TIPO"].Value = "Sai. por " + retquery2.Rows[0]["serie"];
+                    }
+                    else if (row.Cells["TIPO"].Value.ToString() == "Devolução de Vendas ")
+                    {
+                        row.Cells["TIPO"].Value = "Entra. por " + retquery2.Rows[0]["serie"];
+                    }
                 }
             }
         } // verifica troca
@@ -154,7 +158,6 @@ namespace Acerto
                 }
             }
         }
-
         // Eventos do FORM
         private void Produto_FormClosed(object sender, FormClosedEventArgs e)
         {
