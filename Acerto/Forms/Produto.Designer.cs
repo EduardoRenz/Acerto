@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -61,7 +62,10 @@
             this.lblAnoEst = new System.Windows.Forms.Label();
             this.anoEst = new System.Windows.Forms.TextBox();
             this.prodDescr = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblErrProc = new System.Windows.Forms.Label();
+            this.lblColetando = new System.Windows.Forms.Label();
+            this.txtColetando = new System.Windows.Forms.TextBox();
             this.ProdGridHist = new System.Windows.Forms.DataGridView();
             this.groupTransporte = new System.Windows.Forms.GroupBox();
             this.flowFilial = new System.Windows.Forms.FlowLayoutPanel();
@@ -70,6 +74,7 @@
             this.flowVol = new System.Windows.Forms.FlowLayoutPanel();
             this.labelVol = new System.Windows.Forms.Label();
             this.textVol = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.prodGridSaldos)).BeginInit();
             this.tableLayoutProd.SuspendLayout();
             this.groupBoxProduto.SuspendLayout();
@@ -81,6 +86,7 @@
             this.flowDivProdMais.SuspendLayout();
             this.panelsubGrp.SuspendLayout();
             this.panelAnoEst.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProdGridHist)).BeginInit();
             this.groupTransporte.SuspendLayout();
             this.flowFilial.SuspendLayout();
@@ -116,7 +122,7 @@
             this.prodGridSaldos.DefaultCellStyle = dataGridViewCellStyle3;
             this.prodGridSaldos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.prodGridSaldos.EnableHeadersVisualStyles = false;
-            this.prodGridSaldos.Location = new System.Drawing.Point(3, 403);
+            this.prodGridSaldos.Location = new System.Drawing.Point(3, 402);
             this.prodGridSaldos.Name = "prodGridSaldos";
             this.prodGridSaldos.ReadOnly = true;
             this.prodGridSaldos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -135,7 +141,7 @@
             this.prodGridSaldos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.prodGridSaldos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.prodGridSaldos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.prodGridSaldos.Size = new System.Drawing.Size(798, 74);
+            this.prodGridSaldos.Size = new System.Drawing.Size(798, 73);
             this.prodGridSaldos.TabIndex = 1;
             // 
             // tableLayoutProd
@@ -143,8 +149,8 @@
             this.tableLayoutProd.ColumnCount = 1;
             this.tableLayoutProd.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutProd.Controls.Add(this.groupBoxProduto, 0, 0);
-            this.tableLayoutProd.Controls.Add(this.lblErrProc, 0, 4);
             this.tableLayoutProd.Controls.Add(this.prodGridSaldos, 0, 3);
+            this.tableLayoutProd.Controls.Add(this.flowLayoutPanel2, 0, 4);
             this.tableLayoutProd.Controls.Add(this.ProdGridHist, 0, 2);
             this.tableLayoutProd.Controls.Add(this.groupTransporte, 0, 1);
             this.tableLayoutProd.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -155,7 +161,7 @@
             this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 72F));
             this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.72727F));
             this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.27273F));
-            this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutProd.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutProd.Size = new System.Drawing.Size(804, 509);
             this.tableLayoutProd.TabIndex = 2;
             // 
@@ -397,17 +403,53 @@
             this.prodDescr.TabIndex = 8;
             this.prodDescr.Text = "Descrição do produto";
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoSize = true;
+            this.flowLayoutPanel2.Controls.Add(this.lblErrProc);
+            this.flowLayoutPanel2.Controls.Add(this.lblColetando);
+            this.flowLayoutPanel2.Controls.Add(this.txtColetando);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 481);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(705, 24);
+            this.flowLayoutPanel2.TabIndex = 5;
+            // 
             // lblErrProc
             // 
             this.lblErrProc.AutoSize = true;
             this.lblErrProc.BackColor = System.Drawing.Color.Red;
             this.lblErrProc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrProc.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblErrProc.Location = new System.Drawing.Point(3, 480);
+            this.lblErrProc.Location = new System.Drawing.Point(3, 0);
+            this.lblErrProc.MinimumSize = new System.Drawing.Size(500, 0);
             this.lblErrProc.Name = "lblErrProc";
-            this.lblErrProc.Size = new System.Drawing.Size(208, 24);
+            this.lblErrProc.Size = new System.Drawing.Size(500, 24);
             this.lblErrProc.TabIndex = 2;
             this.lblErrProc.Text = "Erro de processamento";
+            // 
+            // lblColetando
+            // 
+            this.lblColetando.AutoSize = true;
+            this.lblColetando.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColetando.Location = new System.Drawing.Point(509, 0);
+            this.lblColetando.Name = "lblColetando";
+            this.lblColetando.Size = new System.Drawing.Size(96, 24);
+            this.lblColetando.TabIndex = 3;
+            this.lblColetando.Text = "Coletando";
+            // 
+            // txtColetando
+            // 
+            this.txtColetando.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.txtColetando.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtColetando.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtColetando.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtColetando.Location = new System.Drawing.Point(608, 0);
+            this.txtColetando.Margin = new System.Windows.Forms.Padding(0);
+            this.txtColetando.Name = "txtColetando";
+            this.txtColetando.ReadOnly = true;
+            this.txtColetando.Size = new System.Drawing.Size(97, 22);
+            this.txtColetando.TabIndex = 4;
+            this.txtColetando.Text = "vol";
             // 
             // ProdGridHist
             // 
@@ -457,7 +499,7 @@
             this.ProdGridHist.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ProdGridHist.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.ProdGridHist.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ProdGridHist.Size = new System.Drawing.Size(798, 208);
+            this.ProdGridHist.Size = new System.Drawing.Size(798, 207);
             this.ProdGridHist.TabIndex = 0;
             // 
             // groupTransporte
@@ -542,6 +584,11 @@
             this.textVol.TabIndex = 4;
             this.textVol.Text = "sem volume";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Produto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -576,6 +623,8 @@
             this.panelsubGrp.PerformLayout();
             this.panelAnoEst.ResumeLayout(false);
             this.panelAnoEst.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProdGridHist)).EndInit();
             this.groupTransporte.ResumeLayout(false);
             this.flowFilial.ResumeLayout(false);
@@ -618,5 +667,9 @@
         private System.Windows.Forms.FlowLayoutPanel flowVol;
         private System.Windows.Forms.Label labelVol;
         private System.Windows.Forms.TextBox textVol;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Label lblColetando;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox txtColetando;
     }
 }

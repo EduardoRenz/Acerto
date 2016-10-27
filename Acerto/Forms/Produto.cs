@@ -31,6 +31,7 @@ namespace Acerto
             MostraHistorico(conecta); // Lista o movimento
             MostraSaldo(conecta); // Informa os saldos
             VerificaErrosProcessamento(conecta);
+            VerificaColetando(conecta);
             //prodFilial.Text = filial.ToString();
 
         } // Constroi informações da janela (Todos os scripts de busca ao BD)
@@ -99,7 +100,7 @@ namespace Acerto
 
 
         } // Detalhes do produto tabela MERCADORIAS
-        // Verifica erros de processamento
+        // ERROS DE PROCESSAMENTO
         private void VerificaErrosProcessamento(OracleConexao conecta)
         {
             string query = "select movestdat Data, movestseo Origem, movestsed Destino, movesttip Tipo, movestref Material, movestser Serie, movestncf Nf, me_log Processamento from me where me_est is null and movestref = '" + material + "' and movestser = '" + serie + "'";
@@ -111,8 +112,32 @@ namespace Acerto
             }
             else
             {
-                lblErrProc.Text = "";
+                lblErrProc.Enabled = false;
+                lblErrProc.Visible = false;
             }
+        }
+        // SENDO COLETADO 
+        private void VerificaColetando(OracleConexao conecta)
+        {
+            string query = "select trf_vol from trftmp where trf_ser='"+serie+"' and trf_ref='"+material+"'";
+            Console.WriteLine(query);
+            DataTable vol = new DataTable();
+            vol = conecta.Consulta(query);
+            if(vol.Rows.Count > 0)
+            {
+                lblColetando.Text = "Sendo coletado no volume: ";
+                txtColetando.Text = vol.Rows[0]["trf_vol"].ToString();
+            }
+            else
+            {
+                lblColetando.Enabled = false;
+                lblColetando.Visible = false;
+
+                txtColetando.Enabled = false;
+                txtColetando.Visible = false;
+            }
+
+
         }
         // Mini funções
         private void CheckCheckin(DataGridViewRow row)
