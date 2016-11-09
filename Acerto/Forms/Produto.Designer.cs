@@ -431,6 +431,7 @@
             // 
             this.lblColetando.AutoSize = true;
             this.lblColetando.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColetando.ForeColor = System.Drawing.SystemColors.Control;
             this.lblColetando.Location = new System.Drawing.Point(509, 0);
             this.lblColetando.Name = "lblColetando";
             this.lblColetando.Size = new System.Drawing.Size(96, 24);
